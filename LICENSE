@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 the authors of this template
+Copyright (c) 2026 Ashmit Mittal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ SOFTWARE.
 
 ---
 
-NOTE ON ARTWORK: the MIT licence above covers the code. The illustrations in
-src/assets/ are a caricature of the original author and are included only so
-this template renders as designed. Replace them with your own artwork before
-publishing your own site.
+NOTE ON ARTWORK: the MIT licence above covers the code only. The illustrations
+in src/assets/ are copyright Ashmit Mittal and are a caricature of him. They are
+included so this template renders as designed. Replace them with your own
+artwork before publishing your own site.

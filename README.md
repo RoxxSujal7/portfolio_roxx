@@ -5,7 +5,9 @@ taped paper labels drop into place, a small spider dangles on its silk, and a wo
 past a giant watermark word. Built with Astro, GSAP and Lenis — no framework runtime ships to
 the browser.
 
-This is the template behind a personal site, published so people can see how it is put together.
+This is the template behind [ashmit.codes](https://ashmit.codes), published so people can see how
+it is put together. Built and drawn by **Ashmit Mittal** — [@ashmit.codes](https://www.instagram.com/ashmit.codes/)
+on Instagram, where the making-of reels live.
 
 ## Run
 
@@ -63,6 +65,9 @@ Static output, so anywhere works. `vercel.json` is set up for Vercel; delete it 
 ## Licence
 
 - **Code** — MIT, see `LICENSE`. Use it, change it, ship it, no attribution needed.
-- **Illustrations** (`src/assets/`) — these are a caricature of the original author, included so
-  the template renders as designed. Please replace them with your own artwork before you put the
+- **Illustrations** (`src/assets/`) — © Ashmit Mittal. They are a caricature of him, included so
+  the template renders as designed. Please replace them with your own artwork before you put your
   site online. See `src/assets/README.md`.
+
+Credit is not required, but if this template is useful to you, a link back to
+[@ashmit.codes](https://www.instagram.com/ashmit.codes/) is always welcome.

@@ -24,11 +24,13 @@ const art = { agent: artAgent, p2p: artP2p, crm: artCrm, systems: artSystems, re
 // EDIT ME. Everything you need to change to make this site yours is in this
 // block: your links, your skill labels, your tech chips, your projects.
 // ---------------------------------------------------------------------------
-const NAME = 'Your Name';
-const SITE = 'yourname.dev';
+const NAME = 'Ashmit Mittal';
+const SITE = 'ashmit.codes';
+const HANDLE = '@ashmit.codes';
+const IG = 'https://www.instagram.com/ashmit.codes/';
+const GH = 'https://github.com/ashmitmittal';
+// Placeholders on purpose — put your own in before you deploy.
 const EMAIL = 'hello@yourname.dev';
-const IG = 'https://www.instagram.com/yourhandle/';
-const GH = 'https://github.com/yourusername';
 const LINKEDIN = 'https://www.linkedin.com/in/yourusername/';
 
 // Floating taped labels on the landing screen. x/y are % of the hero box.
@@ -38,7 +40,7 @@ const labels = [
   { text: 'Scalable systems', x: '78%', y: '29%', rot: 5 },
   { text: 'AI agents', x: '83%', y: '60%', rot: -4 },
   { text: 'Postgres & MySQL', x: '10%', y: '79%', rot: -3 },
-  { text: 'Design systems', x: '75%', y: '79%', rot: 6 },
+  { text: 'Reels on AI', x: '75%', y: '79%', rot: 6 },
 ];
 const chips = ['Node.js', 'Express', 'React', 'Next.js', 'PostgreSQL', 'MySQL', 'Redis', 'Docker', 'Google Cloud', 'AI agents'];
 
@@ -73,7 +75,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
   <body>
     <header class="nav">
       <div class="wrap">
-        <a class="wordmark" href="/">yourname<em>.</em>dev</a>
+        <a class="wordmark" href="/">ashmit<em>.</em>codes</a>
         <nav aria-label="Primary">
           <ul>
             <li><a href="#about">About</a></li>
@@ -89,7 +91,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
       <!-- ============ landing ============ -->
       <section class="hero" id="top">
         <Web />
-        <div class="hero-word" aria-hidden="true"><span>YOURNAME</span></div>
+        <div class="hero-word" aria-hidden="true"><span>ASHMIT</span></div>
         <svg class="thread" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
           <path d="M -30 430 C 110 390, 170 540, 290 480 S 430 370, 540 610 S 900 320, 1010 570 S 1210 430, 1310 510 S 1410 470, 1480 540" />
         </svg>
@@ -103,7 +105,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
           <div class="sticker hero-figure">
             <Image src={hero} alt="Illustrated character sitting on the ground, pointing to the side" widths={[700, 1000, 1500]} sizes="(max-width: 900px) 94vw, 820px" format="webp" quality={82} loading="eager" />
           </div>
-          <p class="tagline"><span class="script">creative</span> developer &amp; designer</p>
+          <p class="tagline"><span class="script">your friendly neighbourhood</span> software engineer</p>
           <ul class="hero-cta">
             <li><a class="btn" href="#work">See the work</a></li>
             <li><a class="btn ghost" href="#contact">Say hi</a></li>
@@ -125,7 +127,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
           </div>
           <div class="about-text" data-reveal>
             <p class="hi">Hi, I'm</p>
-            <h2 class="name">{NAME} <a class="script aka" href={IG} target="_blank" rel="noopener">aka @yourhandle</a></h2>
+            <h2 class="name">{NAME} <a class="script aka" href={IG} target="_blank" rel="noopener">aka {HANDLE}</a></h2>
             <p class="role">Software engineer · builds for the web · writes about it</p>
             <div class="prose">
               <p>Two or three sentences about who you are and what you do all day. Write it the way you would say it out loud to someone who does not write code. Plain words beat job titles here.</p>
@@ -156,7 +158,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
             <div class="sticker"><Image src={hang} alt="" widths={[300, 500]} sizes="150px" format="webp" quality={80} /></div>
           </div>
           <h2>My work</h2>
-          <span class="script sub">selected builds &amp; experiments</span>
+          <span class="script sub">selected builds &amp; reels</span>
         </header>
         <ul class="grid" data-stagger>
           {work.map((w) => (
@@ -178,7 +180,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
         </ul>
         <div class="work-foot">
           <div class="band" data-reveal>
-            <p class="h">Something new every week on <a class="script" href={IG} target="_blank" rel="noopener">@yourhandle</a></p>
+            <p class="h">New reel every week on <a class="script" href={IG} target="_blank" rel="noopener">{HANDLE}</a></p>
             <div class="sticker laptop-figure" data-pop>
               <Image src={laptop} alt="Illustrated character sitting on a ledge, typing on a laptop" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 280px" format="webp" quality={82} />
             </div>

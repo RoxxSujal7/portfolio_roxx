@@ -1,6 +1,6 @@
 # Artwork
 
-The illustrations in `stickers/` and `work/` are a caricature of the original author of this
+The illustrations in `stickers/` and `work/` are a caricature of Ashmit Mittal, the author of this
 template. They are here so the site renders the way it was designed, and so you can see how the
 poses line up with the layout.
 
