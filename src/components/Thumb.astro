@@ -1,0 +1,50 @@
+---
+// Placeholder project art in the site's ink style. Swap for real images when they exist.
+interface Props { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site' }
+const { kind } = Astro.props;
+const id = `dots-${kind}`;
+---
+<svg class="thumb-art" viewBox="0 0 400 300" role="img" aria-label={`${kind} illustration`}>
+  <defs>
+    <pattern id={id} width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#1f1d3a" fill-opacity="0.12" /></pattern>
+  </defs>
+  <rect width="400" height="300" fill="#f3f1ea" />
+  <rect width="400" height="300" fill={`url(#${id})`} />
+  <g fill="none" stroke="#1f1d3a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    {kind === 'agent' && <>
+      <path d="M90 90 h180 a22 22 0 0 1 22 22 v70 a22 22 0 0 1 -22 22 h-110 l-40 34 v-34 h-30 a22 22 0 0 1 -22 -22 v-70 a22 22 0 0 1 22 -22 z" fill="#fff" />
+      <circle cx="140" cy="147" r="7" fill="#1f1d3a" /><circle cx="180" cy="147" r="7" fill="#1f1d3a" /><circle cx="220" cy="147" r="7" fill="#1f1d3a" />
+      <path d="M300 60 l8 24 24 8 -24 8 -8 24 -8 -24 -24 -8 24 -8 z" fill="#d8402f" stroke="#d8402f" />
+    </>}
+    {kind === 'p2p' && <>
+      <rect x="40" y="120" width="110" height="76" rx="10" fill="#fff" /><path d="M25 210 h140" />
+      <rect x="250" y="120" width="110" height="76" rx="10" fill="#fff" /><path d="M235 210 h140" />
+      <path d="M170 158 h60 M215 142 l16 16 -16 16 M185 142 l-16 16 16 16" stroke="#d8402f" />
+      <path d="M186 70 h20 l10 10 v26 h-30 z" fill="#fff" /><path d="M206 70 v10 h10" />
+    </>}
+    {kind === 'crm' && <>
+      <rect x="70" y="60" width="200" height="60" rx="10" fill="#fff" /><path d="M95 90 h60 M175 90 h70" />
+      <rect x="90" y="130" width="200" height="60" rx="10" fill="#fff" /><path d="M115 160 h60 M195 160 h70" />
+      <rect x="110" y="200" width="200" height="60" rx="10" fill="#fff" /><path d="M135 230 h60 M215 230 h70" />
+      <circle cx="320" cy="90" r="26" fill="#d8402f" stroke="#d8402f" /><path d="M306 90 l10 10 20 -22" stroke="#fff" />
+    </>}
+    {kind === 'reels' && <>
+      <rect x="140" y="40" width="120" height="220" rx="22" fill="#fff" /><path d="M180 58 h40" />
+      <path d="M185 115 l50 35 -50 35 z" fill="#d8402f" stroke="#d8402f" />
+      <path d="M80 110 q-30 40 0 80 M60 90 q-50 60 0 120" /><path d="M320 110 q30 40 0 80 M340 90 q50 60 0 120" />
+    </>}
+    {kind === 'systems' && <>
+      <rect x="90" y="70" width="220" height="50" rx="10" fill="#fff" /><circle cx="120" cy="95" r="6" fill="#d8402f" stroke="#d8402f" /><path d="M150 95 h100" />
+      <rect x="90" y="130" width="220" height="50" rx="10" fill="#fff" /><circle cx="120" cy="155" r="6" fill="#d8402f" stroke="#d8402f" /><path d="M150 155 h100" />
+      <rect x="90" y="190" width="220" height="50" rx="10" fill="#fff" /><circle cx="120" cy="215" r="6" fill="#d8402f" stroke="#d8402f" /><path d="M150 215 h100" />
+      <path d="M345 235 v-160 M330 92 l15 -17 15 17" />
+    </>}
+    {kind === 'site' && <>
+      <path d="M400 0 L400 200 M400 0 L260 0 M400 0 L300 100 M400 0 L340 40" stroke-width="3" stroke-opacity="0.5" />
+      <path d="M400 60 Q370 62 358 42 M400 110 Q345 112 322 78 M400 160 Q320 162 285 115" stroke-width="3" stroke-opacity="0.5" />
+      <path d="M120 40 v70" stroke-width="3" /><ellipse cx="120" cy="135" rx="16" ry="22" fill="#1f1d3a" /><circle cx="120" cy="106" r="11" fill="#1f1d3a" />
+      <path d="M108 118 q-22 -10 -30 -34 M132 118 q22 -10 30 -34 M106 130 q-30 0 -42 -22 M134 130 q30 0 42 -22 M108 145 q-28 8 -40 30 M132 145 q28 8 40 30 M112 155 q-16 18 -14 40 M128 155 q16 18 14 40" stroke-width="3.5" />
+      <path d="M210 190 l60 22 -26 10 -10 26 z" fill="#d8402f" stroke="#d8402f" />
+    </>}
+  </g>
+</svg>

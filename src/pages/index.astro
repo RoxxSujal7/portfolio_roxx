@@ -1,0 +1,221 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import Spider from '../components/Spider.astro';
+import Web from '../components/Web.astro';
+import Note from '../components/Note.astro';
+import Thumb from '../components/Thumb.astro';
+import hero from '../assets/stickers/hero.png';
+import swing from '../assets/stickers/swing.png';
+import portrait from '../assets/stickers/portrait.png';
+import crouch from '../assets/stickers/crouch.png';
+import hang from '../assets/stickers/hang.png';
+import laptop from '../assets/stickers/laptop.png';
+import wave from '../assets/stickers/wave.png';
+import artAgent from '../assets/work/agent.png';
+import artP2p from '../assets/work/p2p.png';
+import artCrm from '../assets/work/crm.png';
+import artSystems from '../assets/work/systems.png';
+import artReels from '../assets/work/reels.png';
+import artSite from '../assets/work/site.png';
+const art = { agent: artAgent, p2p: artP2p, crm: artCrm, systems: artSystems, reels: artReels, site: artSite };
+
+// ---------------------------------------------------------------------------
+// EDIT ME. Everything you need to change to make this site yours is in this
+// block: your links, your skill labels, your tech chips, your projects.
+// ---------------------------------------------------------------------------
+const NAME = 'Your Name';
+const SITE = 'yourname.dev';
+const EMAIL = 'hello@yourname.dev';
+const IG = 'https://www.instagram.com/yourhandle/';
+const GH = 'https://github.com/yourusername';
+const LINKEDIN = 'https://www.linkedin.com/in/yourusername/';
+
+// Floating taped labels on the landing screen. x/y are % of the hero box.
+const labels = [
+  { text: 'Node.js & APIs', x: '6%', y: '27%', rot: -6 },
+  { text: 'React & Next.js', x: '4%', y: '57%', rot: 4 },
+  { text: 'Scalable systems', x: '78%', y: '29%', rot: 5 },
+  { text: 'AI agents', x: '83%', y: '60%', rot: -4 },
+  { text: 'Postgres & MySQL', x: '10%', y: '79%', rot: -3 },
+  { text: 'Design systems', x: '75%', y: '79%', rot: 6 },
+];
+const chips = ['Node.js', 'Express', 'React', 'Next.js', 'PostgreSQL', 'MySQL', 'Redis', 'Docker', 'Google Cloud', 'AI agents'];
+
+// Six cards, one per illustration in src/assets/work/. Swap the copy; if you
+// delete an image, the matching <Thumb> SVG is drawn instead.
+const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; title: string; line: string; tag: string; href?: string }[] = [
+  { kind: 'agent', title: 'An AI assistant', line: 'One line about a project you built. Say what it does and who it was for, in plain words.', tag: 'Node.js · LLM agents · 2026' },
+  { kind: 'p2p', title: 'Peer-to-peer file transfer', line: 'One line about a project you built. Keep it short enough to read at a glance.', tag: 'WebRTC · React · 2025', href: GH },
+  { kind: 'crm', title: 'A customer dashboard', line: 'One line about a project you built. What problem it solved beats what stack it used.', tag: 'Next.js · Postgres · 2024–26' },
+  { kind: 'systems', title: 'Backend services', line: 'One line about a project you built. Numbers help: users, requests, uptime.', tag: 'Node.js · MySQL · Redis' },
+  { kind: 'reels', title: 'Short-form video', line: 'One line about something you make outside of code. Link it if it lives somewhere.', tag: 'Instagram · every week', href: IG },
+  { kind: 'site', title: 'This website', line: 'Built with Astro and GSAP, with hand-drawn stickers and one character per section.', tag: 'Astro · GSAP · 2026', href: GH },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{NAME} · {SITE}</title>
+    <meta name="description" content="Portfolio of a software engineer who builds for the web. Replace this description with your own." />
+    <meta property="og:title" content={`${NAME} · software engineer`} />
+    <meta property="og:description" content="Replace this with one line about what you build." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://${SITE}/`} />
+    <meta name="theme-color" content="#1f1d3a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700&family=Nunito:wght@400;600;700;800&family=Kaushan+Script&family=Patrick+Hand&display=swap" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap">
+        <a class="wordmark" href="/">yourname<em>.</em>dev</a>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href={IG} target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ landing ============ -->
+      <section class="hero" id="top">
+        <Web />
+        <div class="hero-word" aria-hidden="true"><span>YOURNAME</span></div>
+        <svg class="thread" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M -30 430 C 110 390, 170 540, 290 480 S 430 370, 540 610 S 900 320, 1010 570 S 1210 430, 1310 510 S 1410 470, 1480 540" />
+        </svg>
+
+        <div class="swing-rig" aria-hidden="true">
+          <span class="line"></span>
+          <div class="sticker swing-img"><Image src={swing} alt="" widths={[500, 800]} sizes="40vh" format="webp" quality={80} loading="eager" /></div>
+        </div>
+
+        <div class="hero-stage">
+          <div class="sticker hero-figure">
+            <Image src={hero} alt="Illustrated character sitting on the ground, pointing to the side" widths={[700, 1000, 1500]} sizes="(max-width: 900px) 94vw, 820px" format="webp" quality={82} loading="eager" />
+          </div>
+          <p class="tagline"><span class="script">creative</span> developer &amp; designer</p>
+          <ul class="hero-cta">
+            <li><a class="btn" href="#work">See the work</a></li>
+            <li><a class="btn ghost" href="#contact">Say hi</a></li>
+          </ul>
+        </div>
+
+        <ul class="labels">
+          {labels.map((l) => <li style={`--x:${l.x}; --y:${l.y}`}><Note rot={l.rot}>{l.text}</Note></li>)}
+        </ul>
+        <Spider class="spider-hero" silk={70} />
+      </section>
+
+      <!-- ============ about ============ -->
+      <div class="wrap" id="about">
+        <div class="band" data-reveal><h2>About me</h2></div>
+        <section class="about">
+          <div class="sticker about-figure" data-pop>
+            <Image src={portrait} alt="Portrait illustration of the character" widths={[500, 800, 1100]} sizes="(max-width: 900px) 78vw, 520px" format="webp" quality={82} />
+          </div>
+          <div class="about-text" data-reveal>
+            <p class="hi">Hi, I'm</p>
+            <h2 class="name">{NAME} <a class="script aka" href={IG} target="_blank" rel="noopener">aka @yourhandle</a></h2>
+            <p class="role">Software engineer · builds for the web · writes about it</p>
+            <div class="prose">
+              <p>Two or three sentences about who you are and what you do all day. Write it the way you would say it out loud to someone who does not write code. Plain words beat job titles here.</p>
+              <p>Then a second paragraph about the other half of your work — what you share, what you are learning, or what you want people to send you. End with a reason for someone to keep scrolling.</p>
+            </div>
+            <ul class="chips">{chips.map((c) => <li>{c}</li>)}</ul>
+          </div>
+          <Spider class="spider-about" silk={40} />
+        </section>
+      </div>
+
+      <!-- ============ ready band ============ -->
+      <div class="wrap ready">
+        <div class="band ready-band" data-reveal>
+          <p class="h">Get ready<br />to see <span class="script">the work</span></p>
+          <div class="sticker ready-figure" data-pop>
+            <Image src={crouch} alt="Illustrated character crouched on the edge of a ledge" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 400px" format="webp" quality={82} />
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ work ============ -->
+      <section class="wrap work" id="work">
+        <div class="watermark" aria-hidden="true">MY WORK</div>
+        <header class="work-head" data-reveal>
+          <div class="hang-rig" aria-hidden="true">
+            <span class="line"></span>
+            <div class="sticker"><Image src={hang} alt="" widths={[300, 500]} sizes="150px" format="webp" quality={80} /></div>
+          </div>
+          <h2>My work</h2>
+          <span class="script sub">selected builds &amp; experiments</span>
+        </header>
+        <ul class="grid" data-stagger>
+          {work.map((w) => (
+            <li class="card">
+              <a class="card-link" href={w.href ?? '#contact'} target={w.href ? '_blank' : undefined} rel={w.href ? 'noopener' : undefined}>
+                <div class="thumb">
+                  {art[w.kind]
+                    ? <Image src={art[w.kind]} alt={`${w.title} illustration`} widths={[420, 640, 900]} sizes="(max-width: 900px) 92vw, 380px" format="webp" quality={80} />
+                    : <Thumb kind={w.kind} />}
+                </div>
+                <div class="body">
+                  <h3>{w.title}</h3>
+                  <p>{w.line}</p>
+                  <span class="tag">{w.tag}</span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="work-foot">
+          <div class="band" data-reveal>
+            <p class="h">Something new every week on <a class="script" href={IG} target="_blank" rel="noopener">@yourhandle</a></p>
+            <div class="sticker laptop-figure" data-pop>
+              <Image src={laptop} alt="Illustrated character sitting on a ledge, typing on a laptop" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 280px" format="webp" quality={82} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ contact ============ -->
+      <div class="wrap" id="contact">
+        <div class="band" data-reveal><h2>Say hi</h2></div>
+        <section class="contact">
+          <div class="watermark" aria-hidden="true">HELLO</div>
+          <div class="sticker contact-figure" data-pop>
+            <Image src={wave} alt="Illustrated character waving" widths={[500, 800]} sizes="(max-width: 900px) 70vw, 380px" format="webp" quality={82} />
+          </div>
+          <div class="contact-text" data-reveal>
+            <h2>Let's build <span class="script">something</span></h2>
+            <p class="lede">One line inviting people to write to you. Say what you want in your inbox and whether you actually reply.</p>
+            <ul class="links">
+              <li><Note rot={-4} href={`mailto:${EMAIL}`}>{EMAIL}</Note></li>
+              <li><Note rot={3} href={GH}>GitHub</Note></li>
+              <li><Note rot={-2} href={LINKEDIN}>LinkedIn</Note></li>
+              <li><Note rot={2} href={IG}>Instagram</Note></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <span>{SITE}</span>
+        <span>© 2026 {NAME}</span>
+        <span>drawn in ink, built in the open</span>
+      </div>
+    </footer>
+
+    <script>import '../scripts/motion.ts';</script>
+  </body>
+</html>

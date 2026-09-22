@@ -1,0 +1,18 @@
+---
+// Corner cobweb, drawn light so it stays decoration.
+interface Props { class?: string }
+const { class: cls = '' } = Astro.props;
+const rays = [0, 15, 30, 45, 60, 75, 90];
+const rings = [60, 120, 180, 240, 300];
+---
+<svg class={`web ${cls}`} viewBox="0 0 320 320" aria-hidden="true">
+  {rays.map((a) => { const r = (a * Math.PI) / 180; return <line x1="0" y1="0" x2={Math.cos(r) * 320} y2={Math.sin(r) * 320} />; })}
+  {rings.map((rad) => (
+    <path d={rays.slice(0, -1).map((a, i) => {
+      const a1 = (a * Math.PI) / 180, a2 = ((a + 15) * Math.PI) / 180, sag = rad * 0.94;
+      const x1 = Math.cos(a1) * rad, y1 = Math.sin(a1) * rad, x2 = Math.cos(a2) * rad, y2 = Math.sin(a2) * rad;
+      const mx = Math.cos((a1 + a2) / 2) * sag, my = Math.sin((a1 + a2) / 2) * sag;
+      return `${i === 0 ? `M${x1} ${y1}` : ''} Q${mx} ${my} ${x2} ${y2}`;
+    }).join(' ')} />
+  ))}
+</svg>

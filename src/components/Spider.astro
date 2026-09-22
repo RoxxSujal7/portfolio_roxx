@@ -1,0 +1,24 @@
+---
+// A small hand-drawn spider on a silk line. The .rig group is what the motion script bobs.
+interface Props { class?: string; silk?: number }
+const { class: cls = '', silk = 90 } = Astro.props;
+---
+<svg class={`spider ${cls}`} viewBox={`0 0 90 ${silk + 70}`} width="90" height={silk + 70} aria-hidden="true">
+  <line class="silk" x1="45" y1="0" x2="45" y2={silk} />
+  <g class="rig" transform={`translate(45 ${silk})`}>
+    <g class="legs">
+      <path d="M-6 6 q-16 -10 -22 -26 q-2 -6 2 -8" />
+      <path d="M-8 10 q-20 -4 -30 -18 q-3 -5 0 -9" />
+      <path d="M-8 15 q-20 4 -30 18 q-3 5 -1 10" />
+      <path d="M-6 19 q-14 12 -18 28 q-1 5 2 8" />
+      <path d="M6 6 q16 -10 22 -26 q2 -6 -2 -8" />
+      <path d="M8 10 q20 -4 30 -18 q3 -5 0 -9" />
+      <path d="M8 15 q20 4 30 18 q3 5 1 10" />
+      <path d="M6 19 q14 12 18 28 q1 5 -2 8" />
+    </g>
+    <ellipse class="abdomen" cx="0" cy="16" rx="11" ry="14" />
+    <circle class="head" cx="0" cy="-2" r="7.5" />
+    <circle class="eye" cx="-2.8" cy="-3" r="1.4" />
+    <circle class="eye" cx="2.8" cy="-3" r="1.4" />
+  </g>
+</svg>
