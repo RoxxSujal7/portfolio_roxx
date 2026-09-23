@@ -21,38 +21,86 @@ import artSite from '../assets/work/site.png';
 const art = { agent: artAgent, p2p: artP2p, crm: artCrm, systems: artSystems, reels: artReels, site: artSite };
 
 // ---------------------------------------------------------------------------
-// EDIT ME. Everything you need to change to make this site yours is in this
-// block: your links, your skill labels, your tech chips, your projects.
+// Personal configuration for Sujal Kumar
 // ---------------------------------------------------------------------------
-const NAME = 'Ashmit Mittal';
-const SITE = 'ashmit.codes';
-const HANDLE = '@ashmit.codes';
-const IG = 'https://www.instagram.com/ashmit.codes/';
-const GH = 'https://github.com/ashmitmittal';
-// Placeholders on purpose — put your own in before you deploy.
-const EMAIL = 'hello@yourname.dev';
-const LINKEDIN = 'https://www.linkedin.com/in/yourusername/';
+const NAME = 'Sujal';
+const FIRST_NAME = 'Sujal';
+const SITE = 'sujal.dev';
+const HANDLE = '@roxxsujal7';
+const GH = 'https://github.com/RoxxSujal7';
+const LINKEDIN = 'https://www.linkedin.com/in/sujalroxx7/';
+const EMAIL = 'sujalsah9@gmail.com';
 
 // Floating taped labels on the landing screen. x/y are % of the hero box.
 const labels = [
-  { text: 'Node.js & APIs', x: '6%', y: '27%', rot: -6 },
+  { text: 'Full-Stack Web', x: '5%', y: '26%', rot: -6 },
   { text: 'React & Next.js', x: '4%', y: '57%', rot: 4 },
-  { text: 'Scalable systems', x: '78%', y: '29%', rot: 5 },
-  { text: 'AI agents', x: '83%', y: '60%', rot: -4 },
-  { text: 'Postgres & MySQL', x: '10%', y: '79%', rot: -3 },
-  { text: 'Reels on AI', x: '75%', y: '79%', rot: 6 },
+  { text: 'AI Agents & LLMs', x: '77%', y: '27%', rot: 5 },
+  { text: 'Python & FastAPI', x: '80%', y: '58%', rot: -4 },
+  { text: 'Node.js & Systems', x: '8%', y: '80%', rot: -3 },
+  { text: 'RAG & Vector DBs', x: '75%', y: '80%', rot: 6 },
 ];
-const chips = ['Node.js', 'Express', 'React', 'Next.js', 'PostgreSQL', 'MySQL', 'Redis', 'Docker', 'Google Cloud', 'AI agents'];
 
-// Six cards, one per illustration in src/assets/work/. Swap the copy; if you
-// delete an image, the matching <Thumb> SVG is drawn instead.
+const chips = [
+  'TypeScript',
+  'JavaScript',
+  'Python',
+  'React',
+  'Next.js',
+  'Node.js',
+  'FastAPI',
+  'LangChain',
+  'LLM Agents',
+  'PostgreSQL',
+  'MongoDB',
+  'Docker',
+  'Git'
+];
+
+// Six cards tailored to Full Stack + AI Engineer profile.
 const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; title: string; line: string; tag: string; href?: string }[] = [
-  { kind: 'agent', title: 'An AI assistant', line: 'One line about a project you built. Say what it does and who it was for, in plain words.', tag: 'Node.js · LLM agents · 2026' },
-  { kind: 'p2p', title: 'Peer-to-peer file transfer', line: 'One line about a project you built. Keep it short enough to read at a glance.', tag: 'WebRTC · React · 2025', href: GH },
-  { kind: 'crm', title: 'A customer dashboard', line: 'One line about a project you built. What problem it solved beats what stack it used.', tag: 'Next.js · Postgres · 2024–26' },
-  { kind: 'systems', title: 'Backend services', line: 'One line about a project you built. Numbers help: users, requests, uptime.', tag: 'Node.js · MySQL · Redis' },
-  { kind: 'reels', title: 'Short-form video', line: 'One line about something you make outside of code. Link it if it lives somewhere.', tag: 'Instagram · every week', href: IG },
-  { kind: 'site', title: 'This website', line: 'Built with Astro and GSAP, with hand-drawn stickers and one character per section.', tag: 'Astro · GSAP · 2026', href: GH },
+  {
+    kind: 'agent',
+    title: 'Autonomous AI Assistant',
+    line: 'Multi-agent orchestration system that reasons, executes workflows, and retrieves contextual knowledge.',
+    tag: 'Python · LangChain · LLM APIs',
+    href: GH
+  },
+  {
+    kind: 'p2p',
+    title: 'Real-Time Collaboration Platform',
+    line: 'High-throughput full-stack web application with instant data synchronization and low-latency communication.',
+    tag: 'Next.js · Node.js · WebSockets',
+    href: GH
+  },
+  {
+    kind: 'crm',
+    title: 'AI Analytics & SaaS Dashboard',
+    line: 'Full-stack business dashboard featuring automated reporting, telemetry, and modern data visualization.',
+    tag: 'React · FastAPI · PostgreSQL',
+    href: GH
+  },
+  {
+    kind: 'systems',
+    title: 'RAG & Semantic Search Engine',
+    line: 'Document intelligence pipeline using embeddings and vector search to power grounded LLM responses.',
+    tag: 'Python · Vector DB · FastAPI',
+    href: GH
+  },
+  {
+    kind: 'reels',
+    title: 'Intelligent Automation Pipeline',
+    line: 'Background job queues and data ingestion pipelines connecting cloud APIs with machine learning models.',
+    tag: 'Node.js · Redis · Docker',
+    href: GH
+  },
+  {
+    kind: 'site',
+    title: 'Interactive Portfolio',
+    line: 'Dynamic poster-style portfolio built with Astro, GSAP micro-animations, and Lenis smooth scrolling.',
+    tag: 'Astro · GSAP · TypeScript',
+    href: GH
+  },
 ];
 ---
 <!doctype html>
@@ -61,9 +109,9 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{NAME} · {SITE}</title>
-    <meta name="description" content="Portfolio of a software engineer who builds for the web. Replace this description with your own." />
-    <meta property="og:title" content={`${NAME} · software engineer`} />
-    <meta property="og:description" content="Replace this with one line about what you build." />
+    <meta name="description" content={`Portfolio of ${NAME}, Full Stack & AI Engineer building modern web apps and intelligent systems.`} />
+    <meta property="og:title" content={`${NAME} · Full Stack + AI Engineer`} />
+    <meta property="og:description" content={`Explore projects, AI agents, and full-stack systems built by ${NAME}.`} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={`https://${SITE}/`} />
     <meta name="theme-color" content="#1f1d3a" />
@@ -75,23 +123,33 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
   <body>
     <header class="nav">
       <div class="wrap">
-        <a class="wordmark" href="/">ashmit<em>.</em>codes</a>
+        <a class="wordmark" href="/">sujal<em>.</em>dev</a>
         <nav aria-label="Primary">
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href={IG} target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href={GH} target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </nav>
+        <button id="theme-toggle" aria-pressed="false" aria-label="Toggle Spidey theme" title="Toggle Spidey theme">
+          <span style="position:relative;display:flex;align-items:center;justify-content:center;width:20px;height:20px;">
+            <span class="icon-paper" style="font-size:16px;">☀️</span>
+            <span class="icon-spidey" style="font-size:16px;">🕷️</span>
+          </span>
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
+          <span style="letter-spacing:0.01em">Spidey</span>
+        </button>
       </div>
     </header>
 
     <main>
       <!-- ============ landing ============ -->
       <section class="hero" id="top">
-        <Web />
-        <div class="hero-word" aria-hidden="true"><span>ASHMIT</span></div>
+        <Web class="web-hero-right" />
+        <Web class="web-hero-left" />
+        <div class="hero-word" aria-hidden="true"><span>{FIRST_NAME.toUpperCase()}</span></div>
         <svg class="thread" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
           <path d="M -30 430 C 110 390, 170 540, 290 480 S 430 370, 540 610 S 900 320, 1010 570 S 1210 430, 1310 510 S 1410 470, 1480 540" />
         </svg>
@@ -105,7 +163,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
           <div class="sticker hero-figure">
             <Image src={hero} alt="Illustrated character sitting on the ground, pointing to the side" widths={[700, 1000, 1500]} sizes="(max-width: 900px) 94vw, 820px" format="webp" quality={82} loading="eager" />
           </div>
-          <p class="tagline"><span class="script">your friendly neighbourhood</span> software engineer</p>
+          <p class="tagline"><span class="script">full stack &amp; AI</span> software engineer</p>
           <ul class="hero-cta">
             <li><a class="btn" href="#work">See the work</a></li>
             <li><a class="btn ghost" href="#contact">Say hi</a></li>
@@ -127,11 +185,11 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
           </div>
           <div class="about-text" data-reveal>
             <p class="hi">Hi, I'm</p>
-            <h2 class="name">{NAME} <a class="script aka" href={IG} target="_blank" rel="noopener">aka {HANDLE}</a></h2>
-            <p class="role">Software engineer · builds for the web · writes about it</p>
+            <h2 class="name">{NAME} <a class="script aka" href={GH} target="_blank" rel="noopener">aka {HANDLE}</a></h2>
+            <p class="role">Full Stack &amp; AI Engineer · Web Systems · Intelligent Agents</p>
             <div class="prose">
-              <p>Two or three sentences about who you are and what you do all day. Write it the way you would say it out loud to someone who does not write code. Plain words beat job titles here.</p>
-              <p>Then a second paragraph about the other half of your work — what you share, what you are learning, or what you want people to send you. End with a reason for someone to keep scrolling.</p>
+              <p>I build modern full-stack web applications and intelligent AI systems. From designing scalable web architectures and responsive interfaces to implementing LLM-powered pipelines and retrieval systems, I focus on turning complex technical challenges into fast, reliable software.</p>
+              <p>Driven by curiosity in generative AI, distributed systems, and real-time collaboration. Whether it's crafting high-performance APIs or building autonomous agents, I enjoy pushing the boundaries of what's possible on the web.</p>
             </div>
             <ul class="chips">{chips.map((c) => <li>{c}</li>)}</ul>
           </div>
@@ -158,7 +216,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
             <div class="sticker"><Image src={hang} alt="" widths={[300, 500]} sizes="150px" format="webp" quality={80} /></div>
           </div>
           <h2>My work</h2>
-          <span class="script sub">selected builds &amp; reels</span>
+          <span class="script sub">selected projects &amp; engineering builds</span>
         </header>
         <ul class="grid" data-stagger>
           {work.map((w) => (
@@ -180,7 +238,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
         </ul>
         <div class="work-foot">
           <div class="band" data-reveal>
-            <p class="h">New reel every week on <a class="script" href={IG} target="_blank" rel="noopener">{HANDLE}</a></p>
+            <p class="h">Explore open source code &amp; experiments on <a class="script" href={GH} target="_blank" rel="noopener">{HANDLE}</a></p>
             <div class="sticker laptop-figure" data-pop>
               <Image src={laptop} alt="Illustrated character sitting on a ledge, typing on a laptop" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 280px" format="webp" quality={82} />
             </div>
@@ -198,12 +256,11 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
           </div>
           <div class="contact-text" data-reveal>
             <h2>Let's build <span class="script">something</span></h2>
-            <p class="lede">One line inviting people to write to you. Say what you want in your inbox and whether you actually reply.</p>
+            <p class="lede">Have an exciting project, AI collaboration, or engineering role in mind? My inbox is always open.</p>
             <ul class="links">
               <li><Note rot={-4} href={`mailto:${EMAIL}`}>{EMAIL}</Note></li>
               <li><Note rot={3} href={GH}>GitHub</Note></li>
               <li><Note rot={-2} href={LINKEDIN}>LinkedIn</Note></li>
-              <li><Note rot={2} href={IG}>Instagram</Note></li>
             </ul>
           </div>
         </section>
@@ -214,10 +271,11 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
       <div class="wrap">
         <span>{SITE}</span>
         <span>© 2026 {NAME}</span>
-        <span>drawn in ink, built in the open</span>
+        <span>built with code &amp; intelligence</span>
       </div>
     </footer>
 
     <script>import '../scripts/motion.ts';</script>
+    <script>import '../scripts/theme.ts';</script>
   </body>
 </html>

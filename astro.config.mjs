@@ -2,6 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://ashmit.codes', // change to your own domain
+  site: 'https://roxxsujal7.github.io', // or your custom domain
   output: 'static',
 });

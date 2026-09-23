@@ -1,23 +1,269 @@
-/* Illustrated poster theme: paper, navy ink, red thread, yellow tape. Light only. */
+/* Illustrated poster theme: paper, navy ink, red thread, yellow tape. */
 :root {
   color-scheme: light only;
-  --paper: #faf8f3;
+  --paper:   #faf8f3;
   --paper-2: #f0ede5;
-  --ink: #1f1d3a;
-  --ink-2: #4a4866;
-  --ink-3: #8c8aa3;
-  --ghost: #e8e5ef;
-  --red: #d8402f;
-  --tape: rgba(242, 201, 76, 0.88);
-  --white: #ffffff;
+  --ink:     #1f1d3a;
+  --ink-2:   #4a4866;
+  --ink-3:   #8c8aa3;
+  --ghost:   #e8e5ef;
+  --red:     #d8402f;
+  --tape:    rgba(242, 201, 76, 0.88);
+  --white:   #ffffff;
   --display: "Montserrat", "Arial Black", Impact, sans-serif;
-  --sans: "Nunito", system-ui, -apple-system, sans-serif;
-  --script: "Kaushan Script", "Brush Script MT", cursive;
-  --hand: "Patrick Hand", "Comic Sans MS", cursive;
-  --max: 1280px;
-  --gutter: clamp(20px, 5vw, 72px);
-  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --sans:    "Nunito", system-ui, -apple-system, sans-serif;
+  --script:  "Kaushan Script", "Brush Script MT", cursive;
+  --hand:    "Patrick Hand", "Comic Sans MS", cursive;
+  --max:     1280px;
+  --gutter:  clamp(20px, 5vw, 72px);
+  --ease:    cubic-bezier(0.2, 0.7, 0.2, 1);
+  /* theme transition speed */
+  --tt: 0.4s;
 }
+
+/* ── Spidey / Dark Theme ─────────────────────────────────────────── */
+.spidey {
+  color-scheme: dark only;
+  --paper:   #0a0608;
+  --paper-2: #130b0e;
+  --ink:     #f0e8e8;
+  --ink-2:   #c9b8b8;
+  --ink-3:   #8a7272;
+  --ghost:   #1e0f12;
+  --red:     #e8271a;
+  --tape:    rgba(180, 20, 20, 0.72);
+  --white:   #1a0c0e;
+}
+
+/* Smooth theme crossfade — only on elements whose bg/border actually change */
+/* ponytail: excluded h1,h2,h3,p,a — they inherit color and never need their own transition */
+.nav, .note, .card, .btn, .band, .chips li, .footer,
+html, body, #theme-toggle, #theme-toggle .toggle-track {
+  transition:
+    background-color var(--tt) var(--ease),
+    border-color     var(--tt) var(--ease),
+    box-shadow       var(--tt) var(--ease);
+}
+/* colour changes only for items that explicitly set color */
+.wordmark em, .script, .role, .card .tag { transition: color var(--tt) var(--ease); }
+
+/* Button bounce on theme toggle */
+@keyframes toggle-bounce {
+  0%,100% { transform: scale(1); }
+  40%      { transform: scale(0.86); }
+  70%      { transform: scale(1.06); }
+}
+
+/* ── Spidey-specific overrides ───────────────────────────────────── */
+
+/* Spidey hero: red radial glow behind hero word */
+.spidey .hero::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(232,39,26,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 90% 90%, rgba(232,39,26,0.10) 0%, transparent 60%);
+}
+
+/* Spidey web SVG pattern — reusable inline SVG encoded as data URL */
+/* Covers: about section (top-right), work section (top-left), contact section (bottom-right) */
+:root {
+  --web-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%23e8271a' stroke-opacity='0.18' stroke-width='1.2' stroke-linecap='round'%3E%3C!-- radial spokes --%3E%3Cline x1='130' y1='130' x2='130' y2='10'/%3E%3Cline x1='130' y1='130' x2='220' y2='50'/%3E%3Cline x1='130' y1='130' x2='250' y2='130'/%3E%3Cline x1='130' y1='130' x2='220' y2='210'/%3E%3Cline x1='130' y1='130' x2='130' y2='250'/%3E%3Cline x1='130' y1='130' x2='40' y2='210'/%3E%3Cline x1='130' y1='130' x2='10' y2='130'/%3E%3Cline x1='130' y1='130' x2='40' y2='50'/%3E%3C!-- concentric rings --%3E%3Cellipse cx='130' cy='130' rx='30' ry='30'/%3E%3Cellipse cx='130' cy='130' rx='60' ry='60'/%3E%3Cellipse cx='130' cy='130' rx='90' ry='90'/%3E%3Cellipse cx='130' cy='130' rx='120' ry='120'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* About section: web top-right */
+.spidey .about::after {
+  content: '';
+  position: absolute; top: -40px; right: -60px;
+  width: 320px; height: 320px;
+  background: var(--web-svg) center/contain no-repeat;
+  pointer-events: none; z-index: 0;
+  opacity: 0.65;
+}
+
+/* Work section: web top-left */
+.spidey .work::before {
+  content: '';
+  position: absolute; top: 40px; left: -80px;
+  width: 280px; height: 280px;
+  background: var(--web-svg) center/contain no-repeat;
+  pointer-events: none; z-index: 0;
+  opacity: 0.5;
+}
+
+/* Contact section: web bottom-right corner */
+.spidey .contact::after {
+  content: '';
+  position: absolute; bottom: -20px; right: -60px;
+  width: 240px; height: 240px;
+  background: var(--web-svg) center/contain no-repeat;
+  pointer-events: none; z-index: 0;
+  opacity: 0.45;
+}
+
+/* Toggle button bounce animation */
+#theme-toggle.bounce { animation: toggle-bounce 0.32s var(--ease); }
+
+/* Make the big background word glow red in spidey mode */
+.spidey .hero-word span {
+  color: var(--red);
+  text-shadow: 0 0 120px rgba(232,39,26,0.35);
+}
+
+/* Web lines glow red */
+.spidey .web line, .spidey .web path {
+  stroke: var(--red);
+  stroke-opacity: 0.22;
+  filter: drop-shadow(0 0 4px rgba(232,39,26,0.5));
+}
+
+/* Thread glows bright red */
+.spidey .thread path {
+  stroke-width: 2.8;
+  filter: drop-shadow(0 0 6px rgba(232,39,26,0.8));
+}
+
+/* Spider silk glows */
+.spidey .spider .silk { stroke: var(--red); filter: drop-shadow(0 0 3px rgba(232,39,26,0.6)); }
+.spidey .spider .legs path { stroke: var(--red); }
+.spidey .spider .abdomen, .spidey .spider .head { fill: var(--red); }
+
+/* Nav dark + red glow on hover */
+.spidey .nav {
+  background: rgba(10,6,8,0.92);
+  border-bottom-color: rgba(232,39,26,0.25);
+  box-shadow: 0 1px 0 rgba(232,39,26,0.1), 0 8px 32px rgba(0,0,0,0.6);
+}
+.spidey .wordmark em { text-shadow: 0 0 18px rgba(232,39,26,0.7); }
+
+/* Notes: dark paper with red tape */
+.spidey .note {
+  background: #1a0c0e;
+  border-color: rgba(232,39,26,0.3);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.5), 0 0 0 1px rgba(232,39,26,0.1);
+}
+.spidey a.note:hover { color: var(--red); }
+
+/* Cards: dark with red offset shadow */
+.spidey .card {
+  background: #130b0e;
+  border-color: rgba(232,39,26,0.4);
+  box-shadow: 6px 6px 0 rgba(232,39,26,0.5);
+}
+.spidey .card:hover { box-shadow: 9px 9px 0 rgba(232,39,26,0.7); }
+.spidey .card .thumb {
+  background: linear-gradient(135deg, #1e0f12, #0a0608 60%, #1e0f12);
+  border-bottom-color: rgba(232,39,26,0.3);
+}
+
+/* Bands / headers: deep red */
+.spidey .band { background: var(--red); box-shadow: 4px 4px 0 rgba(0,0,0,0.4); }
+
+/* Buttons */
+.spidey .btn { background: var(--red); border-color: var(--red); box-shadow: 4px 4px 0 rgba(232,39,26,0.35); }
+.spidey .btn:hover { box-shadow: 6px 6px 0 rgba(232,39,26,0.5); }
+.spidey .btn.ghost {
+  background: rgba(26, 12, 14, 0.85);
+  border-color: rgba(232, 39, 26, 0.65);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(232, 39, 26, 0.25);
+  backdrop-filter: blur(8px);
+}
+.spidey .btn.ghost:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: #ffffff;
+  box-shadow: 0 0 22px rgba(232, 39, 26, 0.6);
+}
+
+/* Tagline script contrast: make the cursive text pop on top of the giant red SUJAL letters */
+.spidey .tagline .script {
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(232, 39, 26, 0.95), 0 2px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* Tape: radioactive crimson translucent sheen */
+.spidey .note .tape {
+  background: rgba(232, 39, 26, 0.78);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(232, 39, 26, 0.35);
+}
+
+/* Swing rig line red */
+.spidey .swing-rig .line { background: var(--red); }
+
+/* Footer */
+.spidey .footer { border-top-color: rgba(232,39,26,0.25); }
+
+/* Sticker glow: red outline instead of white */
+.spidey .sticker img {
+  filter:
+    drop-shadow(3px 0 0 rgba(232,39,26,0.6))
+    drop-shadow(-3px 0 0 rgba(232,39,26,0.6))
+    drop-shadow(0 3px 0 rgba(232,39,26,0.6))
+    drop-shadow(0 -3px 0 rgba(232,39,26,0.6))
+    drop-shadow(0 14px 24px rgba(0,0,0,0.7));
+}
+
+/* Chips: dark charcoal bg (--ink is now near-white, can't use it as bg) */
+.spidey .chips li {
+  background: #2b1217;
+  color: var(--ink);
+  border: 1px solid rgba(232,39,26,0.2);
+}
+.spidey .chips li:nth-child(3n) {
+  background: var(--red);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* Prose links — keep them readable, not bright red */
+.spidey .prose a { color: var(--red); opacity: 0.85; }
+
+/* Card body text */
+.spidey .card p { color: var(--ink-2); }
+.spidey .card h3 { color: var(--ink); }
+.spidey .card .tag { color: var(--red); }
+
+/* ── Theme toggle button ─────────────────────────────────────────── */
+#theme-toggle {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 14px 7px 10px;
+  border: 1.5px solid rgba(31,29,58,0.22);
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink);
+  font-family: var(--sans); font-weight: 800; font-size: 13px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 rgba(31,29,58,0.12);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease),
+              background-color var(--tt) var(--ease), border-color var(--tt) var(--ease);
+  flex-shrink: 0;
+}
+#theme-toggle:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 rgba(31,29,58,0.18); }
+#theme-toggle .toggle-track {
+  position: relative; width: 36px; height: 20px;
+  border-radius: 999px;
+  background: var(--ink-3);
+  transition: background var(--tt) var(--ease);
+}
+#theme-toggle .toggle-thumb {
+  position: absolute; top: 3px; left: 3px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #fff;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), background var(--tt) var(--ease);
+}
+/* Spidey state — thumb slides right, track goes red */
+.spidey #theme-toggle {
+  border-color: rgba(232,39,26,0.35);
+  box-shadow: 2px 2px 0 rgba(232,39,26,0.2);
+}
+.spidey #theme-toggle .toggle-track { background: var(--red); }
+.spidey #theme-toggle .toggle-thumb { transform: translateX(16px); background: #fff; }
+/* Spidey icon rotates in */
+#theme-toggle .icon-paper { transition: opacity 0.3s, transform 0.3s; }
+#theme-toggle .icon-spidey { position: absolute; opacity: 0; transform: rotate(-45deg) scale(0.6); transition: opacity 0.3s, transform 0.3s; }
+.spidey #theme-toggle .icon-paper { opacity: 0; transform: rotate(45deg) scale(0.6); }
+.spidey #theme-toggle .icon-spidey { opacity: 1; transform: rotate(0deg) scale(1); }
 *, *::before, *::after { box-sizing: border-box; }
 html { background: var(--paper); color: var(--ink); }
 html.lenis, html.lenis body { height: auto; }
@@ -32,7 +278,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- nav ---------- */
 .nav { position: sticky; top: 0; z-index: 20; background: rgba(250, 248, 243, 0.88); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(31, 29, 58, 0.12); }
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
 .wordmark { font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase; }
 .wordmark em { font-style: normal; color: var(--red); }
 .nav ul { display: flex; gap: 26px; margin: 0; padding: 0; list-style: none; font-weight: 700; font-size: 14.5px; }
@@ -79,6 +325,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
 /* ---------- hero ---------- */
 .hero { position: relative; overflow: hidden; min-height: calc(100svh - 64px); }
 .hero .web { top: -20px; right: -20px; transform: scaleX(-1); }
+.hero .web-hero-left { top: auto; bottom: -20px; left: -20px; right: auto; transform: scaleY(-1); opacity: 0.6; }
 .hero-word { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
 .hero-word span { font-family: var(--display); font-weight: 900; font-size: clamp(84px, 20.5vw, 320px); line-height: 0.85; letter-spacing: -0.035em; color: var(--ink); transform: translateY(-22%); }
 .hero-stage { position: relative; z-index: 2; display: grid; justify-items: center; padding-top: clamp(96px, 12vh, 150px); }
