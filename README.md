@@ -1,73 +1,95 @@
-# Poster Portfolio (Astro)
+# Sujal · Portfolio
 
-An illustrated, poster-style one-page portfolio. A hand-drawn character swings in on a thread,
-taped paper labels drop into place, a small spider dangles on its silk, and a work grid scrolls
-past a giant watermark word. Built with Astro, GSAP and Lenis — no framework runtime ships to
-the browser.
+Interactive poster-style portfolio for **Sujal** — Full Stack & AI Engineer. Features dynamic typography, GSAP-driven micro-interactions, smooth kinetic scrolling, and an interactive **Spidey** dark mode with radial wipe transitions and glowing web overlays.
 
-This is the template behind [ashmit.codes](https://ashmit.codes), published so people can see how
-it is put together. Built and drawn by **Ashmit Mittal** — [@ashmit.codes](https://www.instagram.com/ashmit.codes/)
-on Instagram, where the making-of reels live.
+🌐 **Website**: [sujal.dev](https://sujal.dev)  
+🐙 **GitHub**: [@RoxxSujal7](https://github.com/RoxxSujal7)  
+💼 **LinkedIn**: [sujalroxx7](https://www.linkedin.com/in/sujalroxx7/)  
+📬 **Email**: [sujalsah9@gmail.com](mailto:sujalsah9@gmail.com)
 
-## Run
+---
+
+## ⚡ Highlights & Features
+
+- **Illustrated Poster Aesthetic**: Warm paper texture, high-contrast typography, taped note labels, and sticker-style art direction.
+- **Interactive Spidey Theme**:
+  - Full dark theme featuring deep crimson accents, glowing neon webs, red thread highlights, and comic-style sticker glows.
+  - Smooth **circular radial wipe transition** powered by the Web Animations API (WAAPI) expanding directly from the toggle button.
+  - Persistent theme preference saved in `localStorage`.
+- **Motion & Micro-interactions**:
+  - **GSAP & Lenis**: Butter-smooth kinetic scrolling synchronized with GSAP ScrollTrigger.
+  - Dynamic entrance animation: character swings in on a thread, taped labels rain down with natural tilts, and the red thread draws itself dynamically.
+  - Interactive spider rigs bobbing on physical silk lines (clickable to replay intro).
+  - Scroll-linked watermark parallax, staggered project reveals, and pop-in character poses.
+- **Fast & Zero-Runtime Framework**: Powered by **Astro** for near-zero JS client overhead, blazing performance, and automatic WebP image optimization.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Astro](https://astro.build/) (Static Site Generation)
+- **Styling**: Vanilla CSS with customized design tokens and theme variables
+- **Motion & Animations**: [GSAP](https://gsap.com/) (Timeline, ScrollTrigger), [Lenis](https://lenis.darkroom.engineering/) (Smooth Scroll), WAAPI
+- **Language**: TypeScript & Semantic HTML5
+- **Assets**: Optimized WebP sticker graphics & custom inline SVGs
+
+---
+
+## 📁 Project Structure
 
 ```
+├── public/                 # Static assets & favicons
+├── src/
+│   ├── assets/             # Sticker illustrations and project thumbnails
+│   │   ├── stickers/       # Character poses (hero, swing, crouch, laptop, wave)
+│   │   └── work/           # Project preview cards
+│   ├── components/         # Astro components
+│   │   ├── Spider.astro    # SVG spider with animated silk
+│   │   ├── Web.astro       # Mathematically drawn corner spiderweb
+│   │   ├── Note.astro      # Taped label note with rotational tilt
+│   │   └── Thumb.astro     # Stand-in project preview artwork
+│   ├── pages/
+│   │   └── index.astro     # Main portfolio page & data definitions
+│   ├── scripts/
+│   │   ├── motion.ts       # GSAP timelines, Lenis scroll, and trigger choreographies
+│   │   └── theme.ts        # WAAPI-based Spidey/Paper theme switcher & local persistence
+│   └── styles/
+│       └── global.css      # Core design tokens, Spidey theme overrides, and layout
+├── astro.config.mjs        # Astro configuration
+└── package.json
+```
+
+---
+
+## 🚀 Local Development
+
+To run this project locally:
+
+```bash
+# 1. Install dependencies
 npm install
-npm run dev        # http://localhost:4321
-npm run build      # static output in dist/
+
+# 2. Start development server
+npm run dev
+
+# 3. Build production bundle (static output in /dist)
+npm run build
+
+# 4. Preview production build
 npm run preview
 ```
 
-## Make it yours
+---
 
-Almost everything you need is in the `EDIT ME` block at the top of `src/pages/index.astro`:
+## 👤 Author
 
-| What | Where |
-|---|---|
-| Name, site, email, social links | the constants at the top of `src/pages/index.astro` |
-| Floating skill labels (and their x/y/tilt) | `labels` array |
-| Tech chips in the About section | `chips` array |
-| The six project cards | `work` array |
-| Body copy (About, Contact, taglines) | the markup below the frontmatter |
-| Colours, fonts, spacing | the `:root` tokens in `src/styles/global.css` |
-| Animation timings | `src/scripts/motion.ts` |
+**Sujal**
+- GitHub: [@RoxxSujal7](https://github.com/RoxxSujal7)
+- LinkedIn: [in/sujalroxx7](https://www.linkedin.com/in/sujalroxx7/)
+- Email: [sujalsah9@gmail.com](mailto:sujalsah9@gmail.com)
 
-Then swap the wordmark (`yourname.dev`), the giant hero word (`YOURNAME`), and the `<title>`
-and `og:` tags in `<head>`.
+---
 
-## How it works
+## 📄 License
 
-- **`src/pages/index.astro`** — the whole page. Six sections: hero, about, a "ready" band, the
-  work grid, contact, footer.
-- **`src/styles/global.css`** — design tokens at `:root`, then section-by-section layout. One
-  `@media (max-width: 900px)` block at the bottom handles the entire mobile pass.
-- **`src/scripts/motion.ts`** — Lenis smooth scroll wired into GSAP's ticker. The intro is a
-  single timeline: the word rises, the swing rig arcs in and deletes itself, the character drops
-  on a `back.out` ease, labels rain down. Scroll behaviour is driven by four data attributes you
-  can put on any element: `data-reveal`, `data-pop`, `data-stagger`, and `.watermark` parallax.
-  All of it sits behind a `prefers-reduced-motion` check.
-- **`src/components/`** — `Spider` (SVG bug on a silk line), `Web` (cobweb generated with trig),
-  `Note` (taped paper label), `Thumb` (per-project fallback SVG art, drawn when a work image
-  is missing).
-
-### Two things worth knowing
-
-- **Upside-down poses.** The character hanging above the Work heading is an upright drawing
-  rotated 180° in CSS (`.hang-rig .sticker`). Image generators tend to refuse "upside down on a
-  thread" prompts, so generate upright and flip it.
-- **The sticker cut-out edge** is four stacked white `drop-shadow()` filters plus one soft real
-  shadow (`.sticker img` in `global.css`). No masking, no cut-out PNGs needed.
-
-## Deploy
-
-Static output, so anywhere works. `vercel.json` is set up for Vercel; delete it for anything else.
-
-## Licence
-
-- **Code** — MIT, see `LICENSE`. Use it, change it, ship it, no attribution needed.
-- **Illustrations** (`src/assets/`) — © Ashmit Mittal. They are a caricature of him, included so
-  the template renders as designed. Please replace them with your own artwork before you put your
-  site online. See `src/assets/README.md`.
-
-Credit is not required, but if this template is useful to you, a link back to
-[@ashmit.codes](https://www.instagram.com/ashmit.codes/) is always welcome.
+This repository is maintained for personal portfolio use under the [MIT License](LICENSE).
