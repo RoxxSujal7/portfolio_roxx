@@ -5,6 +5,7 @@ Interactive poster-style portfolio for **Sujal** — Full Stack & AI Engineer. F
 🌐 **Website**: [sujal.dev](https://sujal.dev)  
 🐙 **GitHub**: [@RoxxSujal7](https://github.com/RoxxSujal7)  
 💼 **LinkedIn**: [sujalroxx7](https://www.linkedin.com/in/sujalroxx7/)  
+📸 **Instagram**: [@roxxsujal7](https://www.instagram.com/roxxsujal7/)  
 📬 **Email**: [sujalsah9@gmail.com](mailto:sujalsah9@gmail.com)
 
 ---
@@ -86,6 +87,7 @@ npm run preview
 **Sujal**
 - GitHub: [@RoxxSujal7](https://github.com/RoxxSujal7)
 - LinkedIn: [in/sujalroxx7](https://www.linkedin.com/in/sujalroxx7/)
+- Instagram: [@roxxsujal7](https://www.instagram.com/roxxsujal7/)
 - Email: [sujalsah9@gmail.com](mailto:sujalsah9@gmail.com)
 
 ---
