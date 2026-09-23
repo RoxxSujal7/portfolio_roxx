@@ -1,0 +1,61 @@
+name: Security Scan
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  strix-scan:
+    name: Strix AI Security Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # required for git diff resolution
+
+      - name: Install Strix CLI
+        run: curl -sSL https://strix.ai/install | bash
+
+      - name: Run Diff-Scoped Security Scan
+        if: env.LLM_API_KEY != '' || env.STRIX_API_TOKEN != ''
+        env:
+          STRIX_LLM: ${{ secrets.STRIX_LLM || 'openai/gpt-4o' }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          STRIX_API_TOKEN: ${{ secrets.STRIX_API_TOKEN }}
+        run: |
+          if [ -n "$STRIX_API_TOKEN" ]; then
+            strix cloud scans start --source . --wait
+          else
+            strix -n -t ./ --scan-mode quick --max-budget 10
+          fi
+
+      - name: Fail unless the scan completed
+        if: env.LLM_API_KEY != ''
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        run: |
+          if [ -d "strix_runs" ]; then
+            run_json=$(ls -t strix_runs/*/run.json 2>/dev/null | head -1)
+            if [ -n "$run_json" ] && [ -f "$run_json" ]; then
+              status=$(jq -r .status "$run_json")
+              if [ "$status" != "completed" ]; then
+                echo "Strix run status is '$status' — the scan did not complete (budget exhausted). Raise --max-budget." >&2
+                exit 1
+              fi
+            fi
+          fi
+
+      - name: Upload SARIF findings to GitHub Security
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        continue-on-error: true
+        with:
+          sarif_file: strix_runs

@@ -1,5 +1,4 @@
 import sharp from 'sharp';
-import fs from 'fs';
 import path from 'path';
 
 const bgPath = 'C:/Users/sujal/.gemini/antigravity-ide/brain/94da7efc-375f-41db-b985-eedcab60bd04/og_banner_art_1790159703258.jpg';
