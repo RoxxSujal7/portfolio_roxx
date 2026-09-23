@@ -16,9 +16,12 @@
   --hand:    "Patrick Hand", "Comic Sans MS", cursive;
   --max:     1280px;
   --gutter:  clamp(20px, 5vw, 72px);
-  --ease:    cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   /* theme transition speed */
-  --tt: 0.4s;
+  --tt: 0.35s;
 }
 
 /* ── Spidey / Dark Theme ─────────────────────────────────────────── */
@@ -301,9 +304,12 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 18px 12px; border: 1.5px solid rgba(31, 29, 58, 0.18);
   box-shadow: 0 8px 18px rgba(31, 29, 58, 0.14);
   transform: rotate(var(--r, 0deg));
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
-.note:hover { transform: rotate(0deg) translateY(-3px); box-shadow: 0 14px 26px rgba(31, 29, 58, 0.18); }
+@media (hover: hover) and (pointer: fine) {
+  .note:hover { transform: rotate(0deg) translateY(-3px); box-shadow: 0 14px 26px rgba(31, 29, 58, 0.18); }
+}
+.note:active { transform: scale(0.97) rotate(0deg); box-shadow: 0 4px 10px rgba(31, 29, 58, 0.12); }
 .note .tape { position: absolute; top: -9px; left: 50%; width: 58px; height: 18px; background: var(--tape); transform: translateX(-50%) rotate(-3deg); box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
 a.note:hover { color: var(--red); }
 
@@ -333,9 +339,19 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
 .tagline { margin: -14px 0 0; text-align: center; font-family: var(--display); font-weight: 800; font-size: clamp(15px, 1.6vw, 22px); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
 .tagline .script { display: block; font-size: clamp(28px, 3.2vw, 46px); letter-spacing: 0; line-height: 1; margin-bottom: 4px; }
 .hero-cta { display: flex; gap: 18px; justify-content: center; margin: 22px 0 44px; padding: 0; list-style: none; }
-.btn { font-weight: 800; font-size: 15px; padding: 12px 22px; border: 2px solid var(--ink); border-radius: 999px; background: var(--ink); color: #fff; box-shadow: 4px 4px 0 rgba(31, 29, 58, 0.25); transition: transform 0.2s, box-shadow 0.2s; }
+.btn {
+  font-weight: 800; font-size: 15px; padding: 12px 22px;
+  border: 2px solid var(--ink); border-radius: 999px;
+  background: var(--ink); color: #fff;
+  box-shadow: 4px 4px 0 rgba(31, 29, 58, 0.25);
+  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
 .btn.ghost { background: transparent; color: var(--ink); }
-.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(31, 29, 58, 0.25); }
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(31, 29, 58, 0.25); }
+}
+.btn:active { transform: scale(0.97) translate(0px, 0px); box-shadow: 2px 2px 0 rgba(31, 29, 58, 0.25); }
+.spidey .btn:active { box-shadow: 2px 2px 0 rgba(232, 39, 26, 0.45); }
 .labels { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; pointer-events: none; z-index: 3; }
 .labels li { position: absolute; left: var(--x); top: var(--y); pointer-events: auto; }
 .thread { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
@@ -355,7 +371,16 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
 .role { margin: 0 0 18px; font-family: var(--display); font-weight: 700; font-style: italic; font-size: clamp(15px, 1.4vw, 19px); color: var(--red); letter-spacing: 0.01em; }
 .prose p { margin: 0 0 14px; color: var(--ink-2); font-size: 18px; max-width: 60ch; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
-.chips li { font-weight: 800; font-size: 13.5px; letter-spacing: 0.03em; padding: 8px 14px; border-radius: 10px; background: var(--ink); color: #fff; }
+.chips li {
+  font-weight: 800; font-size: 13.5px; letter-spacing: 0.03em; padding: 8px 14px;
+  border-radius: 10px; background: var(--ink); color: #fff;
+  transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+  cursor: default;
+}
+@media (hover: hover) and (pointer: fine) {
+  .chips li:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(31, 29, 58, 0.2); }
+  .spidey .chips li:hover { box-shadow: 0 6px 16px rgba(232, 39, 26, 0.35); }
+}
 .chips li:nth-child(3n) { background: var(--red); }
 .spider-about { top: 0; right: 2%; }
 
@@ -375,11 +400,34 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
 .hang-rig { position: absolute; left: clamp(0px, 9%, 170px); top: -70px; transform-origin: top center; z-index: 2; }
 .hang-rig .line { width: 2px; height: 90px; margin: 0 auto; background: var(--ink); }
 .hang-rig .sticker { width: clamp(90px, 10vw, 150px); transform: rotate(180deg); margin-top: -8px; }
-.grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin: 0; padding: 0; list-style: none; }
-.card { background: #fff; border: 2px solid var(--ink); border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 var(--ink); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
-.card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); }
-.card .thumb { aspect-ratio: 4 / 3; background: linear-gradient(135deg, var(--ghost), #fff 60%, var(--ghost)); display: grid; place-items: center; color: var(--ink-3); font-family: var(--hand); font-size: 20px; text-transform: uppercase; border-bottom: 2px solid var(--ink); }
-.card .thumb img, .card .thumb svg { width: 100%; height: 100%; object-fit: cover; }
+.grid {
+  position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin: 0; padding: 0; list-style: none;
+  perspective: 1200px;
+}
+.card {
+  background: #fff; border: 2px solid var(--ink); border-radius: 14px; overflow: hidden;
+  box-shadow: 6px 6px 0 var(--ink);
+  transform-style: preserve-3d; will-change: transform, box-shadow;
+  transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-6px) rotateX(1.8deg) rotateY(-1.2deg); box-shadow: 10px 14px 0 var(--ink); }
+  .spidey .card:hover { box-shadow: 10px 14px 0 rgba(232, 39, 26, 0.7); }
+}
+.card:active { transform: scale(0.985) translateY(-2px); box-shadow: 4px 4px 0 var(--ink); }
+.spidey .card:active { box-shadow: 4px 4px 0 rgba(232, 39, 26, 0.5); }
+.card .thumb {
+  aspect-ratio: 4 / 3; background: linear-gradient(135deg, var(--ghost), #fff 60%, var(--ghost));
+  display: grid; place-items: center; color: var(--ink-3); font-family: var(--hand); font-size: 20px;
+  text-transform: uppercase; border-bottom: 2px solid var(--ink); overflow: hidden;
+}
+.card .thumb img, .card .thumb svg {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 450ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .thumb img, .card:hover .thumb svg { transform: scale(1.05); }
+}
 .card-link { display: block; color: inherit; }
 .ready-band .script, .work-foot .script { color: #ffb3a8; }
 .name .aka:hover { color: var(--ink); }
