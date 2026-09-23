@@ -261,9 +261,15 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
             <p class="lede">Have an exciting project, AI collaboration, or engineering role in mind? My inbox is always open.</p>
             <ul class="links">
               <li><Note rot={-4} href={`mailto:${EMAIL}`}>{EMAIL}</Note></li>
-              <li><Note rot={3} href={GH}>GitHub</Note></li>
-              <li><Note rot={-2} href={LINKEDIN}>LinkedIn</Note></li>
-              <li><Note rot={3} href={INSTAGRAM}>Instagram</Note></li>
+              <li class="socials-cluster">
+                <div class="socials-row">
+                  <Note rot={3} href={GH}>GitHub</Note>
+                  <Note rot={-2} href={LINKEDIN}>LinkedIn</Note>
+                </div>
+                <div class="socials-center">
+                  <Note rot={2} href={INSTAGRAM}>Instagram</Note>
+                </div>
+              </li>
             </ul>
           </div>
         </section>
