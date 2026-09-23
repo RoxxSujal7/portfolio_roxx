@@ -1,6 +1,24 @@
+# Dependencies
 node_modules/
+
+# Build outputs
 dist/
 .astro/
 .vercel/
+
+# Environment files & secrets
+.env
+.env.*
+!.env.example
+
+# OS & Logs
 .DS_Store
+Thumbs.db
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Pentesting & Security Scan Artifacts
+strix_runs/
+.strix/

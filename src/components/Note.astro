@@ -4,7 +4,7 @@ interface Props { class?: string; rot?: number; href?: string }
 const { class: cls = '', rot = 0, href } = Astro.props;
 const Tag = href ? 'a' : 'span';
 ---
-<Tag class={`note ${cls}`} style={`--r:${rot}deg`} href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel={href?.startsWith('http') ? 'noopener' : undefined}>
+<Tag class={`note ${cls}`} style={`--r:${rot}deg`} href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}>
   <i class="tape" aria-hidden="true"></i>
   <slot />
 </Tag>

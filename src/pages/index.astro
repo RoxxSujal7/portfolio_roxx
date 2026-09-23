@@ -130,9 +130,9 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href={GH} target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href={INSTAGRAM} target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href={GH} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">Instagram</a></li>
           </ul>
         </nav>
         <button id="theme-toggle" aria-pressed="false" aria-label="Toggle Spidey theme" title="Toggle Spidey theme">
@@ -187,7 +187,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
           </div>
           <div class="about-text" data-reveal>
             <p class="hi">Hi, I'm</p>
-            <h2 class="name">{NAME} <a class="script aka" href={GH} target="_blank" rel="noopener">aka {HANDLE}</a></h2>
+            <h2 class="name">{NAME} <a class="script aka" href={GH} target="_blank" rel="noopener noreferrer">aka {HANDLE}</a></h2>
             <p class="role">Full Stack &amp; AI Engineer · Web Systems · Intelligent Agents</p>
             <div class="prose">
               <p>I build modern full-stack web applications and intelligent AI systems. From designing scalable web architectures and responsive interfaces to implementing LLM-powered pipelines and retrieval systems, I focus on turning complex technical challenges into fast, reliable software.</p>
@@ -223,7 +223,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
         <ul class="grid" data-stagger>
           {work.map((w) => (
             <li class="card">
-              <a class="card-link" href={w.href ?? '#contact'} target={w.href ? '_blank' : undefined} rel={w.href ? 'noopener' : undefined}>
+              <a class="card-link" href={w.href ?? '#contact'} target={w.href ? '_blank' : undefined} rel={w.href ? 'noopener noreferrer' : undefined}>
                 <div class="thumb">
                   {art[w.kind]
                     ? <Image src={art[w.kind]} alt={`${w.title} illustration`} widths={[420, 640, 900]} sizes="(max-width: 900px) 92vw, 380px" format="webp" quality={80} />
@@ -240,7 +240,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
         </ul>
         <div class="work-foot">
           <div class="band" data-reveal>
-            <p class="h">Explore open source code &amp; experiments on <a class="script" href={GH} target="_blank" rel="noopener">{HANDLE}</a></p>
+            <p class="h">Explore open source code &amp; experiments on <a class="script" href={GH} target="_blank" rel="noopener noreferrer">{HANDLE}</a></p>
             <div class="sticker laptop-figure" data-pop>
               <Image src={laptop} alt="Illustrated character sitting on a ledge, typing on a laptop" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 280px" format="webp" quality={82} />
             </div>
