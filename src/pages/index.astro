@@ -113,10 +113,27 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
     <meta name="description" content={`Portfolio of ${NAME}, Full Stack & AI Engineer building modern web apps and intelligent systems.`} />
     <meta property="og:title" content={`${NAME} · Full Stack + AI Engineer`} />
     <meta property="og:description" content={`Explore projects, AI agents, and full-stack systems built by ${NAME}.`} />
+    <meta name="theme-color" content="#1f1d3a" />
+    <link rel="canonical" href={`https://${SITE}/`} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={`https://${SITE}/`} />
-    <meta name="theme-color" content="#1f1d3a" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={`${NAME} · Full Stack + AI Engineer`} />
+    <meta property="og:description" content={`Explore projects, AI agents, and full-stack systems built by ${NAME}.`} />
+    <meta property="og:image" content={`https://${SITE}/og-image.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${NAME} · Full Stack & AI Software Engineer Portfolio`} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content={HANDLE} />
+    <meta name="twitter:title" content={`${NAME} · Full Stack + AI Engineer`} />
+    <meta name="twitter:description" content={`Explore projects, AI agents, and full-stack systems built by ${NAME}.`} />
+    <meta name="twitter:image" content={`https://${SITE}/og-image.png`} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700&family=Nunito:wght@400;600;700;800&family=Kaushan+Script&family=Patrick+Hand&display=swap" />
