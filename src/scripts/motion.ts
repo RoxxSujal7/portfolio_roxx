@@ -15,6 +15,25 @@ lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((t) => lenis.raf(t * 1000));
 gsap.ticker.lagSmoothing(0);
 
+// --- Smooth animated scrolling for internal anchor links (About, Work, Contact, Hero CTAs) ---
+document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+  if (anchor.classList.contains('skip-link')) return; // allow screen readers / keyboard to jump immediately
+  anchor.addEventListener('click', (e) => {
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#') return;
+    const targetEl = document.querySelector<HTMLElement>(href);
+    if (targetEl) {
+      e.preventDefault();
+      lenis.scrollTo(targetEl, {
+        offset: -70,
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+      });
+      history.pushState(null, '', href);
+    }
+  });
+});
+
 // --- Landing timeline: Spidey swings in on the line, lands into hero pose ---
 const rig = document.querySelector<HTMLElement>('.swing-rig');
 const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
