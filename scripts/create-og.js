@@ -1,7 +1,7 @@
 import sharp from 'sharp';
 import path from 'path';
 
-const bgPath = 'C:/Users/sujal/.gemini/antigravity-ide/brain/94da7efc-375f-41db-b985-eedcab60bd04/og_banner_art_1790159703258.jpg';
+const bgPath = path.resolve('src/assets/branding/og-bg.jpg');
 const outputPath = path.resolve('public/og-image.png');
 
 const svgOverlay = `
