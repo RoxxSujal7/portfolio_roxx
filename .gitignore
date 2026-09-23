@@ -22,3 +22,7 @@ yarn-error.log*
 # Pentesting & Security Scan Artifacts
 strix_runs/
 .strix/
+
+# Brag video temporary iteration runs (local only)
+brag-output-*/
+

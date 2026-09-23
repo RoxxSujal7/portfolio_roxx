@@ -24,6 +24,24 @@ Featuring *Into the Spider-Verse* comic art direction, tactile physical interact
 
 ---
 
+## 🎬 Launch Teaser: "Every Dimension Needs an Architect"
+
+<div align="center">
+
+<a href="./brag-output/brag-4k.mp4">
+  <img src="./brag-output/brag.jpg" alt="Sujal Portfolio Cinematic Trailer" width="100%" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(216, 64, 47, 0.25);" />
+</a>
+
+<br/>
+
+**[▶️ Watch the 4K Cinematic Launch Trailer](./brag-output/brag-4k.mp4)** &nbsp;|&nbsp; **[1080p Version](./brag-output/brag.mp4)**
+
+*A 20-second cinematic Spider-Verse blockbuster teaser showcasing 60fps kinetic motion, autonomous AI systems, and interactive Spidey dark mode physics.*
+
+</div>
+
+---
+
 ## ⚡ Highlights & Engineering Architecture
 
 ### 1. 🕷️ Illustrated Poster Art Direction & Spidey Theme
@@ -94,6 +112,12 @@ Featuring *Into the Spider-Verse* comic art direction, tactile physical interact
 │   └── workflows/
 │       ├── ci.yml                 # Build verification, typecheck, & audit gate
 │       └── security.yml           # Strix AI diff-scoped pentest & SARIF workflow
+├── brag-output/
+│   ├── brag-4k.mp4                # 4K Cinematic launch trailer (3840x2160, 60fps audio/video)
+│   ├── brag.mp4                   # 1080p release video
+│   ├── brag.jpg                   # Launch poster thumbnail
+│   ├── share-copy.txt             # Launch copy & captions
+│   └── composition/               # Hyperframes composition source & assets
 ├── public/
 │   ├── favicon.svg                # Spider-Man mask SVG favicon
 │   ├── og-image.png               # 1200x630 Open Graph preview banner
