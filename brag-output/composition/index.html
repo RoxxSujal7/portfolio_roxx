@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Sujal · Cinematic Portfolio Trailer</title>
+    <title>Sujal · YC Product Launch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -50,66 +50,82 @@
         pointer-events: none;
       }
 
-      /* ── Scene 1: Single Cinematic Hook ── */
-      #scene-1 {
-        background: radial-gradient(circle at 50% 50%, #1a0a10 0%, #0a0608 80%);
+      /* YC Accent Badges */
+      .yc-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #ff6600;
+        color: #0a0608;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 6px 16px;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+        margin-bottom: 20px;
       }
-      .trailer-web-bg {
-        position: absolute;
-        inset: 0;
-        background-image: radial-gradient(circle at 50% 50%, rgba(232, 39, 26, 0.15) 0%, transparent 60%);
-        opacity: 0.6;
+
+      /* ── Scene 1: The YC Hook ── */
+      #scene-1 {
+        background: radial-gradient(circle at 50% 50%, #170d10 0%, #0a0608 85%);
       }
       .letterbox-top, .letterbox-bottom {
         position: absolute;
         left: 0;
         width: 1920px;
-        height: 100px;
+        height: 90px;
         background: #000000;
         z-index: 50;
       }
       .letterbox-top { top: 0; }
       .letterbox-bottom { bottom: 0; }
 
-      .hook-tagline {
-        font-family: "Montserrat", sans-serif;
-        font-size: 44px;
-        font-weight: 800;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        color: #ff3b30;
-        margin-bottom: 20px;
+      .yc-hook-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        text-shadow: 0 0 30px rgba(255, 59, 48, 0.7);
+        z-index: 10;
+        max-width: 1500px;
       }
-      .hook-headline {
+      .hook-problem {
         font-family: "Montserrat", sans-serif;
-        font-size: 110px;
+        font-size: 54px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #ff6600;
+        margin-bottom: 14px;
+        text-shadow: 0 0 30px rgba(255, 102, 0, 0.5);
+      }
+      .hook-solution {
+        font-family: "Montserrat", sans-serif;
+        font-size: 88px;
         font-weight: 900;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.02em;
         text-transform: uppercase;
         color: #ffffff;
-        text-align: center;
-        line-height: 1.0;
-        text-shadow: 0 0 50px rgba(232, 39, 26, 0.8), 0 0 100px rgba(232, 39, 26, 0.4);
+        line-height: 1.05;
+        text-shadow: 0 0 50px rgba(255, 102, 0, 0.6);
       }
-      .hook-headline span.crimson {
+      .hook-solution span.highlight {
         color: #ff3b30;
-        display: inline-block;
       }
-      .hook-sub {
+      .hook-sub-pill {
         font-family: "Montserrat", sans-serif;
-        font-size: 26px;
+        font-size: 22px;
         font-weight: 800;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.15em;
         color: #ffffff;
-        background: rgba(232, 39, 26, 0.25);
-        border: 2px solid #e8271a;
-        padding: 12px 34px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 102, 0, 0.6);
+        padding: 10px 32px;
         border-radius: 999px;
-        margin-top: 36px;
+        margin-top: 32px;
         text-transform: uppercase;
-        display: inline-block;
       }
 
       /* ── Scene 2: In-Page Case Study Slide-Over Drawer ── */
@@ -130,76 +146,76 @@
         height: 1080px;
         overflow: hidden;
       }
-      .comic-nav-top {
+      .s2-nav-top {
         position: absolute;
-        top: 50px;
-        left: 100px;
+        top: 45px;
+        left: 90px;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 16px;
         z-index: 10;
       }
-      .comic-brand {
+      .s2-brand {
         font-family: "Montserrat", sans-serif;
-        font-size: 42px;
+        font-size: 40px;
         font-weight: 900;
         letter-spacing: -0.03em;
         color: #1f1d3a;
       }
-      .comic-brand span {
-        color: #d8402f;
+      .s2-brand span {
+        color: #c2410c;
       }
-      .comic-badge {
+      .s2-pill {
         font-family: "Montserrat", sans-serif;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.12em;
         background: #1f1d3a;
         color: #ffffff;
-        padding: 6px 16px;
-        border-radius: 6px;
+        padding: 6px 14px;
+        border-radius: 4px;
       }
 
       .scene-2-left {
         position: absolute;
-        top: 150px;
-        left: 100px;
+        top: 140px;
+        left: 90px;
         width: 680px;
         z-index: 10;
       }
       .s2-eyebrow {
         font-family: "Montserrat", sans-serif;
-        font-size: 20px;
+        font-size: 19px;
         font-weight: 800;
-        letter-spacing: 0.25em;
+        letter-spacing: 0.22em;
         text-transform: uppercase;
         color: #b91c1c;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
       .s2-h1 {
         font-family: "Montserrat", sans-serif;
-        font-size: 58px;
+        font-size: 56px;
         font-weight: 900;
         line-height: 1.08;
         letter-spacing: -0.02em;
         color: #1f1d3a;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
       }
       .s2-h1 em {
         font-style: italic;
-        color: #b91c1c;
+        color: #c2410c;
       }
       .s2-desc {
         font-size: 20px;
         font-weight: 700;
         color: #383556;
         line-height: 1.5;
-        margin-bottom: 30px;
+        margin-bottom: 26px;
       }
 
-      /* Trigger Card preview on the left */
+      /* Trigger Card preview */
       .s2-trigger-card {
         background: #ffffff;
         border: 3px solid #1f1d3a;
@@ -235,11 +251,11 @@
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
         font-weight: 800;
-        color: #b91c1c;
-        margin-top: 12px;
+        color: #c2410c;
+        margin-top: 10px;
       }
 
-      /* Real Slide-Over Drawer Presentation on the right */
+      /* Drawer Stage on Right */
       .drawer-stage {
         position: absolute;
         top: 0;
@@ -259,7 +275,7 @@
         border-radius: 18px;
         border: 4px solid #1f1d3a;
         background: #ffffff;
-        box-shadow: -20px 24px 60px rgba(31, 29, 58, 0.35), -8px 0 0px #d8402f;
+        box-shadow: -20px 24px 60px rgba(31, 29, 58, 0.35), -8px 0 0px #ff6600;
         overflow: hidden;
       }
       .drawer-mockup-img {
@@ -269,7 +285,7 @@
         object-position: top center;
       }
 
-      /* Floating Callout Badges around the Drawer */
+      /* Telemetry Badges */
       .drawer-callout {
         position: absolute;
         background: #ffffff;
@@ -291,7 +307,7 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: #d8402f;
+        background: #c2410c;
       }
       #badge-latency {
         top: 220px;
@@ -327,23 +343,23 @@
       }
       .s3-header {
         position: absolute;
-        top: 60px;
+        top: 50px;
         text-align: center;
         width: 100%;
         z-index: 20;
       }
       .s3-eyebrow {
         font-family: "Montserrat", sans-serif;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 800;
-        letter-spacing: 0.28em;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: #b91c1c;
-        margin-bottom: 10px;
+        color: #c2410c;
+        margin-bottom: 8px;
       }
       .s3-title {
         font-family: "Montserrat", sans-serif;
-        font-size: 60px;
+        font-size: 58px;
         font-weight: 900;
         letter-spacing: -0.02em;
         text-transform: uppercase;
@@ -353,13 +369,13 @@
         color: #ffffff !important;
       }
       #scene-3.spidey-mode .s3-eyebrow {
-        color: #ff3b30 !important;
+        color: #ff6600 !important;
       }
 
       /* Recruiter Modal Presentation in Center */
       .recruiter-stage {
         position: absolute;
-        top: 175px;
+        top: 165px;
         left: 50%;
         transform: translateX(-50%);
         width: 820px;
@@ -377,8 +393,8 @@
         overflow: hidden;
       }
       #scene-3.spidey-mode .recruiter-mockup-wrapper {
-        border-color: #e8271a;
-        box-shadow: 0 0 40px rgba(232, 39, 26, 0.4), 0 25px 60px rgba(0, 0, 0, 0.7);
+        border-color: #ff6600;
+        box-shadow: 0 0 40px rgba(255, 102, 0, 0.4), 0 25px 60px rgba(0, 0, 0, 0.7);
       }
       .recruiter-mockup-img {
         width: 100%;
@@ -387,7 +403,7 @@
         object-position: top center;
       }
 
-      /* Callout Pins for Recruiter */
+      /* Callout Pins */
       .rec-callout {
         position: absolute;
         background: #ffffff;
@@ -404,23 +420,23 @@
       }
       #scene-3.spidey-mode .rec-callout {
         background: #140b0e;
-        border-color: #e8271a;
+        border-color: #ff6600;
         color: #ffffff;
-        box-shadow: 0 0 20px rgba(232, 39, 26, 0.3), 6px 8px 0px #e8271a;
+        box-shadow: 0 0 20px rgba(255, 102, 0, 0.3), 6px 8px 0px #ff6600;
       }
       #rec-pin-pdf {
-        top: 210px;
+        top: 200px;
         right: 140px;
       }
       #rec-pin-matrix {
-        bottom: 220px;
+        bottom: 230px;
         left: 120px;
       }
 
-      /* Floating Tactile Toast notification */
+      /* Toast Feedback */
       .toast-stage {
         position: absolute;
-        bottom: 50px;
+        bottom: 45px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 35;
@@ -432,11 +448,11 @@
         border-radius: 999px;
       }
 
-      /* Spidey Toggle UI overlay */
+      /* Spidey Toggle UI */
       .toggle-demo {
         position: absolute;
-        top: 60px;
-        right: 100px;
+        top: 50px;
+        right: 90px;
         display: flex;
         align-items: center;
         gap: 14px;
@@ -449,8 +465,8 @@
       }
       #scene-3.spidey-mode .toggle-demo {
         background: #140b0e;
-        border-color: #e8271a;
-        box-shadow: 0 0 24px rgba(232, 39, 26, 0.4), 6px 6px 0px #e8271a;
+        border-color: #ff6600;
+        box-shadow: 0 0 24px rgba(255, 102, 0, 0.4), 6px 6px 0px #ff6600;
       }
       .toggle-label {
         font-family: "Montserrat", sans-serif;
@@ -472,7 +488,7 @@
         position: relative;
       }
       #scene-3.spidey-mode .toggle-switch-ui {
-        background: #e8271a;
+        background: #ff6600;
         border-color: #ffffff;
       }
       .toggle-knob {
@@ -490,16 +506,16 @@
         background: #ffffff;
       }
 
-      /* Dark Mode Drawer reveal in Scene 3 */
+      /* Dark Mode Drawer Stage */
       .dark-drawer-stage {
         position: absolute;
-        top: 175px;
+        top: 165px;
         right: 120px;
         width: 480px;
         height: 720px;
         border-radius: 18px;
-        border: 3px solid #e8271a;
-        box-shadow: 0 0 40px rgba(232, 39, 26, 0.5), 0 25px 60px rgba(0, 0, 0, 0.8);
+        border: 3px solid #ff6600;
+        box-shadow: 0 0 40px rgba(255, 102, 0, 0.5), 0 25px 60px rgba(0, 0, 0, 0.8);
         overflow: hidden;
         z-index: 22;
         opacity: 0;
@@ -510,7 +526,6 @@
         object-fit: cover;
       }
 
-      /* Dynamic SVG Web Grid in scene 3 Spidey Mode */
       .svg-web-grid {
         position: absolute;
         inset: 0;
@@ -519,9 +534,9 @@
         z-index: 10;
       }
 
-      /* ── Scene 4: Blockbuster Outro ── */
+      /* ── Scene 4: YC Demo Day Outro ── */
       #scene-4 {
-        background: radial-gradient(circle at 50% 50%, #1c080d 0%, #0a0608 75%);
+        background: radial-gradient(circle at 50% 50%, #1a0e08 0%, #0a0608 80%);
         color: #ffffff;
       }
       .outro-hanging-spidey {
@@ -530,7 +545,7 @@
         right: 260px;
         width: 260px;
         z-index: 25;
-        filter: drop-shadow(0 15px 30px rgba(232, 39, 26, 0.45));
+        filter: drop-shadow(0 15px 30px rgba(255, 102, 0, 0.45));
         transform-origin: top center;
       }
       .outro-silk-line {
@@ -555,10 +570,10 @@
         font-family: "Montserrat", sans-serif;
         font-size: 32px;
         font-weight: 800;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: #ff3b30;
-        margin-bottom: 16px;
+        color: #ff6600;
+        margin-bottom: 14px;
       }
       .outro-title {
         font-family: "Montserrat", sans-serif;
@@ -568,20 +583,20 @@
         line-height: 0.95;
         text-transform: uppercase;
         color: #ffffff;
-        margin-bottom: 26px;
-        text-shadow: 0 0 50px rgba(232, 39, 26, 0.7);
+        margin-bottom: 24px;
+        text-shadow: 0 0 50px rgba(255, 102, 0, 0.6);
       }
       .outro-title span {
-        color: #ff3b30;
+        color: #ff6600;
       }
       .outro-pills {
         display: flex;
         gap: 16px;
-        margin-bottom: 32px;
+        margin-bottom: 30px;
       }
       .outro-pill {
         background: rgba(255, 255, 255, 0.08);
-        border: 1.5px solid rgba(255, 59, 48, 0.4);
+        border: 1.5px solid rgba(255, 102, 0, 0.4);
         padding: 8px 18px;
         border-radius: 999px;
         font-family: "Montserrat", sans-serif;
@@ -601,11 +616,11 @@
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        background: #ff3b30;
-        color: #ffffff;
+        background: #ff6600;
+        color: #0a0608;
         padding: 16px 40px;
         border-radius: 999px;
-        box-shadow: 0 0 35px rgba(255, 59, 48, 0.6);
+        box-shadow: 0 0 35px rgba(255, 102, 0, 0.6);
       }
       .outro-meta {
         font-family: "Nunito", sans-serif;
@@ -625,7 +640,7 @@
       data-width="1920"
       data-height="1080"
     >
-      <!-- Audio Bed Ducked for Kokoro Voice Clarity -->
+      <!-- Background Audio Bed -->
       <audio
         id="bg-music"
         data-start="0"
@@ -636,35 +651,35 @@
         src="assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3"
       ></audio>
 
-      <!-- 🎙️ NARRATION TRACKS (Kokoro-82M Sweet Female Voice: af_heart) -->
+      <!-- 🎙️ NARRATION TRACKS (Kokoro-82M Voice: af_heart) -->
       <audio
         id="vo-1"
-        data-start="0.3"
-        data-duration="3.05"
+        data-start="0.15"
+        data-duration="4.25"
         data-track-index="2"
         data-volume="1.0"
         src="assets/voice/vo1.wav"
       ></audio>
       <audio
         id="vo-2"
-        data-start="3.8"
-        data-duration="5.06"
+        data-start="4.5"
+        data-duration="4.33"
         data-track-index="3"
         data-volume="1.0"
         src="assets/voice/vo2.wav"
       ></audio>
       <audio
         id="vo-3"
-        data-start="9.0"
-        data-duration="5.82"
+        data-start="9.2"
+        data-duration="5.35"
         data-track-index="4"
         data-volume="1.0"
         src="assets/voice/vo3.wav"
       ></audio>
       <audio
         id="vo-4"
-        data-start="15.0"
-        data-duration="4.89"
+        data-start="15.1"
+        data-duration="4.05"
         data-track-index="5"
         data-volume="1.0"
         src="assets/voice/vo4.wav"
@@ -681,7 +696,7 @@
       ></audio>
       <audio
         id="sfx-slide"
-        data-start="4.6"
+        data-start="4.8"
         data-duration="0.60"
         data-track-index="7"
         data-volume="0.7"
@@ -721,7 +736,7 @@
       ></audio>
       <audio
         id="sfx-recruiter"
-        data-start="9.2"
+        data-start="9.4"
         data-duration="0.60"
         data-track-index="12"
         data-volume="0.6"
@@ -729,7 +744,7 @@
       ></audio>
       <audio
         id="sfx-toast"
-        data-start="10.8"
+        data-start="11.0"
         data-duration="0.11"
         data-track-index="16"
         data-volume="0.6"
@@ -737,7 +752,7 @@
       ></audio>
       <audio
         id="sfx-switch"
-        data-start="12.8"
+        data-start="13.0"
         data-duration="0.62"
         data-track-index="13"
         data-volume="0.85"
@@ -752,28 +767,27 @@
         src="assets/sfx/impact/impactBell_heavy_003.ogg"
       ></audio>
 
-      <!-- ── SCENE 1: The Call (Single Hook: 0.0s – 3.7s) ── -->
-      <div id="scene-1" class="scene clip" data-start="0" data-duration="3.7">
-        <div class="trailer-web-bg"></div>
+      <!-- ── SCENE 1: The YC Hook (0.0s – 4.5s) ── -->
+      <div id="scene-1" class="scene clip" data-start="0" data-duration="4.5">
         <div class="letterbox-top"></div>
         <div class="letterbox-bottom"></div>
 
-        <!-- Single Cinematic Trailer Hook (No two lines) -->
-        <div id="hook-single" style="text-align: center; z-index: 10; display: flex; flex-direction: column; align-items: center;">
-          <div class="hook-tagline" id="hook-tagline">Every Multiverse</div>
-          <div class="hook-headline" id="hook-headline">
-            Needs An <span class="crimson">Architect.</span>
+        <div class="yc-hook-wrap" id="hook-wrap">
+          <div class="yc-badge" id="hook-yc-badge">Y Combinator · W26 Launch</div>
+          <div class="hook-problem" id="hook-problem">Portfolios Had An 80% Bounce Rate.</div>
+          <div class="hook-solution" id="hook-solution">
+            So We Re-Architected <span class="highlight">The Resume.</span>
           </div>
-          <div class="hook-sub" id="hook-badge">Sujal · Full Stack &amp; AI Systems Engineer</div>
+          <div class="hook-sub-pill" id="hook-sub">Sujal Sah · Full Stack &amp; AI Systems Engineer</div>
         </div>
       </div>
 
-      <!-- ── SCENE 2: In-Page Case Study Slide-Over Drawer (3.7s – 9.0s) ── -->
-      <div id="scene-2" class="scene clip" data-start="3.7" data-duration="5.3">
+      <!-- ── SCENE 2: In-Page Case Study Slide-Over Drawer (4.5s – 9.2s) ── -->
+      <div id="scene-2" class="scene clip" data-start="4.5" data-duration="4.7">
         <div class="scene-2-container">
-          <div class="comic-nav-top" id="s2-nav">
-            <div class="comic-brand">sujal<span>.</span>dev</div>
-            <div class="comic-badge">Issue #02 · Architecture Deep Dive</div>
+          <div class="s2-nav-top" id="s2-nav">
+            <div class="s2-brand">sujal<span>.</span>dev</div>
+            <div class="s2-pill">YC Launch #01 · Zero Bounce</div>
           </div>
 
           <div class="scene-2-left" id="s2-content">
@@ -787,11 +801,11 @@
             </p>
 
             <div class="s2-trigger-card" id="s2-trigger">
-              <span class="trigger-pill">Flagship System</span>
+              <span class="trigger-pill">Production AI System</span>
               <div class="trigger-title">Autonomous AI Assistant</div>
               <div style="font-size: 16px; color: #383556; font-weight: 600;">Multi-agent orchestration executing autonomous coding workflows with contextual reasoning.</div>
               <div class="trigger-action">
-                <span>View Full Architecture &amp; Benchmark</span>
+                <span>Inspect Pipeline &amp; Telemetry</span>
                 <span style="font-size: 18px;">&rarr;</span>
               </div>
             </div>
@@ -799,7 +813,6 @@
 
           <!-- Drawer Stage on Right -->
           <div class="drawer-stage" id="drawer-stage">
-            <!-- Telemetry Callout Badges -->
             <div class="drawer-callout" id="badge-latency">
               <span class="dot"></span>
               <span>⚡ &lt; 1.2s Median Latency</span>
@@ -831,11 +844,11 @@
         </div>
       </div>
 
-      <!-- ── SCENE 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode (9.0s – 15.0s) ── -->
-      <div id="scene-3" class="scene clip" data-start="9.0" data-duration="6.0">
+      <!-- ── SCENE 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode (9.2s – 15.0s) ── -->
+      <div id="scene-3" class="scene clip" data-start="9.2" data-duration="5.8">
         <!-- SVG Spiderweb background for Spidey mode -->
         <svg class="svg-web-grid" id="spidey-web-overlay" data-layout-allow-overflow viewBox="0 0 1920 1080">
-          <g fill="none" stroke="#e8271a" stroke-opacity="0.35" stroke-width="1.5">
+          <g fill="none" stroke="#ff6600" stroke-opacity="0.35" stroke-width="1.5">
             <line x1="960" y1="540" x2="960" y2="0" />
             <line x1="960" y1="540" x2="1920" y2="0" />
             <line x1="960" y1="540" x2="1920" y2="540" />
@@ -852,7 +865,7 @@
         </svg>
 
         <div class="s3-header" id="s3-header">
-          <div class="s3-eyebrow" id="s3-eyebrow">For Engineering Leaders &amp; Hiring Managers</div>
+          <div class="s3-eyebrow" id="s3-eyebrow">The Recruiter Moat</div>
           <div class="s3-title" id="s3-title">1-Click ATS High-Density Resume</div>
         </div>
 
@@ -875,7 +888,7 @@
           </div>
         </div>
 
-        <!-- Floating Callout Badges for Recruiter Modal -->
+        <!-- Floating Callout Badges -->
         <div class="rec-callout" id="rec-pin-pdf">
           <span>🖨️ 1-Click Print &amp; PDF Export</span>
         </div>
@@ -892,7 +905,7 @@
           />
         </div>
 
-        <!-- Dark Mode Drawer Stage (Wipe reveal at 12.8s) -->
+        <!-- Dark Mode Drawer Stage (Wipe reveal at 13.0s) -->
         <div class="dark-drawer-stage" id="dark-drawer-stage">
           <img
             src="assets/images/drawer-dark-panel.png"
@@ -902,7 +915,7 @@
         </div>
       </div>
 
-      <!-- ── SCENE 4: Blockbuster Outro (15.0s – 20.0s) ── -->
+      <!-- ── SCENE 4: YC Demo Day Outro (15.0s – 20.0s) ── -->
       <div id="scene-4" class="scene clip" data-start="15.0" data-duration="5.0">
         <div class="outro-silk-line" id="outro-silk"></div>
         <img
@@ -913,6 +926,7 @@
         />
 
         <div class="outro-content">
+          <div class="yc-badge" id="outro-yc-badge">Y Combinator W26 · Demo Day</div>
           <div class="outro-mantra" id="outro-mantra">
             With Great Code Comes Great Velocity.
           </div>
@@ -926,7 +940,7 @@
             <div class="outro-pill">⚡ 60fps Kinetic UI</div>
           </div>
           <div class="outro-cta-bar" id="outro-cta">
-            <div class="outro-btn">Explore The Multiverse</div>
+            <div class="outro-btn">We're Live on GitHub</div>
             <div class="outro-meta">Full Stack &amp; AI Systems Engineer · GitHub @RoxxSujal7</div>
           </div>
         </div>
@@ -940,71 +954,77 @@
       window.__timelines["main"] = tl;
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 1: Single Cinematic Hook (0.0s – 3.7s)
+      // Scene 1: The YC Hook (0.0s – 4.5s)
       // ─────────────────────────────────────────────────────────────
       tl.set("#scene-1", { opacity: 1 }, 0);
-      tl.set("#hook-single", { opacity: 1, scale: 1 }, 0);
+      tl.set("#hook-wrap", { opacity: 1, scale: 1 }, 0);
 
       tl.fromTo(
-        "#hook-tagline",
-        { opacity: 0, y: -25 },
+        "#hook-yc-badge",
+        { opacity: 0, y: -20, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out" },
+        0.1
+      );
+      tl.fromTo(
+        "#hook-problem",
+        { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        0.2
+        0.4
       );
       tl.fromTo(
-        "#hook-headline",
-        { opacity: 0, scale: 1.4, filter: "blur(12px)" },
-        { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: 0.7, ease: "back.out(1.5)" },
-        0.6
+        "#hook-solution",
+        { opacity: 0, scale: 1.3, filter: "blur(10px)" },
+        { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: 0.6, ease: "back.out(1.4)" },
+        0.9
       );
       tl.fromTo(
-        "#hook-badge",
-        { opacity: 0, y: 25, scale: 0.85 },
+        "#hook-sub",
+        { opacity: 0, y: 20, scale: 0.85 },
         { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.4)" },
-        1.2
+        1.5
       );
 
-      // Scene 1 exit zoom into multiverse
+      // Scene 1 exit zoom
       tl.to(
-        "#hook-single",
-        { scale: 1.12, opacity: 0, duration: 0.45, ease: "power3.in" },
-        3.2
+        "#hook-wrap",
+        { scale: 1.1, opacity: 0, duration: 0.45, ease: "power3.in" },
+        4.0
       );
-      tl.to("#scene-1", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 3.5);
+      tl.to("#scene-1", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 4.3);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 2: In-Page Case Study Slide-Over Drawer (3.7s – 9.0s)
+      // Scene 2: In-Page Case Study Slide-Over Drawer (4.5s – 9.2s)
       // ─────────────────────────────────────────────────────────────
-      tl.set("#scene-2", { opacity: 1 }, 3.7);
+      tl.set("#scene-2", { opacity: 1 }, 4.5);
 
       tl.fromTo(
         "#s2-nav",
-        { opacity: 0, y: -30 },
+        { opacity: 0, y: -25 },
         { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
-        3.8
+        4.6
       );
 
       tl.fromTo(
         "#s2-content",
         { opacity: 0, x: -40 },
         { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
-        4.0
+        4.7
       );
 
-      // Project trigger card bounce/pulse
+      // Project trigger card
       tl.fromTo(
         "#s2-trigger",
         { opacity: 0, y: 30, scale: 0.95 },
         { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.5)" },
-        4.3
+        4.9
       );
 
-      // In-Page Drawer slides smoothly out from right edge (4.6s)
+      // In-Page Drawer slides smoothly in (4.8s)
       tl.fromTo(
         "#drawer-mockup",
         { x: 800, opacity: 0 },
         { x: 0, opacity: 1, duration: 0.85, ease: "power3.out" },
-        4.6
+        4.8
       );
 
       // Telemetry Callouts pop in sequence
@@ -1027,7 +1047,7 @@
         6.8
       );
 
-      // Spidey Hero Landing impact
+      // Hero landing impact
       tl.fromTo(
         "#s2-spidey",
         { opacity: 0, scale: 1.4, y: 40 },
@@ -1036,20 +1056,20 @@
       );
 
       // Scene 2 exit
-      tl.to("#scene-2", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 8.8);
+      tl.to("#scene-2", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 9.0);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode (9.0s – 15.0s)
+      // Scene 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode (9.2s – 15.0s)
       // ─────────────────────────────────────────────────────────────
-      tl.set("#scene-3", { opacity: 1, backgroundColor: "#faf8f3" }, 9.0);
-      tl.set("#s3-title", { color: "#1f1d3a" }, 9.0);
-      tl.set("#s3-eyebrow", { color: "#b91c1c" }, 9.0);
+      tl.set("#scene-3", { opacity: 1, backgroundColor: "#faf8f3" }, 9.2);
+      tl.set("#s3-title", { color: "#1f1d3a" }, 9.2);
+      tl.set("#s3-eyebrow", { color: "#c2410c" }, 9.2);
 
       tl.fromTo(
         "#s3-header",
-        { opacity: 0, y: -30 },
+        { opacity: 0, y: -25 },
         { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        9.1
+        9.3
       );
 
       // Recruiter Modal springs into center
@@ -1057,7 +1077,7 @@
         "#recruiter-stage",
         { opacity: 0, scale: 0.85, y: 40 },
         { opacity: 1, scale: 1.0, y: 0, duration: 0.65, ease: "back.out(1.3)" },
-        9.2
+        9.4
       );
 
       // Feature pins pop onto modal
@@ -1065,21 +1085,21 @@
         "#rec-pin-pdf",
         { opacity: 0, scale: 0.7, x: 30 },
         { opacity: 1, scale: 1.0, x: 0, duration: 0.4, ease: "back.out(1.6)" },
-        9.8
+        10.0
       );
       tl.fromTo(
         "#rec-pin-matrix",
         { opacity: 0, scale: 0.7, x: -30 },
         { opacity: 1, scale: 1.0, x: 0, duration: 0.4, ease: "back.out(1.6)" },
-        10.3
+        10.5
       );
 
-      // Tactile Toast notification slides up at bottom (10.8s)
+      // Tactile Toast notification slides up at bottom (11.0s)
       tl.fromTo(
         "#toast-stage",
         { opacity: 0, y: 50, scale: 0.9 },
         { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.8)" },
-        10.8
+        11.0
       );
 
       // Toggle UI slides in
@@ -1087,61 +1107,61 @@
         "#toggle-card",
         { opacity: 0, x: 40 },
         { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" },
-        11.5
+        11.8
       );
 
-      // Spidey Dark Mode radial switch triggers at 12.8s
+      // Spidey Dark Mode radial switch triggers at 13.0s
       tl.to(
         "#knob",
         { x: 28, duration: 0.2, ease: "power3.out" },
-        12.8
+        13.0
       );
       tl.call(
         () => {
           document.getElementById("scene-3").classList.add("spidey-mode");
         },
         null,
-        12.8
+        13.0
       );
       tl.to(
         "#scene-3",
         { backgroundColor: "#0a0608", duration: 0.35, ease: "power2.out" },
-        12.8
+        13.0
       );
       tl.to(
         "#s3-title",
         { color: "#ffffff", duration: 0.35, ease: "power2.out" },
-        12.8
+        13.0
       );
       tl.to(
         "#s3-eyebrow",
-        { color: "#ff3b30", duration: 0.35, ease: "power2.out" },
-        12.8
+        { color: "#ffffff", duration: 0.35, ease: "power2.out" },
+        13.0
       );
       tl.to(
         "#spidey-web-overlay",
         { opacity: 1, duration: 0.5, ease: "power2.out" },
-        12.85
+        13.05
       );
 
       // Shift Recruiter slightly left and reveal Dark Drawer in Spidey Mode
       tl.to(
         "#recruiter-stage",
         { x: "-70%", scale: 0.92, duration: 0.6, ease: "power2.inOut" },
-        12.8
+        13.0
       );
       tl.fromTo(
         "#dark-drawer-stage",
         { opacity: 0, x: 200, scale: 0.9 },
         { opacity: 1, x: 0, scale: 1.0, duration: 0.6, ease: "back.out(1.2)" },
-        12.95
+        13.15
       );
 
       // Scene 3 exit
       tl.to("#scene-3", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 14.7);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 4: Blockbuster Outro (15.0s – 20.0s)
+      // Scene 4: YC Demo Day Outro (15.0s – 20.0s)
       // ─────────────────────────────────────────────────────────────
       tl.set("#scene-4", { opacity: 1 }, 15.0);
 
@@ -1157,6 +1177,13 @@
         { opacity: 0, y: -300 },
         { opacity: 1, y: 0, duration: 1.0, ease: "elastic.out(1.1, 0.5)" },
         15.1
+      );
+
+      tl.fromTo(
+        "#outro-yc-badge",
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.5)" },
+        15.3
       );
 
       // Mantra
@@ -1194,7 +1221,7 @@
       // Resonant title glow
       tl.to(
         "#outro-brand",
-        { textShadow: "0 0 80px rgba(255, 59, 48, 0.95)", duration: 0.35, yoyo: true, repeat: 1 },
+        { textShadow: "0 0 80px rgba(255, 102, 0, 0.95)", duration: 0.35, yoyo: true, repeat: 1 },
         18.5
       );
 

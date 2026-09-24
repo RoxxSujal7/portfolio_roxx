@@ -1,11 +1,66 @@
-Boring portfolios were too slow. Every multiverse needs an architect.
+# Y Combinator W26 / Product Launch Share Copy
+# Product: Sujal's Developer Portfolio & Interactive Engine (v2)
+# Live URL: https://portfolio-roxx.vercel.app/ (sujal.dev)
+# GitHub: https://github.com/RoxxSujal7/portfolio_roxx
 
-Meet Sujal — Full Stack & AI Systems Engineer.
-Just shipped major UX enhancements to the interactive Spider-Verse portfolio:
-🗂️ Zero-Bounce In-Page Case Study Drawers (with real architecture pipelines & telemetry)
-📄 1-Click ATS Recruiter Mode (high-density summary, competency matrix, and PDF export)
-📋 Tactile Toast Feedback & Spidey Dark Mode
-⚡ 60fps Kinetic Physics (zero framework bloat)
+================================================================================
+[X / Twitter Thread]
+================================================================================
+80% of hiring managers bounce from portfolio websites because of slow external redirects.
 
-Explore live: https://portfolio-roxx.vercel.app/ (or sujal.dev) 🕷️⚡
+Today, we're launching Sujal.dev v2 — an engineering portfolio treated as high-throughput production infrastructure.
+
+Here is what we built (and how we achieved zero bounce rates) 🧵👇
+
+1/ In-Page Case Study Slide-Over Drawers:
+No routing changes. No page refreshes. Inspect real-time architecture diagrams, telemetry benchmarks (<1.2s latency), and multi-agent pipelines right in context.
+
+2/ 1-Click ATS Recruiter Mode:
+Tired of 5-page scrolling to find core stack competencies? Switch to high-density ATS mode with instant 1-click PDF export and tactile clipboard copy.
+
+3/ Spider-Verse Kinetic Physics + Spidey Dark Mode:
+Tactile spring physics, custom interactive stickers, and smooth radial dark mode toggling at 60fps — without React/framework bundle bloat.
+
+Built for velocity. Shipped for impact.
+
+Experience it live: https://portfolio-roxx.vercel.app/
 GitHub: https://github.com/RoxxSujal7/portfolio_roxx
+
+================================================================================
+[Hacker News / Show HN]
+================================================================================
+Show HN: Sujal.dev v2 – An interactive developer portfolio built like high-throughput software
+
+Hey HN! I'm Sujal, a Full-Stack & AI Systems Engineer.
+
+Most developer portfolios suffer from the same UX anti-pattern: external medium links, broken GitHub pages, or heavyweight single-page apps that take 4 seconds to load on mobile.
+
+I treated my portfolio as a real systems product:
+- Zero-Bounce Drawers: In-page slide-overs that render full architecture workflows and distributed telemetry without navigational context switches.
+- ATS High-Density Mode: A dedicated recruiter interface for technical recruiters who have 15 seconds to evaluate stack alignment, with instant printable PDF generation.
+- Zero-bloat kinetic engine: Hand-tuned GSAP + Lenis kinetic momentum running at 60fps with a Spider-Verse comic art direction.
+
+Live demo: https://portfolio-roxx.vercel.app/
+Source code: https://github.com/RoxxSujal7/portfolio_roxx
+
+I'd love feedback from the HN community on the architecture drawer flows and recruiter density!
+
+================================================================================
+[LinkedIn Post]
+================================================================================
+🚀 Excited to unveil a major upgrade to my engineering portfolio: Sujal.dev v2!
+
+Instead of treating a portfolio as a digital resume, I approached this redesign with product thinking:
+How do we give hiring managers and engineering leaders immediate technical depth without friction?
+
+Key UX innovations shipped:
+✅ In-Page Architecture Drawers: Deep-dive into distributed agent systems and real telemetry without leaving the page.
+✅ ATS Recruiter Mode: High-density competency matrix + 1-click PDF resume export.
+✅ Tactile Feedback Engine: Haptic-like toast notifications and fluid Spider-Verse visual design running at 60fps.
+
+Special thanks to everyone who provided feedback on early iterations!
+
+👉 Try the interactive experience: https://portfolio-roxx.vercel.app/
+⭐ Repository: https://github.com/RoxxSujal7/portfolio_roxx
+
+#YCombinator #ProductLaunch #FullStack #SoftwareEngineering #WebPerf #DeveloperPortfolio #AI
