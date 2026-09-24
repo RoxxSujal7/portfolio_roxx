@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Sujal Portfolio System Architecture",
+    "output": "public/architecture.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "full-stack",
+        "label": "Full System Architecture",
+        "focus": ["client", "edge", "astro", "motion", "drawer", "recruiter", "ci"],
+        "note": "Complete overview from edge CDN to progressive client hydration and conversion layers."
+      },
+      {
+        "id": "conversion-engine",
+        "label": "Progressive Disclosure & ATS",
+        "focus": ["client", "drawer", "recruiter", "toast"],
+        "note": "Instant in-page case study drawers, ATS recruiter modal, and 1-click clipboard actions."
+      },
+      {
+        "id": "quality-gates",
+        "label": "CI/CD & Automated Verification",
+        "focus": ["astro", "ci", "playwright", "strix"],
+        "note": "Automated build verification, Playwright E2E testing, and Strix AI pentest gates."
+      }
+    ]
+  },
+  "components": [
+    { "id": "client", "type": "external", "label": "Client Viewport", "sublabel": "Desktop / Mobile Web", "pos": [40, 240], "size": [130, 60] },
+    { "id": "edge", "type": "cloud", "label": "Vercel Edge Network", "sublabel": "Global CDN / HTTP/3", "pos": [230, 240], "size": [140, 60], "tag": "0-latency edge" },
+    { "id": "astro", "type": "frontend", "label": "Astro 7 SSG", "sublabel": "0-Runtime JS Baseline", "pos": [430, 240], "size": [140, 60], "tag": "100 Lighthouse" },
+    { "id": "motion", "type": "frontend", "label": "Motion Engine", "sublabel": "GSAP 3.15 + Lenis 1.3", "pos": [430, 110], "size": [140, 60] },
+    { "id": "theme", "type": "frontend", "label": "WAAPI Theme Engine", "sublabel": "Radial Wipe Transition", "pos": [230, 110], "size": [140, 60] },
+    { "id": "drawer", "type": "backend", "label": "Case Study Drawer", "sublabel": "Semantic <dialog> Panel", "pos": [640, 175], "size": [150, 60], "tag": "Slide-Over UX" },
+    { "id": "recruiter", "type": "backend", "label": "ATS Recruiter Modal", "sublabel": "High-Density Resume", "pos": [640, 305], "size": [150, 60], "tag": "1-Click PDF" },
+    { "id": "toast", "type": "backend", "label": "Tactile Toast Engine", "sublabel": "Clipboard Feedback", "pos": [850, 240], "size": [140, 60] },
+    { "id": "ci", "type": "cloud", "label": "GitHub Actions", "sublabel": "Automated Pipeline", "pos": [430, 390], "size": [140, 60] },
+    { "id": "playwright", "type": "security", "label": "Playwright E2E Suite", "sublabel": "UX & Gesture Tests", "pos": [640, 390], "size": [150, 60] },
+    { "id": "strix", "type": "security", "label": "Strix AI Security", "sublabel": "Diff-Scoped Pentest", "pos": [230, 390], "size": [140, 60], "tag": "SARIF 2.1" }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Client Browser Runtime", "wraps": ["motion", "theme", "drawer", "recruiter", "toast"] },
+    { "kind": "security-group", "label": "CI/CD & Automated Verification Gates", "wraps": ["ci", "playwright", "strix"] }
+  ],
+  "connections": [
+    { "id": "client-to-edge", "from": "client", "to": "edge", "label": "HTTPS Request", "variant": "emphasis", "labelDy": -26 },
+    { "id": "edge-to-astro", "from": "edge", "to": "astro", "label": "Static HTML" },
+    { "id": "astro-to-motion", "from": "astro", "to": "motion", "label": "Hydrates" },
+    { "id": "motion-to-theme", "from": "motion", "to": "theme" },
+    { "id": "astro-to-drawer", "from": "astro", "to": "drawer", "label": "Open Card" },
+    { "id": "astro-to-recruiter", "from": "astro", "to": "recruiter", "label": "ATS Trigger" },
+    { "id": "drawer-to-toast", "from": "drawer", "to": "toast", "label": "Copy Action" },
+    { "id": "recruiter-to-toast", "from": "recruiter", "to": "toast", "label": "Copy Resume" },
+    { "id": "ci-to-playwright", "from": "ci", "to": "playwright", "label": "E2E Verify" },
+    { "id": "ci-to-strix", "from": "ci", "to": "strix", "label": "AI Pentest" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Core Baseline", "items": ["Astro 7 static site generation delivering sub-second First Contentful Paint", "0-runtime JS baseline with isolated kinetic motion scripts"] },
+    { "dot": "emerald", "title": "Conversion Layer", "items": ["In-page case study slide-over drawer with architecture flows & tradeoffs", "One-click high-density ATS recruiter modal with instant print & plain-text export"] },
+    { "dot": "rose", "title": "Quality & Verification", "items": ["Comprehensive Playwright test suite verifying touch, scrolling, and deep-links", "Strix AI pentest scan gate uploading SARIF 2.1 alerts on every pull request"] }
+  ]
+}
