@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Sujal · YC Product Launch</title>
+    <title>Sujal · YC A-to-Z Product Launch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -76,7 +76,7 @@
         position: absolute;
         left: 0;
         width: 1920px;
-        height: 90px;
+        height: 80px;
         background: #000000;
         z-index: 50;
       }
@@ -89,26 +89,26 @@
         align-items: center;
         text-align: center;
         z-index: 10;
-        max-width: 1500px;
+        max-width: 1550px;
       }
       .hook-problem {
         font-family: "Montserrat", sans-serif;
-        font-size: 54px;
+        font-size: 52px;
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: #ff6600;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         text-shadow: 0 0 30px rgba(255, 102, 0, 0.5);
       }
       .hook-solution {
         font-family: "Montserrat", sans-serif;
-        font-size: 88px;
+        font-size: 82px;
         font-weight: 900;
         letter-spacing: -0.02em;
         text-transform: uppercase;
         color: #ffffff;
-        line-height: 1.05;
+        line-height: 1.08;
         text-shadow: 0 0 50px rgba(255, 102, 0, 0.6);
       }
       .hook-solution span.highlight {
@@ -116,7 +116,7 @@
       }
       .hook-sub-pill {
         font-family: "Montserrat", sans-serif;
-        font-size: 22px;
+        font-size: 21px;
         font-weight: 800;
         letter-spacing: 0.15em;
         color: #ffffff;
@@ -124,11 +124,11 @@
         border: 2px solid rgba(255, 102, 0, 0.6);
         padding: 10px 32px;
         border-radius: 999px;
-        margin-top: 32px;
+        margin-top: 30px;
         text-transform: uppercase;
       }
 
-      /* ── Scene 2: In-Page Case Study Slide-Over Drawer ── */
+      /* ── Scene 2: A is for Art Direction & Terminal Velocity ── */
       #scene-2 {
         background-color: #faf8f3;
         background-image: 
@@ -140,168 +140,247 @@
         justify-content: flex-start;
         align-items: stretch;
       }
-      .scene-2-container {
+      .scene-container {
         position: relative;
         width: 1920px;
         height: 1080px;
         overflow: hidden;
       }
-      .s2-nav-top {
+      .scene-nav-top {
         position: absolute;
-        top: 45px;
-        left: 90px;
+        top: 36px;
+        left: 70px;
+        right: 70px;
         display: flex;
         align-items: center;
-        gap: 16px;
-        z-index: 10;
+        justify-content: space-between;
+        z-index: 20;
       }
-      .s2-brand {
+      .brand-mark {
         font-family: "Montserrat", sans-serif;
-        font-size: 40px;
+        font-size: 32px;
         font-weight: 900;
-        letter-spacing: -0.03em;
         color: #1f1d3a;
+        letter-spacing: -0.03em;
       }
-      .s2-brand span {
+      .brand-mark span {
         color: #c2410c;
       }
-      .s2-pill {
+      .part-badge {
+        background: #0a0608;
+        color: #faf8f3;
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        border-radius: 4px;
+        border: 1px solid rgba(255, 102, 0, 0.4);
+      }
+
+      .s2-content-split {
+        position: absolute;
+        top: 130px;
+        left: 70px;
+        right: 70px;
+        bottom: 40px;
+        display: grid;
+        grid-template-columns: 820px 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .s2-left-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .scene-eyebrow {
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #b91c1c;
+        margin-bottom: 12px;
+      }
+      .scene-heading {
+        font-family: "Montserrat", sans-serif;
+        font-size: 58px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        line-height: 1.05;
+        color: #1f1d3a;
+        margin-bottom: 18px;
+      }
+      .scene-desc {
+        font-size: 21px;
+        line-height: 1.45;
+        color: #383556;
+        font-weight: 700;
+        max-width: 720px;
+        margin-bottom: 28px;
+      }
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .feature-pill-badge {
+        background: #ffffff;
+        border: 2px solid #1f1d3a;
+        color: #1f1d3a;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
         font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        background: #1f1d3a;
-        color: #ffffff;
-        padding: 6px 14px;
-        border-radius: 4px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        box-shadow: 3px 3px 0px #1f1d3a;
       }
 
-      .scene-2-left {
-        position: absolute;
-        top: 140px;
-        left: 90px;
-        width: 680px;
-        z-index: 10;
-      }
-      .s2-eyebrow {
-        font-family: "Montserrat", sans-serif;
-        font-size: 19px;
-        font-weight: 800;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: #b91c1c;
-        margin-bottom: 10px;
-      }
-      .s2-h1 {
-        font-family: "Montserrat", sans-serif;
-        font-size: 56px;
-        font-weight: 900;
-        line-height: 1.08;
-        letter-spacing: -0.02em;
-        color: #1f1d3a;
-        text-transform: uppercase;
-        margin-bottom: 18px;
-      }
-      .s2-h1 em {
-        font-style: italic;
-        color: #c2410c;
-      }
-      .s2-desc {
-        font-size: 20px;
-        font-weight: 700;
-        color: #383556;
-        line-height: 1.5;
-        margin-bottom: 26px;
-      }
-
-      /* Trigger Card preview */
-      .s2-trigger-card {
-        background: #ffffff;
-        border: 3px solid #1f1d3a;
-        border-radius: 14px;
-        box-shadow: 10px 12px 0px #1f1d3a;
-        padding: 24px;
+      /* Terminal UI Container in Scene 2 */
+      .terminal-frame-wrap {
         position: relative;
-        max-width: 580px;
+        background: #0d0b14;
+        border: 3px solid #1f1d3a;
+        border-radius: 12px;
+        box-shadow: 12px 14px 0px #1f1d3a;
+        overflow: hidden;
+        width: 100%;
+        max-width: 880px;
       }
-      .trigger-pill {
-        display: inline-block;
+      .terminal-titlebar {
+        background: #1f1d3a;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .win-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .win-red { background: #ff5f56; }
+      .win-yellow { background: #ffbd2e; }
+      .win-green { background: #27c93f; }
+      .terminal-title {
+        color: #faf8f3;
+        font-family: "Montserrat", sans-serif;
         font-size: 13px;
         font-weight: 800;
+        letter-spacing: 0.08em;
+        margin-left: 8px;
+      }
+      .terminal-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* ── Scene 3: B & C is for Production AI & Zero-Bounce Case Studies ── */
+      #scene-3 {
+        background-color: #faf8f3;
+        background-image: 
+          radial-gradient(#d5d0c5 1.2px, transparent 1.2px),
+          radial-gradient(#d5d0c5 1.2px, #faf8f3 1.2px);
+        background-size: 32px 32px;
+        background-position: 0 0, 16px 16px;
+        color: #1f1d3a;
+        justify-content: flex-start;
+        align-items: stretch;
+      }
+      .s3-content-split {
+        position: absolute;
+        top: 120px;
+        left: 70px;
+        right: 70px;
+        bottom: 30px;
+        display: grid;
+        grid-template-columns: 800px 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .s3-trigger-card {
+        background: #ffffff;
+        border: 3px solid #1f1d3a;
+        border-radius: 12px;
+        box-shadow: 6px 6px 0px #1f1d3a;
+        padding: 24px 28px;
+        max-width: 650px;
+        margin-top: 15px;
+      }
+      .s3-trigger-card .trigger-pill {
+        display: inline-block;
+        background: #ffded8;
+        color: #c2410c;
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 900;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        background: #fee2e2;
-        color: #991b1b;
         padding: 4px 12px;
         border-radius: 999px;
         margin-bottom: 10px;
       }
-      .trigger-title {
+      .s3-trigger-card .trigger-title {
         font-family: "Montserrat", sans-serif;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 900;
         color: #1f1d3a;
         margin-bottom: 8px;
       }
-      .trigger-action {
-        display: inline-flex;
+      .s3-trigger-card .trigger-action {
+        display: flex;
         align-items: center;
         gap: 8px;
+        margin-top: 14px;
+        color: #991b1b;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
         font-weight: 800;
-        color: #c2410c;
-        margin-top: 10px;
+        text-transform: uppercase;
       }
 
       /* Drawer Stage on Right */
       .drawer-stage {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 1000px;
-        height: 1080px;
+        position: relative;
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding-right: 80px;
-        z-index: 20;
+        flex-direction: column;
+        align-items: flex-end;
       }
       .drawer-mockup-wrapper {
-        position: relative;
-        width: 600px;
-        height: 870px;
-        border-radius: 18px;
-        border: 4px solid #1f1d3a;
-        background: #ffffff;
-        box-shadow: -20px 24px 60px rgba(31, 29, 58, 0.35), -8px 0 0px #ff6600;
+        width: 680px;
+        box-shadow: -15px 15px 40px rgba(10, 6, 8, 0.25);
+        border-radius: 16px 0 0 16px;
+        border-left: 3px solid #1f1d3a;
+        border-top: 3px solid #1f1d3a;
+        border-bottom: 3px solid #1f1d3a;
         overflow: hidden;
+        background: #ffffff;
       }
       .drawer-mockup-img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
+        display: block;
       }
 
-      /* Telemetry Badges */
       .drawer-callout {
         position: absolute;
+        left: -80px;
         background: #ffffff;
         border: 2px solid #1f1d3a;
-        padding: 12px 20px;
-        border-radius: 10px;
-        box-shadow: 6px 8px 0px #1f1d3a;
-        font-family: "Montserrat", sans-serif;
-        font-size: 17px;
-        font-weight: 800;
         color: #1f1d3a;
-        z-index: 25;
-        white-space: nowrap;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        padding: 10px 18px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 0px #1f1d3a;
         display: flex;
         align-items: center;
         gap: 10px;
+        z-index: 30;
       }
       .drawer-callout .dot {
         width: 10px;
@@ -309,301 +388,249 @@
         border-radius: 50%;
         background: #c2410c;
       }
-      #badge-latency {
-        top: 220px;
-        right: 700px;
-      }
-      #badge-pipeline {
-        top: 460px;
-        right: 700px;
-      }
-      #badge-compliance {
-        top: 700px;
-        right: 700px;
-      }
+      #badge-latency { top: 80px; }
+      #badge-pipeline { top: 320px; }
+      #badge-compliance { top: 580px; }
 
       .hero-spidey-corner {
         position: absolute;
-        bottom: 20px;
-        left: 60px;
-        width: 280px;
-        z-index: 15;
-        filter: drop-shadow(10px 16px 20px rgba(31, 29, 58, 0.3));
+        bottom: -20px;
+        right: 560px;
+        width: 250px;
+        z-index: 40;
+        pointer-events: none;
+        filter: drop-shadow(4px 4px 0px #1f1d3a);
       }
 
-      /* ── Scene 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode ── */
-      #scene-3 {
-        background-color: #faf8f3;
+      /* ── Scene 4: 1-Click ATS Recruiter Mode & Spidey Dark Theme ── */
+      #scene-4 {
+        background: #faf8f3;
         color: #1f1d3a;
         transition: background-color 0.4s ease;
       }
-      #scene-3.spidey-mode {
-        background-color: #0a0608 !important;
+      #scene-4.spidey-mode {
+        background: #0a0608 !important;
         color: #f0e8e8 !important;
       }
-      .s3-header {
+      .svg-web-grid {
         position: absolute;
-        top: 50px;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .s4-header {
+        position: absolute;
+        top: 36px;
+        left: 0;
+        width: 1920px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        width: 100%;
         z-index: 20;
       }
-      .s3-eyebrow {
+      .s4-eyebrow {
         font-family: "Montserrat", sans-serif;
-        font-size: 20px;
-        font-weight: 800;
-        letter-spacing: 0.25em;
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: #c2410c;
-        margin-bottom: 8px;
+        color: #b91c1c;
+        margin-bottom: 6px;
       }
-      .s3-title {
+      .s4-title {
         font-family: "Montserrat", sans-serif;
-        font-size: 58px;
+        font-size: 50px;
         font-weight: 900;
         letter-spacing: -0.02em;
         text-transform: uppercase;
         color: #1f1d3a;
       }
-      #scene-3.spidey-mode .s3-title {
-        color: #ffffff !important;
-      }
-      #scene-3.spidey-mode .s3-eyebrow {
-        color: #ff6600 !important;
-      }
 
-      /* Recruiter Modal Presentation in Center */
-      .recruiter-stage {
-        position: absolute;
-        top: 165px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 820px;
-        height: 720px;
-        z-index: 20;
-      }
-      .recruiter-mockup-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        border-radius: 18px;
-        border: 3px solid #1f1d3a;
-        background: #ffffff;
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-        overflow: hidden;
-      }
-      #scene-3.spidey-mode .recruiter-mockup-wrapper {
-        border-color: #ff6600;
-        box-shadow: 0 0 40px rgba(255, 102, 0, 0.4), 0 25px 60px rgba(0, 0, 0, 0.7);
-      }
-      .recruiter-mockup-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
-      }
-
-      /* Callout Pins */
-      .rec-callout {
-        position: absolute;
-        background: #ffffff;
-        border: 2px solid #1f1d3a;
-        padding: 12px 20px;
-        border-radius: 999px;
-        box-shadow: 6px 8px 0px #1f1d3a;
-        font-family: "Montserrat", sans-serif;
-        font-size: 16px;
-        font-weight: 800;
-        color: #1f1d3a;
-        z-index: 25;
-        white-space: nowrap;
-      }
-      #scene-3.spidey-mode .rec-callout {
-        background: #140b0e;
-        border-color: #ff6600;
-        color: #ffffff;
-        box-shadow: 0 0 20px rgba(255, 102, 0, 0.3), 6px 8px 0px #ff6600;
-      }
-      #rec-pin-pdf {
-        top: 200px;
-        right: 140px;
-      }
-      #rec-pin-matrix {
-        bottom: 230px;
-        left: 120px;
-      }
-
-      /* Toast Feedback */
-      .toast-stage {
-        position: absolute;
-        bottom: 45px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 35;
-      }
-      .toast-mockup-img {
-        width: 480px;
-        height: auto;
-        filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
-        border-radius: 999px;
-      }
-
-      /* Spidey Toggle UI */
+      /* Toggle Component */
       .toggle-demo {
         position: absolute;
-        top: 50px;
-        right: 90px;
+        top: 42px;
+        right: 80px;
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 12px;
         background: #ffffff;
         border: 2px solid #1f1d3a;
-        padding: 10px 22px;
+        padding: 8px 18px;
         border-radius: 999px;
-        box-shadow: 6px 6px 0px #1f1d3a;
-        z-index: 30;
-      }
-      #scene-3.spidey-mode .toggle-demo {
-        background: #140b0e;
-        border-color: #ff6600;
-        box-shadow: 0 0 24px rgba(255, 102, 0, 0.4), 6px 6px 0px #ff6600;
+        box-shadow: 3px 3px 0px #1f1d3a;
+        z-index: 25;
       }
       .toggle-label {
         font-family: "Montserrat", sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
         color: #1f1d3a;
-      }
-      #scene-3.spidey-mode .toggle-label {
-        color: #ffffff;
+        text-transform: uppercase;
       }
       .toggle-switch-ui {
-        width: 58px;
-        height: 30px;
-        background: #e8e5ef;
+        width: 52px;
+        height: 28px;
+        background: #ffded8;
         border: 2px solid #1f1d3a;
         border-radius: 999px;
         position: relative;
-      }
-      #scene-3.spidey-mode .toggle-switch-ui {
-        background: #ff6600;
-        border-color: #ffffff;
       }
       .toggle-knob {
         position: absolute;
         top: 2px;
         left: 2px;
-        width: 22px;
-        height: 22px;
-        background: #1f1d3a;
+        width: 20px;
+        height: 20px;
+        background: #c2410c;
         border-radius: 50%;
-        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
-      #scene-3.spidey-mode .toggle-knob {
-        transform: translateX(28px);
+
+      /* Recruiter Stage */
+      .recruiter-stage {
+        position: absolute;
+        top: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 820px;
+        z-index: 10;
+      }
+      .recruiter-mockup-wrapper {
+        width: 820px;
+        border: 3px solid #1f1d3a;
+        border-radius: 14px;
+        box-shadow: 10px 10px 0px #1f1d3a;
+        overflow: hidden;
         background: #ffffff;
+      }
+      .recruiter-mockup-img {
+        width: 100%;
+        display: block;
+      }
+
+      .rec-callout {
+        position: absolute;
+        background: #ffffff;
+        border: 2px solid #1f1d3a;
+        color: #1f1d3a;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        padding: 10px 20px;
+        border-radius: 999px;
+        box-shadow: 4px 4px 0px #1f1d3a;
+        z-index: 25;
+      }
+      #rec-pin-pdf { top: 190px; right: 130px; }
+      #rec-pin-matrix { bottom: 130px; left: 120px; }
+
+      .toast-stage {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 30;
+      }
+      .toast-mockup-img {
+        width: 480px;
+        filter: drop-shadow(0 10px 25px rgba(0,0,0,0.3));
       }
 
       /* Dark Mode Drawer Stage */
       .dark-drawer-stage {
         position: absolute;
-        top: 165px;
+        top: 130px;
         right: 120px;
-        width: 480px;
-        height: 720px;
-        border-radius: 18px;
+        width: 660px;
         border: 3px solid #ff6600;
-        box-shadow: 0 0 40px rgba(255, 102, 0, 0.5), 0 25px 60px rgba(0, 0, 0, 0.8);
+        border-radius: 14px;
+        box-shadow: 0 0 40px rgba(255, 102, 0, 0.4);
         overflow: hidden;
-        z-index: 22;
+        background: #0a0608;
         opacity: 0;
+        z-index: 20;
       }
       .dark-drawer-img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        display: block;
       }
 
-      .svg-web-grid {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0;
-        z-index: 10;
-      }
-
-      /* ── Scene 4: YC Demo Day Outro ── */
-      #scene-4 {
-        background: radial-gradient(circle at 50% 50%, #1a0e08 0%, #0a0608 80%);
-        color: #ffffff;
-      }
-      .outro-hanging-spidey {
-        position: absolute;
-        top: 0;
-        right: 260px;
-        width: 260px;
-        z-index: 25;
-        filter: drop-shadow(0 15px 30px rgba(255, 102, 0, 0.45));
-        transform-origin: top center;
+      /* ── Scene 5: Outro & A-to-Z Velocity Climax ── */
+      #scene-5 {
+        background: radial-gradient(circle at 50% 50%, #170d10 0%, #0a0608 85%);
       }
       .outro-silk-line {
         position: absolute;
         top: 0;
-        right: 385px;
+        right: 360px;
         width: 3px;
-        height: 180px;
+        height: 200px;
         background: #ffffff;
-        box-shadow: 0 0 10px #ffffff;
-        z-index: 24;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        z-index: 10;
       }
-      .outro-content {
+      .outro-hanging-spidey {
         position: absolute;
-        left: 140px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 30;
-        max-width: 1100px;
+        top: 120px;
+        right: 280px;
+        width: 160px;
+        z-index: 15;
+        filter: drop-shadow(0 0 30px rgba(255, 102, 0, 0.6));
+      }
+
+      .outro-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 1400px;
+        margin-left: 140px;
+        z-index: 20;
       }
       .outro-mantra {
         font-family: "Montserrat", sans-serif;
         font-size: 32px;
         font-weight: 800;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
         color: #ff6600;
-        margin-bottom: 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        text-shadow: 0 0 25px rgba(255, 102, 0, 0.5);
       }
       .outro-title {
         font-family: "Montserrat", sans-serif;
-        font-size: 125px;
+        font-size: 110px;
         font-weight: 900;
-        letter-spacing: -0.03em;
-        line-height: 0.95;
+        letter-spacing: -0.04em;
         text-transform: uppercase;
         color: #ffffff;
-        margin-bottom: 24px;
-        text-shadow: 0 0 50px rgba(255, 102, 0, 0.6);
+        line-height: 0.95;
+        margin-bottom: 26px;
+        text-shadow: 0 0 60px rgba(255, 102, 0, 0.7);
       }
       .outro-title span {
         color: #ff6600;
       }
       .outro-pills {
         display: flex;
-        gap: 16px;
-        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 12px;
+        max-width: 1000px;
+        margin-bottom: 34px;
       }
       .outro-pill {
         background: rgba(255, 255, 255, 0.08);
-        border: 1.5px solid rgba(255, 102, 0, 0.4);
+        border: 2px solid rgba(255, 102, 0, 0.4);
+        color: #f0e8e8;
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
         padding: 8px 18px;
         border-radius: 999px;
-        font-family: "Montserrat", sans-serif;
-        font-size: 16px;
-        font-weight: 800;
-        color: #ffffff;
-        letter-spacing: 0.05em;
       }
       .outro-cta-bar {
         display: flex;
@@ -611,22 +638,22 @@
         gap: 24px;
       }
       .outro-btn {
-        font-family: "Montserrat", sans-serif;
-        font-size: 24px;
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
         background: #ff6600;
         color: #0a0608;
-        padding: 16px 40px;
-        border-radius: 999px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 16px 36px;
+        border-radius: 8px;
         box-shadow: 0 0 35px rgba(255, 102, 0, 0.6);
       }
       .outro-meta {
+        color: #ffffff;
         font-family: "Nunito", sans-serif;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
-        color: #c9b8b8;
         letter-spacing: 0.05em;
       }
     </style>
@@ -636,7 +663,7 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="20"
+      data-duration="24"
       data-width="1920"
       data-height="1080"
     >
@@ -644,10 +671,10 @@
       <audio
         id="bg-music"
         data-start="0"
-        data-duration="20"
+        data-duration="24"
         data-track-index="1"
         data-volume="0.18"
-        data-fade-out="0.9"
+        data-fade-out="1.0"
         src="assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3"
       ></audio>
 
@@ -655,197 +682,254 @@
       <audio
         id="vo-1"
         data-start="0.15"
-        data-duration="4.25"
+        data-duration="4.95"
         data-track-index="2"
         data-volume="1.0"
         src="assets/voice/vo1.wav"
       ></audio>
       <audio
         id="vo-2"
-        data-start="4.5"
-        data-duration="4.33"
+        data-start="4.85"
+        data-duration="5.12"
         data-track-index="3"
         data-volume="1.0"
         src="assets/voice/vo2.wav"
       ></audio>
       <audio
         id="vo-3"
-        data-start="9.2"
-        data-duration="5.35"
+        data-start="9.65"
+        data-duration="4.14"
         data-track-index="4"
         data-volume="1.0"
         src="assets/voice/vo3.wav"
       ></audio>
       <audio
         id="vo-4"
-        data-start="15.1"
-        data-duration="4.05"
+        data-start="14.45"
+        data-duration="5.38"
         data-track-index="5"
         data-volume="1.0"
         src="assets/voice/vo4.wav"
+      ></audio>
+      <audio
+        id="vo-5"
+        data-start="19.5"
+        data-duration="4.05"
+        data-track-index="6"
+        data-volume="1.0"
+        src="assets/voice/vo5.wav"
       ></audio>
 
       <!-- Precision SFX Hits -->
       <audio
         id="sfx-hook"
-        data-start="0.6"
+        data-start="0.7"
         data-duration="1.48"
-        data-track-index="6"
+        data-track-index="7"
         data-volume="0.85"
         src="assets/sfx/impact/impactBell_heavy_000.ogg"
       ></audio>
       <audio
-        id="sfx-slide"
-        data-start="4.8"
+        id="sfx-slide1"
+        data-start="4.9"
         data-duration="0.60"
-        data-track-index="7"
+        data-track-index="8"
+        data-volume="0.7"
+        src="assets/sfx/casino/card-slide-1.ogg"
+      ></audio>
+      <audio
+        id="sfx-term-pop"
+        data-start="5.8"
+        data-duration="0.11"
+        data-track-index="9"
+        data-volume="0.6"
+        src="assets/sfx/interface/drop_001.ogg"
+      ></audio>
+      <audio
+        id="sfx-slide2"
+        data-start="9.8"
+        data-duration="0.60"
+        data-track-index="10"
         data-volume="0.7"
         src="assets/sfx/casino/card-slide-1.ogg"
       ></audio>
       <audio
         id="sfx-pin1"
-        data-start="5.6"
+        data-start="10.5"
         data-duration="0.11"
-        data-track-index="8"
+        data-track-index="11"
         data-volume="0.5"
         src="assets/sfx/interface/drop_001.ogg"
       ></audio>
       <audio
         id="sfx-pin2"
-        data-start="6.2"
+        data-start="11.2"
         data-duration="0.11"
-        data-track-index="9"
-        data-volume="0.5"
-        src="assets/sfx/interface/drop_001.ogg"
-      ></audio>
-      <audio
-        id="sfx-pin3"
-        data-start="6.8"
-        data-duration="0.11"
-        data-track-index="10"
+        data-track-index="12"
         data-volume="0.5"
         src="assets/sfx/interface/drop_001.ogg"
       ></audio>
       <audio
         id="sfx-land"
-        data-start="8.2"
+        data-start="12.8"
         data-duration="0.18"
-        data-track-index="11"
+        data-track-index="13"
         data-volume="0.85"
         src="assets/sfx/impact/impactSoft_medium_001.ogg"
       ></audio>
       <audio
         id="sfx-recruiter"
-        data-start="9.4"
+        data-start="14.6"
         data-duration="0.60"
-        data-track-index="12"
+        data-track-index="14"
         data-volume="0.6"
         src="assets/sfx/casino/card-slide-1.ogg"
       ></audio>
       <audio
         id="sfx-toast"
-        data-start="11.0"
+        data-start="15.8"
         data-duration="0.11"
-        data-track-index="16"
+        data-track-index="15"
         data-volume="0.6"
         src="assets/sfx/interface/drop_001.ogg"
       ></audio>
       <audio
         id="sfx-switch"
-        data-start="13.0"
+        data-start="17.2"
         data-duration="0.62"
-        data-track-index="13"
+        data-track-index="16"
         data-volume="0.85"
         src="assets/sfx/interface/switch_001.ogg"
       ></audio>
       <audio
         id="sfx-outro"
-        data-start="16.5"
+        data-start="20.8"
         data-duration="0.65"
-        data-track-index="14"
+        data-track-index="17"
         data-volume="0.85"
         src="assets/sfx/impact/impactBell_heavy_003.ogg"
       ></audio>
 
-      <!-- ── SCENE 1: The YC Hook (0.0s – 4.5s) ── -->
-      <div id="scene-1" class="scene clip" data-start="0" data-duration="4.5">
+      <!-- ── SCENE 1: The YC Hook (0.0s – 4.8s) ── -->
+      <div id="scene-1" class="scene clip" data-start="0" data-duration="4.8">
         <div class="letterbox-top"></div>
         <div class="letterbox-bottom"></div>
 
         <div class="yc-hook-wrap" id="hook-wrap">
           <div class="yc-badge" id="hook-yc-badge">Y Combinator · W26 Launch</div>
-          <div class="hook-problem" id="hook-problem">Portfolios Had An 80% Bounce Rate.</div>
+          <div class="hook-problem" id="hook-problem">Portfolios Were Broken Templates.</div>
           <div class="hook-solution" id="hook-solution">
-            So We Re-Architected <span class="highlight">The Resume.</span>
+            So We Re-Engineered Sujal.dev <span class="highlight">A to Z.</span>
           </div>
-          <div class="hook-sub-pill" id="hook-sub">Sujal Sah · Full Stack &amp; AI Systems Engineer</div>
+          <div class="hook-sub-pill" id="hook-sub">
+            Sujal Sah · Full Stack &amp; AI Systems Engineer
+          </div>
         </div>
       </div>
 
-      <!-- ── SCENE 2: In-Page Case Study Slide-Over Drawer (4.5s – 9.2s) ── -->
-      <div id="scene-2" class="scene clip" data-start="4.5" data-duration="4.7">
-        <div class="scene-2-container">
-          <div class="s2-nav-top" id="s2-nav">
-            <div class="s2-brand">sujal<span>.</span>dev</div>
-            <div class="s2-pill">YC Launch #01 · Zero Bounce</div>
+      <!-- ── SCENE 2: Kinetic Physics & Dev Terminal (4.8s – 9.6s) ── -->
+      <div id="scene-2" class="scene clip" data-start="4.8" data-duration="4.8">
+        <div class="scene-container">
+          <div class="scene-nav-top" id="s2-nav">
+            <div class="brand-mark">sujal<span>.dev</span></div>
+            <div class="part-badge">Part 01 · Kinetic Dev Shell</div>
           </div>
 
-          <div class="scene-2-left" id="s2-content">
-            <div class="s2-eyebrow">Zero External Redirections</div>
-            <h1 class="s2-h1">
-              In-Page Case Study<br />
-              <em>Slide-Over Drawers</em>
-            </h1>
-            <p class="s2-desc">
-              Inspect real distributed systems pipelines, telemetry benchmarks, and architecture flows without ever losing page context.
-            </p>
-
-            <div class="s2-trigger-card" id="s2-trigger">
-              <span class="trigger-pill">Production AI System</span>
-              <div class="trigger-title">Autonomous AI Assistant</div>
-              <div style="font-size: 16px; color: #383556; font-weight: 600;">Multi-agent orchestration executing autonomous coding workflows with contextual reasoning.</div>
-              <div class="trigger-action">
-                <span>Inspect Pipeline &amp; Telemetry</span>
-                <span style="font-size: 18px;">&rarr;</span>
+          <div class="s2-content-split">
+            <div class="s2-left-info" id="s2-info">
+              <div class="scene-eyebrow">Interactive Poster UI</div>
+              <div class="scene-heading">Kinetic Physics &amp; Dev Terminal</div>
+              <p class="scene-desc">
+                Sixty frames a second Lenis physics, draggable comic stickers, vintage tape peel effects, and a built-in Cmd+K developer shell with live commands.
+              </p>
+              <div class="pill-row" id="s2-pills">
+                <div class="feature-pill-badge">⚡ 60fps Kinetic UI</div>
+                <div class="feature-pill-badge">🖱️ Draggable Stickers</div>
+                <div class="feature-pill-badge">⌨️ Cmd+K Terminal</div>
+                <div class="feature-pill-badge">🎉 Confetti Triggers</div>
               </div>
             </div>
-          </div>
 
-          <!-- Drawer Stage on Right -->
-          <div class="drawer-stage" id="drawer-stage">
-            <div class="drawer-callout" id="badge-latency">
-              <span class="dot"></span>
-              <span>⚡ &lt; 1.2s Median Latency</span>
-            </div>
-            <div class="drawer-callout" id="badge-pipeline">
-              <span class="dot"></span>
-              <span>📐 6-Step Multi-Agent Pipeline</span>
-            </div>
-            <div class="drawer-callout" id="badge-compliance">
-              <span class="dot"></span>
-              <span>🛡️ 99.2% Tool Compliance</span>
-            </div>
-
-            <div class="drawer-mockup-wrapper" id="drawer-mockup">
+            <div class="terminal-frame-wrap" id="s2-terminal">
+              <div class="terminal-titlebar">
+                <div class="win-dot win-red"></div>
+                <div class="win-dot win-yellow"></div>
+                <div class="win-dot win-green"></div>
+                <div class="terminal-title">sujal@portfolio: ~ (interactive shell)</div>
+              </div>
               <img
-                src="assets/images/drawer-panel.png"
-                alt="Real In-Page Case Study Slide-Over Drawer"
-                class="drawer-mockup-img"
+                src="assets/images/terminal-ui.png"
+                alt="Interactive Terminal Shell"
+                class="terminal-img"
               />
             </div>
           </div>
-
-          <img
-            src="assets/images/hero.png"
-            alt="Spider-Man Hero Landing"
-            id="s2-spidey"
-            class="hero-spidey-corner"
-          />
         </div>
       </div>
 
-      <!-- ── SCENE 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode (9.2s – 15.0s) ── -->
-      <div id="scene-3" class="scene clip" data-start="9.2" data-duration="5.8">
+      <!-- ── SCENE 3: Production AI & Case Study Drawers (9.6s – 14.4s) ── -->
+      <div id="scene-3" class="scene clip" data-start="9.6" data-duration="4.8">
+        <div class="scene-container">
+          <div class="scene-nav-top" id="s3-nav">
+            <div class="brand-mark">sujal<span>.dev</span></div>
+            <div class="part-badge">Part 02 · Production AI Systems</div>
+          </div>
+
+          <div class="s3-content-split">
+            <div class="s2-left-info" id="s3-info">
+              <div class="scene-eyebrow">Zero External Redirections</div>
+              <div class="scene-heading">In-Page Case Study Slide-Over Drawers</div>
+              <p class="scene-desc">
+                Inspect real distributed systems pipelines, telemetry benchmarks, and architecture flows without ever losing page context.
+              </p>
+
+              <div class="s3-trigger-card" id="s3-trigger">
+                <span class="trigger-pill">Production AI System</span>
+                <div class="trigger-title">Autonomous AI Assistant</div>
+                <div style="font-size: 16px; color: #383556; font-weight: 600;">Multi-agent orchestration executing autonomous coding workflows with contextual reasoning.</div>
+                <div class="trigger-action">
+                  <span>Inspect Pipeline &amp; Telemetry</span>
+                  <span style="font-size: 18px;">&rarr;</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Drawer Stage on Right -->
+            <div class="drawer-stage" id="drawer-stage">
+              <div class="drawer-callout" id="badge-latency">
+                <span class="dot"></span>
+                <span>⚡ &lt; 1.2s Median Latency</span>
+              </div>
+              <div class="drawer-callout" id="badge-pipeline">
+                <span class="dot"></span>
+                <span>📐 6-Step Multi-Agent Pipeline</span>
+              </div>
+              <div class="drawer-callout" id="badge-compliance">
+                <span class="dot"></span>
+                <span>🛡️ 99.2% Tool Compliance</span>
+              </div>
+
+              <div class="drawer-mockup-wrapper" id="drawer-mockup" data-layout-allow-overflow>
+                <img
+                  src="assets/images/drawer-panel.png"
+                  alt="Real In-Page Case Study Slide-Over Drawer"
+                  class="drawer-mockup-img"
+                />
+              </div>
+            </div>
+
+            <img
+              src="assets/images/hero.png"
+              alt="Spider-Man Hero Landing"
+              id="s3-spidey"
+              class="hero-spidey-corner"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SCENE 4: 1-Click ATS Recruiter Mode + Spidey Dark Mode (14.4s – 19.4s) ── -->
+      <div id="scene-4" class="scene clip" data-start="14.4" data-duration="5.0">
         <!-- SVG Spiderweb background for Spidey mode -->
         <svg class="svg-web-grid" id="spidey-web-overlay" data-layout-allow-overflow viewBox="0 0 1920 1080">
           <g fill="none" stroke="#ff6600" stroke-opacity="0.35" stroke-width="1.5">
@@ -864,9 +948,9 @@
           </g>
         </svg>
 
-        <div class="s3-header" id="s3-header">
-          <div class="s3-eyebrow" id="s3-eyebrow">The Recruiter Moat</div>
-          <div class="s3-title" id="s3-title">1-Click ATS High-Density Resume</div>
+        <div class="s4-header" id="s4-header">
+          <div class="s4-eyebrow" id="s4-eyebrow">The Recruiter Moat</div>
+          <div class="s4-title" id="s4-title">1-Click ATS High-Density Resume</div>
         </div>
 
         <!-- Spidey Mode Toggle -->
@@ -905,7 +989,7 @@
           />
         </div>
 
-        <!-- Dark Mode Drawer Stage (Wipe reveal at 13.0s) -->
+        <!-- Dark Mode Drawer Stage (Wipe reveal at 17.2s) -->
         <div class="dark-drawer-stage" id="dark-drawer-stage">
           <img
             src="assets/images/drawer-dark-panel.png"
@@ -915,8 +999,8 @@
         </div>
       </div>
 
-      <!-- ── SCENE 4: YC Demo Day Outro (15.0s – 20.0s) ── -->
-      <div id="scene-4" class="scene clip" data-start="15.0" data-duration="5.0">
+      <!-- ── SCENE 5: YC Demo Day Outro & Velocity Climax (19.4s – 24.0s) ── -->
+      <div id="scene-5" class="scene clip" data-start="19.4" data-duration="4.6">
         <div class="outro-silk-line" id="outro-silk"></div>
         <img
           src="assets/images/hang.png"
@@ -936,8 +1020,10 @@
           <div class="outro-pills" id="outro-pills">
             <div class="outro-pill">🗂️ In-Page Case Studies</div>
             <div class="outro-pill">📄 1-Click ATS Resume</div>
-            <div class="outro-pill">📋 Tactile Toast Feedback</div>
+            <div class="outro-pill">⌨️ Cmd+K Dev Terminal</div>
             <div class="outro-pill">⚡ 60fps Kinetic UI</div>
+            <div class="outro-pill">🛡️ 100% WCAG 2.1 AA</div>
+            <div class="outro-pill">🚀 Zero Framework Bloat</div>
           </div>
           <div class="outro-cta-bar" id="outro-cta">
             <div class="outro-btn">We're Live on GitHub</div>
@@ -954,7 +1040,7 @@
       window.__timelines["main"] = tl;
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 1: The YC Hook (0.0s – 4.5s)
+      // Scene 1: The YC Hook (0.0s – 4.8s)
       // ─────────────────────────────────────────────────────────────
       tl.set("#scene-1", { opacity: 1 }, 0);
       tl.set("#hook-wrap", { opacity: 1, scale: 1 }, 0);
@@ -969,62 +1055,96 @@
         "#hook-problem",
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        0.4
+        0.35
       );
       tl.fromTo(
         "#hook-solution",
-        { opacity: 0, scale: 1.3, filter: "blur(10px)" },
+        { opacity: 0, scale: 1.25, filter: "blur(10px)" },
         { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: 0.6, ease: "back.out(1.4)" },
-        0.9
+        0.8
       );
       tl.fromTo(
         "#hook-sub",
         { opacity: 0, y: 20, scale: 0.85 },
         { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.4)" },
-        1.5
+        1.4
       );
 
       // Scene 1 exit zoom
       tl.to(
         "#hook-wrap",
         { scale: 1.1, opacity: 0, duration: 0.45, ease: "power3.in" },
-        4.0
+        4.2
       );
-      tl.to("#scene-1", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 4.3);
+      tl.to("#scene-1", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 4.5);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 2: In-Page Case Study Slide-Over Drawer (4.5s – 9.2s)
+      // Scene 2: Kinetic Physics & Dev Terminal (4.8s – 9.6s)
       // ─────────────────────────────────────────────────────────────
-      tl.set("#scene-2", { opacity: 1 }, 4.5);
+      tl.set("#scene-2", { opacity: 1 }, 4.8);
 
       tl.fromTo(
         "#s2-nav",
         { opacity: 0, y: -25 },
         { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
-        4.6
-      );
-
-      tl.fromTo(
-        "#s2-content",
-        { opacity: 0, x: -40 },
-        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
-        4.7
-      );
-
-      // Project trigger card
-      tl.fromTo(
-        "#s2-trigger",
-        { opacity: 0, y: 30, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.5)" },
         4.9
       );
 
-      // In-Page Drawer slides smoothly in (4.8s)
+      tl.fromTo(
+        "#s2-info",
+        { opacity: 0, x: -40 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+        5.0
+      );
+
+      tl.fromTo(
+        "#s2-terminal",
+        { opacity: 0, y: 60, scale: 0.92 },
+        { opacity: 1, y: 0, scale: 1.0, duration: 0.6, ease: "back.out(1.4)" },
+        5.2
+      );
+
+      tl.fromTo(
+        "#s2-pills",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+        5.8
+      );
+
+      tl.to("#scene-2", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 9.2);
+
+      // ─────────────────────────────────────────────────────────────
+      // Scene 3: Production AI & Case Study Drawers (9.6s – 14.4s)
+      // ─────────────────────────────────────────────────────────────
+      tl.set("#scene-3", { opacity: 1 }, 9.6);
+
+      tl.fromTo(
+        "#s3-nav",
+        { opacity: 0, y: -25 },
+        { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+        9.7
+      );
+
+      tl.fromTo(
+        "#s3-info",
+        { opacity: 0, x: -40 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+        9.8
+      );
+
+      tl.fromTo(
+        "#s3-trigger",
+        { opacity: 0, y: 30, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.5)" },
+        10.0
+      );
+
+      // Drawer slides smoothly in
       tl.fromTo(
         "#drawer-mockup",
         { x: 800, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.85, ease: "power3.out" },
-        4.8
+        { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+        9.9
       );
 
       // Telemetry Callouts pop in sequence
@@ -1032,74 +1152,71 @@
         "#badge-latency",
         { opacity: 0, x: 50, scale: 0.8 },
         { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" },
-        5.6
+        10.5
       );
       tl.fromTo(
         "#badge-pipeline",
         { opacity: 0, x: 50, scale: 0.8 },
         { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" },
-        6.2
+        11.2
       );
       tl.fromTo(
         "#badge-compliance",
         { opacity: 0, x: 50, scale: 0.8 },
         { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" },
-        6.8
+        11.8
       );
 
       // Hero landing impact
       tl.fromTo(
-        "#s2-spidey",
-        { opacity: 0, scale: 1.4, y: 40 },
-        { opacity: 1, scale: 1.0, y: 0, duration: 0.45, ease: "elastic.out(1, 0.4)" },
-        8.2
+        "#s3-spidey",
+        { opacity: 0, scale: 1.5, y: -80 },
+        { opacity: 1, scale: 1.0, y: 0, duration: 0.4, ease: "bounce.out" },
+        12.8
       );
 
-      // Scene 2 exit
-      tl.to("#scene-2", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 9.0);
+      tl.to("#scene-3", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 14.1);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode (9.2s – 15.0s)
+      // Scene 4: 1-Click ATS Recruiter Mode + Spidey Dark Mode (14.4s – 19.4s)
       // ─────────────────────────────────────────────────────────────
-      tl.set("#scene-3", { opacity: 1, backgroundColor: "#faf8f3" }, 9.2);
-      tl.set("#s3-title", { color: "#1f1d3a" }, 9.2);
-      tl.set("#s3-eyebrow", { color: "#c2410c" }, 9.2);
+      tl.set("#scene-4", { opacity: 1 }, 14.4);
 
       tl.fromTo(
-        "#s3-header",
-        { opacity: 0, y: -25 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        9.3
+        "#s4-header",
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" },
+        14.5
       );
 
-      // Recruiter Modal springs into center
+      // Recruiter modal springs up
       tl.fromTo(
         "#recruiter-stage",
-        { opacity: 0, scale: 0.85, y: 40 },
-        { opacity: 1, scale: 1.0, y: 0, duration: 0.65, ease: "back.out(1.3)" },
-        9.4
+        { opacity: 0, y: 80, scale: 0.88 },
+        { opacity: 1, y: 0, scale: 1.0, duration: 0.65, ease: "back.out(1.3)" },
+        14.6
       );
 
-      // Feature pins pop onto modal
+      // Pins pop onto Recruiter
       tl.fromTo(
         "#rec-pin-pdf",
         { opacity: 0, scale: 0.7, x: 30 },
-        { opacity: 1, scale: 1.0, x: 0, duration: 0.4, ease: "back.out(1.6)" },
-        10.0
+        { opacity: 1, scale: 1.0, x: 0, duration: 0.4, ease: "back.out(1.8)" },
+        15.1
       );
       tl.fromTo(
         "#rec-pin-matrix",
         { opacity: 0, scale: 0.7, x: -30 },
-        { opacity: 1, scale: 1.0, x: 0, duration: 0.4, ease: "back.out(1.6)" },
-        10.5
+        { opacity: 1, scale: 1.0, x: 0, duration: 0.4, ease: "back.out(1.8)" },
+        15.5
       );
 
-      // Tactile Toast notification slides up at bottom (11.0s)
+      // Tactile Toast notification pops up
       tl.fromTo(
         "#toast-stage",
         { opacity: 0, y: 50, scale: 0.9 },
         { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.8)" },
-        11.0
+        15.8
       );
 
       // Toggle UI slides in
@@ -1107,91 +1224,91 @@
         "#toggle-card",
         { opacity: 0, x: 40 },
         { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" },
-        11.8
+        16.2
       );
 
-      // Spidey Dark Mode radial switch triggers at 13.0s
+      // Spidey Dark Mode radial switch triggers at 17.2s
       tl.to(
         "#knob",
         { x: 28, duration: 0.2, ease: "power3.out" },
-        13.0
+        17.2
       );
       tl.call(
         () => {
-          document.getElementById("scene-3").classList.add("spidey-mode");
+          document.getElementById("scene-4").classList.add("spidey-mode");
         },
         null,
-        13.0
+        17.2
       );
       tl.to(
-        "#scene-3",
+        "#scene-4",
         { backgroundColor: "#0a0608", duration: 0.35, ease: "power2.out" },
-        13.0
+        17.2
       );
       tl.to(
-        "#s3-title",
+        "#s4-title",
         { color: "#ffffff", duration: 0.35, ease: "power2.out" },
-        13.0
+        17.2
       );
       tl.to(
-        "#s3-eyebrow",
+        "#s4-eyebrow",
         { color: "#ffffff", duration: 0.35, ease: "power2.out" },
-        13.0
+        17.2
       );
       tl.to(
         "#spidey-web-overlay",
         { opacity: 1, duration: 0.5, ease: "power2.out" },
-        13.05
+        17.25
       );
 
       // Shift Recruiter slightly left and reveal Dark Drawer in Spidey Mode
       tl.to(
         "#recruiter-stage",
         { x: "-70%", scale: 0.92, duration: 0.6, ease: "power2.inOut" },
-        13.0
+        17.2
       );
       tl.fromTo(
         "#dark-drawer-stage",
         { opacity: 0, x: 200, scale: 0.9 },
         { opacity: 1, x: 0, scale: 1.0, duration: 0.6, ease: "back.out(1.2)" },
-        13.15
+        17.35
       );
 
-      // Scene 3 exit
-      tl.to("#scene-3", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 14.7);
+      // Scene 4 exit
+      tl.to("#scene-4", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 19.1);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 4: YC Demo Day Outro (15.0s – 20.0s)
+      // Scene 5: YC Demo Day Outro (19.4s – 24.0s)
       // ─────────────────────────────────────────────────────────────
-      tl.set("#scene-4", { opacity: 1 }, 15.0);
+      tl.set("#scene-5", { opacity: 1 }, 19.4);
 
       // Spider-Man drops down on silk thread
       tl.fromTo(
         "#outro-silk",
         { height: 0 },
-        { height: 180, duration: 0.8, ease: "power2.out" },
-        15.1
+        { height: 180, duration: 0.7, ease: "power2.out" },
+        19.5
       );
       tl.fromTo(
         "#hanging-spidey",
         { opacity: 0, y: -300 },
-        { opacity: 1, y: 0, duration: 1.0, ease: "elastic.out(1.1, 0.5)" },
-        15.1
+        { opacity: 1, y: 0, duration: 0.9, ease: "elastic.out(1.1, 0.5)" },
+        19.5
       );
 
       tl.fromTo(
         "#outro-yc-badge",
         { opacity: 0, scale: 0.8 },
         { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.5)" },
-        15.3
+        19.7
       );
 
       // Mantra
       tl.fromTo(
         "#outro-mantra",
         { opacity: 0, x: -40 },
-        { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" },
-        15.6
+        { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" },
+        20.0
       );
 
       // Brand title slam
@@ -1199,7 +1316,7 @@
         "#outro-brand",
         { opacity: 0, scale: 1.25, filter: "blur(10px)" },
         { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: 0.6, ease: "back.out(1.5)" },
-        16.5
+        20.8
       );
 
       // Feature pills reveal
@@ -1207,7 +1324,7 @@
         "#outro-pills",
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        17.2
+        21.4
       );
 
       // CTA bar reveals
@@ -1215,14 +1332,14 @@
         "#outro-cta",
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-        17.8
+        21.9
       );
 
       // Resonant title glow
       tl.to(
         "#outro-brand",
         { textShadow: "0 0 80px rgba(255, 102, 0, 0.95)", duration: 0.35, yoyo: true, repeat: 1 },
-        18.5
+        22.5
       );
 
       tl.seek(0);
