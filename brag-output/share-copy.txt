@@ -1,5 +1,11 @@
 Boring portfolios were too slow. Every multiverse needs an architect.
 
-Meet Sujal — Full Stack & AI Engineer building autonomous multi-agent systems, document intelligence pipelines, and 60fps kinetic web experiences.
+Meet Sujal — Full Stack & AI Systems Engineer.
+Just shipped major UX enhancements to the interactive Spider-Verse portfolio:
+🗂️ Zero-Bounce In-Page Case Study Drawers (with real architecture pipelines & telemetry)
+📄 1-Click ATS Recruiter Mode (high-density summary, competency matrix, and PDF export)
+📋 Tactile Toast Feedback & Spidey Dark Mode
+⚡ 60fps Kinetic Physics (zero framework bloat)
 
-Interactive Spider-Verse portfolio live now at sujal.dev 🕷️⚡
+Explore live: https://portfolio-roxx.vercel.app/ (or sujal.dev) 🕷️⚡
+GitHub: https://github.com/RoxxSujal7/portfolio_roxx

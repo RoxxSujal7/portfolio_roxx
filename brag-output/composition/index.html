@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Nunito:wght@600;700;800;900&family=Kaushan+Script&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Nunito:wght@600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
@@ -50,7 +50,7 @@
         pointer-events: none;
       }
 
-      /* ── Scene 1: The Call (Hook) ── */
+      /* ── Scene 1: The Hook ── */
       #scene-1 {
         background: radial-gradient(circle at 50% 50%, #1a0a10 0%, #0a0608 80%);
       }
@@ -71,7 +71,6 @@
       .letterbox-top { top: 0; }
       .letterbox-bottom { bottom: 0; }
 
-      /* Phase 1 Hook Styles (Output 2) */
       .c-hook-top {
         font-family: "Montserrat", sans-serif;
         font-size: 50px;
@@ -99,7 +98,6 @@
         display: inline-block;
       }
 
-      /* Phase 2 Hook Styles (Output 1) */
       .hook-tagline {
         font-family: "Montserrat", sans-serif;
         font-size: 40px;
@@ -140,7 +138,7 @@
         display: inline-block;
       }
 
-      /* ── Scene 2: The Comic Multiverse ── */
+      /* ── Scene 2: In-Page Case Study Slide-Over Drawer ── */
       #scene-2 {
         background-color: #faf8f3;
         background-image: 
@@ -149,11 +147,19 @@
         background-size: 32px 32px;
         background-position: 0 0, 16px 16px;
         color: #1f1d3a;
+        justify-content: flex-start;
+        align-items: stretch;
       }
-      .comic-header {
+      .scene-2-container {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      .comic-nav-top {
         position: absolute;
-        top: 60px;
-        left: 120px;
+        top: 50px;
+        left: 100px;
         display: flex;
         align-items: center;
         gap: 20px;
@@ -161,7 +167,7 @@
       }
       .comic-brand {
         font-family: "Montserrat", sans-serif;
-        font-size: 48px;
+        font-size: 42px;
         font-weight: 900;
         letter-spacing: -0.03em;
         color: #1f1d3a;
@@ -171,7 +177,35 @@
       }
       .comic-badge {
         font-family: "Montserrat", sans-serif;
-        font-size: 18px;
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        background: #d8402f;
+        color: #ffffff;
+        padding: 6px 16px;
+        border-radius: 6px;
+      }
+
+      .scene-2-left {
+        position: absolute;
+        top: 150px;
+        left: 100px;
+        width: 680px;
+        z-index: 10;
+      }
+      .s2-eyebrow {
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #b91c1c;
+        margin-bottom: 12px;
+      }
+      .comic-badge {
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.15em;
@@ -180,75 +214,145 @@
         padding: 6px 16px;
         border-radius: 6px;
       }
-      .comic-title-wrap {
-        position: absolute;
-        top: 190px;
-        left: 120px;
-        max-width: 900px;
-        z-index: 10;
-      }
-      .comic-h1 {
+      .s2-h1 {
         font-family: "Montserrat", sans-serif;
-        font-size: 76px;
+        font-size: 58px;
         font-weight: 900;
-        line-height: 1.05;
+        line-height: 1.08;
         letter-spacing: -0.02em;
         color: #1f1d3a;
         text-transform: uppercase;
+        margin-bottom: 20px;
       }
-      .comic-h1 em {
+      .s2-h1 em {
         font-style: italic;
-        color: #d8402f;
-        display: block;
+        color: #b91c1c;
       }
-      .swing-spidey {
-        position: absolute;
-        width: 380px;
-        top: 40px;
-        right: 180px;
-        z-index: 20;
-        filter: drop-shadow(12px 18px 24px rgba(31, 29, 58, 0.28));
-      }
-      .hero-spidey {
-        position: absolute;
-        width: 440px;
-        bottom: 70px;
-        right: 160px;
-        z-index: 20;
-        filter: drop-shadow(14px 22px 28px rgba(31, 29, 58, 0.32));
-      }
-      .tape-notes-container {
-        position: absolute;
-        bottom: 140px;
-        left: 120px;
-        display: flex;
-        gap: 28px;
-        z-index: 15;
-      }
-      .tape-note {
-        position: relative;
-        background: #ffffff;
-        border: 2px solid #1f1d3a;
-        padding: 16px 26px;
-        border-radius: 4px;
-        box-shadow: 6px 8px 0px #1f1d3a;
-        font-family: "Montserrat", sans-serif;
-        font-size: 22px;
-        font-weight: 800;
-        color: #1f1d3a;
-      }
-      .tape-strip {
-        position: absolute;
-        top: -14px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 70px;
-        height: 22px;
-        background: rgba(242, 201, 76, 0.95);
-        border: 1px solid rgba(0, 0, 0, 0.15);
+      .s2-desc {
+        font-size: 20px;
+        font-weight: 700;
+        color: #383556;
+        line-height: 1.5;
+        margin-bottom: 30px;
       }
 
-      /* ── Scene 3: Superpowers & Spidey Mode ── */
+      /* Trigger Card preview on the left */
+      .s2-trigger-card {
+        background: #ffffff;
+        border: 3px solid #1f1d3a;
+        border-radius: 14px;
+        box-shadow: 10px 12px 0px #1f1d3a;
+        padding: 24px;
+        position: relative;
+        max-width: 580px;
+      }
+      .trigger-pill {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: #fee2e2;
+        color: #991b1b;
+        padding: 4px 12px;
+        border-radius: 999px;
+        margin-bottom: 10px;
+      }
+      .trigger-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 900;
+        color: #1f1d3a;
+        margin-bottom: 8px;
+      }
+      .trigger-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        color: #b91c1c;
+        margin-top: 12px;
+      }
+
+      /* Real Slide-Over Drawer Presentation on the right */
+      .drawer-stage {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1000px;
+        height: 1080px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 80px;
+        z-index: 20;
+      }
+      .drawer-mockup-wrapper {
+        position: relative;
+        width: 600px;
+        height: 870px;
+        border-radius: 18px;
+        border: 4px solid #1f1d3a;
+        background: #ffffff;
+        box-shadow: -20px 24px 60px rgba(31, 29, 58, 0.35), -8px 0 0px #d8402f;
+        overflow: hidden;
+      }
+      .drawer-mockup-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      /* Floating Callout Badges around the Drawer */
+      .drawer-callout {
+        position: absolute;
+        background: #ffffff;
+        border: 2px solid #1f1d3a;
+        padding: 12px 20px;
+        border-radius: 10px;
+        box-shadow: 6px 8px 0px #1f1d3a;
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        color: #1f1d3a;
+        z-index: 25;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .drawer-callout .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d8402f;
+      }
+      #badge-latency {
+        top: 220px;
+        right: 700px;
+      }
+      #badge-pipeline {
+        top: 460px;
+        right: 700px;
+      }
+      #badge-compliance {
+        top: 700px;
+        right: 700px;
+      }
+
+      .hero-spidey-corner {
+        position: absolute;
+        bottom: 20px;
+        left: 60px;
+        width: 280px;
+        z-index: 15;
+        filter: drop-shadow(10px 16px 20px rgba(31, 29, 58, 0.3));
+      }
+
+      /* ── Scene 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode ── */
       #scene-3 {
         background-color: #faf8f3;
         color: #1f1d3a;
@@ -258,119 +362,121 @@
         background-color: #0a0608 !important;
         color: #f0e8e8 !important;
       }
-      .scene-3-header {
+      .s3-header {
         position: absolute;
-        top: 70px;
+        top: 60px;
         text-align: center;
         width: 100%;
         z-index: 20;
       }
-      .scene-3-eyebrow {
+      .s3-eyebrow {
         font-family: "Montserrat", sans-serif;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 800;
-        letter-spacing: 0.3em;
+        letter-spacing: 0.28em;
         text-transform: uppercase;
         color: #d8402f;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
-      .scene-3-title {
+      .s3-title {
         font-family: "Montserrat", sans-serif;
-        font-size: 64px;
+        font-size: 60px;
         font-weight: 900;
         letter-spacing: -0.02em;
         text-transform: uppercase;
         color: #1f1d3a;
       }
-      .project-deck {
+      #scene-3.spidey-mode .s3-title {
+        color: #ffffff !important;
+      }
+
+      /* Recruiter Modal Presentation in Center */
+      .recruiter-stage {
         position: absolute;
-        top: 260px;
+        top: 175px;
         left: 50%;
         transform: translateX(-50%);
-        display: flex;
-        gap: 40px;
+        width: 820px;
+        height: 720px;
         z-index: 20;
       }
-      .proj-card {
-        width: 480px;
-        background: #ffffff;
-        border: 3px solid #1f1d3a;
-        border-radius: 16px;
-        box-shadow: 12px 14px 0px #1f1d3a;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-      }
-      #scene-3.spidey-mode .proj-card {
-        background: #140b0e;
-        border-color: #e8271a;
-        box-shadow: 0 0 30px rgba(232, 39, 26, 0.35), 10px 12px 0px #e8271a;
-      }
-      .proj-img-wrap {
+      .recruiter-mockup-wrapper {
+        position: relative;
         width: 100%;
-        height: 240px;
+        height: 100%;
+        border-radius: 18px;
+        border: 3px solid #1f1d3a;
+        background: #ffffff;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
         overflow: hidden;
-        border-bottom: 2px solid #1f1d3a;
-        background: #f0ede5;
       }
-      #scene-3.spidey-mode .proj-img-wrap {
+      #scene-3.spidey-mode .recruiter-mockup-wrapper {
         border-color: #e8271a;
-        background: #0a0608;
+        box-shadow: 0 0 40px rgba(232, 39, 26, 0.4), 0 25px 60px rgba(0, 0, 0, 0.7);
       }
-      .proj-img-wrap img {
+      .recruiter-mockup-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: top center;
       }
-      .proj-content {
-        padding: 24px;
-      }
-      .proj-tag {
-        font-size: 15px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: #d43f2e;
-        margin-bottom: 8px;
-      }
-      #scene-3.spidey-mode .scene-3-title {
-        color: #ffffff;
-      }
-      #scene-3.spidey-mode .proj-tag {
-        color: #ff3b30;
-      }
-      .proj-name {
+
+      /* Callout Pins for Recruiter */
+      .rec-callout {
+        position: absolute;
+        background: #ffffff;
+        border: 2px solid #1f1d3a;
+        padding: 12px 20px;
+        border-radius: 999px;
+        box-shadow: 6px 8px 0px #1f1d3a;
         font-family: "Montserrat", sans-serif;
-        font-size: 26px;
+        font-size: 16px;
         font-weight: 800;
         color: #1f1d3a;
-        margin-bottom: 8px;
+        z-index: 25;
+        white-space: nowrap;
       }
-      #scene-3.spidey-mode .proj-name {
+      #scene-3.spidey-mode .rec-callout {
+        background: #140b0e;
+        border-color: #e8271a;
         color: #ffffff;
+        box-shadow: 0 0 20px rgba(232, 39, 26, 0.3), 6px 8px 0px #e8271a;
       }
-      .proj-desc {
-        font-size: 17px;
-        line-height: 1.4;
-        color: #4a4866;
-        font-weight: 600;
+      #rec-pin-pdf {
+        top: 210px;
+        right: 140px;
       }
-      #scene-3.spidey-mode .proj-desc {
-        color: #c9b8b8;
+      #rec-pin-matrix {
+        bottom: 220px;
+        left: 120px;
+      }
+
+      /* Floating Tactile Toast notification */
+      .toast-stage {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 35;
+      }
+      .toast-mockup-img {
+        width: 480px;
+        height: auto;
+        filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
+        border-radius: 999px;
       }
 
       /* Spidey Toggle UI overlay */
       .toggle-demo {
         position: absolute;
-        bottom: 80px;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 60px;
+        right: 100px;
         display: flex;
         align-items: center;
-        gap: 18px;
+        gap: 14px;
         background: #ffffff;
         border: 2px solid #1f1d3a;
-        padding: 14px 28px;
+        padding: 10px 22px;
         border-radius: 999px;
         box-shadow: 6px 6px 0px #1f1d3a;
         z-index: 30;
@@ -382,7 +488,7 @@
       }
       .toggle-label {
         font-family: "Montserrat", sans-serif;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -392,8 +498,8 @@
         color: #ffffff;
       }
       .toggle-switch-ui {
-        width: 64px;
-        height: 34px;
+        width: 58px;
+        height: 30px;
         background: #e8e5ef;
         border: 2px solid #1f1d3a;
         border-radius: 999px;
@@ -407,15 +513,35 @@
         position: absolute;
         top: 2px;
         left: 2px;
-        width: 26px;
-        height: 26px;
+        width: 22px;
+        height: 22px;
         background: #1f1d3a;
         border-radius: 50%;
         transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
       #scene-3.spidey-mode .toggle-knob {
-        transform: translateX(30px);
+        transform: translateX(28px);
         background: #ffffff;
+      }
+
+      /* Dark Mode Drawer reveal in Scene 3 */
+      .dark-drawer-stage {
+        position: absolute;
+        top: 175px;
+        right: 120px;
+        width: 480px;
+        height: 720px;
+        border-radius: 18px;
+        border: 3px solid #e8271a;
+        box-shadow: 0 0 40px rgba(232, 39, 26, 0.5), 0 25px 60px rgba(0, 0, 0, 0.8);
+        overflow: hidden;
+        z-index: 22;
+        opacity: 0;
+      }
+      .dark-drawer-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       /* Dynamic SVG Web Grid in scene 3 Spidey Mode */
@@ -435,7 +561,7 @@
       .outro-hanging-spidey {
         position: absolute;
         top: 0;
-        right: 280px;
+        right: 260px;
         width: 260px;
         z-index: 25;
         filter: drop-shadow(0 15px 30px rgba(232, 39, 26, 0.45));
@@ -444,7 +570,7 @@
       .outro-silk-line {
         position: absolute;
         top: 0;
-        right: 405px;
+        right: 385px;
         width: 3px;
         height: 180px;
         background: #ffffff;
@@ -453,11 +579,11 @@
       }
       .outro-content {
         position: absolute;
-        left: 180px;
+        left: 140px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 30;
-        max-width: 1000px;
+        max-width: 1100px;
       }
       .outro-mantra {
         font-family: "Montserrat", sans-serif;
@@ -466,21 +592,37 @@
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: #ff3b30;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
       }
       .outro-title {
         font-family: "Montserrat", sans-serif;
-        font-size: 130px;
+        font-size: 125px;
         font-weight: 900;
         letter-spacing: -0.03em;
         line-height: 0.95;
         text-transform: uppercase;
         color: #ffffff;
-        margin-bottom: 30px;
+        margin-bottom: 26px;
         text-shadow: 0 0 50px rgba(232, 39, 26, 0.7);
       }
       .outro-title span {
         color: #ff3b30;
+      }
+      .outro-pills {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .outro-pill {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1.5px solid rgba(255, 59, 48, 0.4);
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 0.05em;
       }
       .outro-cta-bar {
         display: flex;
@@ -489,19 +631,19 @@
       }
       .outro-btn {
         font-family: "Montserrat", sans-serif;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         background: #ff3b30;
         color: #ffffff;
-        padding: 16px 42px;
+        padding: 16px 40px;
         border-radius: 999px;
         box-shadow: 0 0 35px rgba(255, 59, 48, 0.6);
       }
       .outro-meta {
         font-family: "Nunito", sans-serif;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 700;
         color: #c9b8b8;
         letter-spacing: 0.05em;
@@ -517,7 +659,7 @@
       data-width="1920"
       data-height="1080"
     >
-      <!-- Audio Tracks (Bed Ducked to 0.22 for Kokoro Voice Clarity) -->
+      <!-- Audio Bed Ducked for Kokoro Voice Clarity -->
       <audio
         id="bg-music"
         data-start="0"
@@ -528,7 +670,7 @@
         src="assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3"
       ></audio>
 
-      <!-- 🎙️ NARRATION TRACKS (Kokoro-82M Voice: Adam) -->
+      <!-- 🎙️ NARRATION TRACKS -->
       <audio
         id="vo-1"
         data-start="0.15"
@@ -580,26 +722,34 @@
         src="assets/sfx/impact/impactPunch_heavy_000.ogg"
       ></audio>
       <audio
-        id="sfx-note1"
-        data-start="6.6"
-        data-duration="0.11"
+        id="sfx-slide"
+        data-start="5.5"
+        data-duration="0.60"
         data-track-index="7"
-        data-volume="0.5"
-        src="assets/sfx/interface/drop_001.ogg"
+        data-volume="0.7"
+        src="assets/sfx/casino/card-slide-1.ogg"
       ></audio>
       <audio
-        id="sfx-note2"
-        data-start="7.2"
+        id="sfx-pin1"
+        data-start="6.6"
         data-duration="0.11"
         data-track-index="8"
         data-volume="0.5"
         src="assets/sfx/interface/drop_001.ogg"
       ></audio>
       <audio
-        id="sfx-note3"
-        data-start="7.8"
+        id="sfx-pin2"
+        data-start="7.2"
         data-duration="0.11"
         data-track-index="9"
+        data-volume="0.5"
+        src="assets/sfx/interface/drop_001.ogg"
+      ></audio>
+      <audio
+        id="sfx-pin3"
+        data-start="7.8"
+        data-duration="0.11"
+        data-track-index="10"
         data-volume="0.5"
         src="assets/sfx/interface/drop_001.ogg"
       ></audio>
@@ -607,32 +757,33 @@
         id="sfx-land"
         data-start="8.74"
         data-duration="0.18"
-        data-track-index="10"
+        data-track-index="11"
         data-volume="0.85"
         src="assets/sfx/impact/impactSoft_medium_001.ogg"
       ></audio>
       <audio
-        id="sfx-cards"
-        data-start="10.0"
+        id="sfx-recruiter"
+        data-start="9.8"
         data-duration="0.60"
-        data-track-index="11"
+        data-track-index="12"
         data-volume="0.6"
         src="assets/sfx/casino/card-slide-1.ogg"
+      ></audio>
+      <audio
+        id="sfx-toast"
+        data-start="11.2"
+        data-duration="0.11"
+        data-track-index="16"
+        data-volume="0.6"
+        src="assets/sfx/interface/drop_001.ogg"
       ></audio>
       <audio
         id="sfx-switch"
         data-start="13.11"
         data-duration="0.62"
-        data-track-index="12"
+        data-track-index="13"
         data-volume="0.85"
         src="assets/sfx/interface/switch_001.ogg"
-      ></audio>
-      <audio
-        id="sfx-glitch"
-        data-start="13.15"
-        data-track-index="13"
-        data-volume="0.75"
-        src="assets/sfx/interface/glitch_002.ogg"
       ></audio>
       <audio
         id="sfx-outro"
@@ -649,7 +800,7 @@
         <div class="letterbox-top"></div>
         <div class="letterbox-bottom"></div>
 
-        <!-- Phase 1: Line from Output 2 -->
+        <!-- Phase 1 Hook -->
         <div id="hook-group-1" style="text-align: center; z-index: 10;">
           <div class="c-hook-top" id="hook-top-2">Boring Portfolios</div>
           <div class="c-hook-main" id="hook-main-2">
@@ -657,7 +808,7 @@
           </div>
         </div>
 
-        <!-- Phase 2: Line from Output 1 -->
+        <!-- Phase 2 Hook -->
         <div id="hook-group-2" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 10; opacity: 0;">
           <div class="hook-tagline" id="hook-tagline-1">Every Multiverse</div>
           <div class="hook-headline" id="hook-headline-1">
@@ -667,54 +818,74 @@
         </div>
       </div>
 
-      <!-- ── SCENE 2: The Comic Multiverse (4.5s – 9.5s) ── -->
+      <!-- ── SCENE 2: In-Page Case Study Slide-Over Drawer (4.5s – 9.5s) ── -->
       <div id="scene-2" class="scene clip" data-start="4.5" data-duration="5.0">
-        <div class="comic-header" id="comic-nav">
-          <div class="comic-brand">sujal<span>.</span>dev</div>
-          <div class="comic-badge">Issue #01 · 2026 Edition</div>
-        </div>
-
-        <div class="comic-title-wrap" id="comic-text">
-          <h1 class="comic-h1">
-            Where Autonomous AI<br />
-            <em>Meets 60fps Kinetic Physics</em>
-          </h1>
-        </div>
-
-        <img
-          src="assets/images/swing.png"
-          alt="Spider-Man Swinging"
-          id="spidey-swing"
-          class="swing-spidey"
-        />
-        <img
-          src="assets/images/hero.png"
-          alt="Spider-Man Hero Landing"
-          id="spidey-hero"
-          class="hero-spidey"
-        />
-
-        <div class="tape-notes-container">
-          <div class="tape-note" id="note-1">
-            <div class="tape-strip"></div>
-            ⚡ AI & Distributed Systems
+        <div class="scene-2-container">
+          <div class="comic-nav-top" id="s2-nav">
+            <div class="comic-brand">sujal<span>.</span>dev</div>
+            <div class="comic-badge">Issue #02 · Architecture Deep Dive</div>
           </div>
-          <div class="tape-note" id="note-2">
-            <div class="tape-strip"></div>
-            🗂️ Case Study Drawers
+
+          <div class="scene-2-left" id="s2-content">
+            <div class="s2-eyebrow">Zero External Redirections</div>
+            <h1 class="s2-h1">
+              In-Page Case Study<br />
+              <em>Slide-Over Drawers</em>
+            </h1>
+            <p class="s2-desc">
+              Inspect real distributed systems pipelines, telemetry benchmarks, and architecture flows without ever losing page context.
+            </p>
+
+            <div class="s2-trigger-card" id="s2-trigger">
+              <span class="trigger-pill">Flagship System</span>
+              <div class="trigger-title">Autonomous AI Assistant</div>
+              <div style="font-size: 16px; color: #4a4866; font-weight: 600;">Multi-agent orchestration executing autonomous coding workflows with contextual reasoning.</div>
+              <div class="trigger-action">
+                <span>View Full Architecture & Benchmark</span>
+                <span style="font-size: 18px;">&rarr;</span>
+              </div>
+            </div>
           </div>
-          <div class="tape-note" id="note-3">
-            <div class="tape-strip"></div>
-            📄 1-Click ATS Resume
+
+          <!-- Drawer Stage on Right -->
+          <div class="drawer-stage" id="drawer-stage">
+            <!-- Telemetry Callout Badges -->
+            <div class="drawer-callout" id="badge-latency">
+              <span class="dot"></span>
+              <span>⚡ &lt; 1.2s Median Latency</span>
+            </div>
+            <div class="drawer-callout" id="badge-pipeline">
+              <span class="dot"></span>
+              <span>📐 6-Step Multi-Agent Pipeline</span>
+            </div>
+            <div class="drawer-callout" id="badge-compliance">
+              <span class="dot"></span>
+              <span>🛡️ 99.2% Tool Compliance</span>
+            </div>
+
+            <div class="drawer-mockup-wrapper" id="drawer-mockup">
+              <img
+                src="assets/images/drawer-panel.png"
+                alt="Real In-Page Case Study Slide-Over Drawer"
+                class="drawer-mockup-img"
+              />
+            </div>
           </div>
+
+          <img
+            src="assets/images/hero.png"
+            alt="Spider-Man Hero Landing"
+            id="s2-spidey"
+            class="hero-spidey-corner"
+          />
         </div>
       </div>
 
-      <!-- ── SCENE 3: Superpowers & Spidey Mode (9.5s – 15.0s) ── -->
+      <!-- ── SCENE 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode (9.5s – 15.0s) ── -->
       <div id="scene-3" class="scene clip" data-start="9.5" data-duration="5.5">
         <!-- SVG Spiderweb background for Spidey mode -->
         <svg class="svg-web-grid" id="spidey-web-overlay" data-layout-allow-overflow viewBox="0 0 1920 1080">
-          <g fill="none" stroke="#e8271a" stroke-opacity="0.3" stroke-width="1.5">
+          <g fill="none" stroke="#e8271a" stroke-opacity="0.35" stroke-width="1.5">
             <line x1="960" y1="540" x2="960" y2="0" />
             <line x1="960" y1="540" x2="1920" y2="0" />
             <line x1="960" y1="540" x2="1920" y2="540" />
@@ -730,51 +901,54 @@
           </g>
         </svg>
 
-        <div class="scene-3-header" id="s3-header">
-          <div class="scene-3-eyebrow" id="s3-eyebrow">Zero Gimmicks · Pure Systems Architecture</div>
-          <div class="scene-3-title" id="s3-title">Where Code Meets Responsibility</div>
+        <div class="s3-header" id="s3-header">
+          <div class="s3-eyebrow" id="s3-eyebrow">For Engineering Leaders & Hiring Managers</div>
+          <div class="s3-title" id="s3-title">1-Click ATS High-Density Resume</div>
         </div>
 
-        <div class="project-deck" id="proj-deck">
-          <div class="proj-card" id="card-1">
-            <div class="proj-img-wrap">
-              <img src="assets/images/agent.png" alt="Autonomous AI Assistant" />
-            </div>
-            <div class="proj-content">
-              <div class="proj-tag">LangChain · LLM APIs</div>
-              <div class="proj-name">Autonomous AI Assistant</div>
-              <div class="proj-desc">Multi-agent orchestration system executing workflows with contextual reasoning.</div>
-            </div>
-          </div>
-
-          <div class="proj-card" id="card-2">
-            <div class="proj-img-wrap">
-              <img src="assets/images/systems.png" alt="RAG & Semantic Search" />
-            </div>
-            <div class="proj-content">
-              <div class="proj-tag">Python · Vector DB</div>
-              <div class="proj-name">RAG & Semantic Engine</div>
-              <div class="proj-desc">High-throughput document pipeline powering grounded LLM intelligence.</div>
-            </div>
-          </div>
-
-          <div class="proj-card" id="card-3">
-            <div class="proj-img-wrap">
-              <img src="assets/images/p2p.png" alt="Real-Time Collaboration" />
-            </div>
-            <div class="proj-content">
-              <div class="proj-tag">Next.js · WebSockets</div>
-              <div class="proj-name">Real-Time Sync Platform</div>
-              <div class="proj-desc">Instant low-latency synchronization and multi-tenant live state streaming.</div>
-            </div>
-          </div>
-        </div>
-
+        <!-- Spidey Mode Toggle -->
         <div class="toggle-demo" id="toggle-card">
-          <div class="toggle-label">Interactive Spidey Mode</div>
+          <div class="toggle-label" id="toggle-label">Spidey Mode</div>
           <div class="toggle-switch-ui">
             <div class="toggle-knob" id="knob"></div>
           </div>
+        </div>
+
+        <!-- Recruiter Modal View (Centered) -->
+        <div class="recruiter-stage" id="recruiter-stage">
+          <div class="recruiter-mockup-wrapper" id="recruiter-mockup">
+            <img
+              src="assets/images/recruiter-card.png"
+              alt="Real ATS Recruiter Resume Modal"
+              class="recruiter-mockup-img"
+            />
+          </div>
+        </div>
+
+        <!-- Floating Callout Badges for Recruiter Modal -->
+        <div class="rec-callout" id="rec-pin-pdf">
+          <span>🖨️ 1-Click Print &amp; PDF Export</span>
+        </div>
+        <div class="rec-callout" id="rec-pin-matrix">
+          <span>🎯 Core Competencies &amp; Impact Bullets</span>
+        </div>
+
+        <!-- Tactile Toast Floating Feedback -->
+        <div class="toast-stage" id="toast-stage">
+          <img
+            src="assets/images/toast-pill.png"
+            alt="Tactile Toast Notification Feedback"
+            class="toast-mockup-img"
+          />
+        </div>
+
+        <!-- Dark Mode Drawer Stage (Wipe reveal at 13.11s) -->
+        <div class="dark-drawer-stage" id="dark-drawer-stage">
+          <img
+            src="assets/images/drawer-dark-panel.png"
+            alt="Drawer in Spidey Dark Mode"
+            class="dark-drawer-img"
+          />
         </div>
       </div>
 
@@ -795,9 +969,15 @@
           <div class="outro-title" id="outro-brand">
             Sujal<span>.</span>Dev
           </div>
+          <div class="outro-pills" id="outro-pills">
+            <div class="outro-pill">🗂️ In-Page Case Studies</div>
+            <div class="outro-pill">📄 1-Click ATS Resume</div>
+            <div class="outro-pill">📋 Tactile Toast Feedback</div>
+            <div class="outro-pill">⚡ 60fps Kinetic UI</div>
+          </div>
           <div class="outro-cta-bar" id="outro-cta">
             <div class="outro-btn">Explore The Multiverse</div>
-            <div class="outro-meta">Full Stack & AI Engineer · GitHub @RoxxSujal7</div>
+            <div class="outro-meta">Full Stack &amp; AI Systems Engineer · GitHub @RoxxSujal7</div>
           </div>
         </div>
       </div>
@@ -810,7 +990,7 @@
       window.__timelines["main"] = tl;
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 1: Dual Hook Sequence (Output 2 + Output 1)
+      // Scene 1: Dual Hook Sequence (0.0s – 4.5s)
       // ─────────────────────────────────────────────────────────────
       tl.set("#scene-1", { opacity: 1 }, 0);
       tl.set("#hook-group-1", { opacity: 1, scale: 1 }, 0);
@@ -867,61 +1047,64 @@
       tl.to("#scene-1", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 4.3);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 2: The Comic Multiverse (4.5s - 9.5s)
+      // Scene 2: In-Page Case Study Slide-Over Drawer (4.5s – 9.5s)
       // ─────────────────────────────────────────────────────────────
       tl.set("#scene-2", { opacity: 1 }, 4.5);
 
       tl.fromTo(
-        "#comic-nav",
+        "#s2-nav",
         { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+        { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
         4.6
       );
 
       tl.fromTo(
-        "#comic-text",
-        { opacity: 0, x: -50 },
-        { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" },
+        "#s2-content",
+        { opacity: 0, x: -40 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
         4.8
       );
 
-      // Spidey swings across frame from top-left to top-right
+      // Project trigger card bounce/pulse
       tl.fromTo(
-        "#spidey-swing",
-        { opacity: 0, x: -700, y: -200, rotation: -25, scale: 0.7 },
-        { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1.0, duration: 1.4, ease: "power2.out" },
-        5.2
-      );
-      tl.to(
-        "#spidey-swing",
-        { opacity: 0, scale: 1.1, x: 100, duration: 0.4, ease: "power1.in" },
-        6.7
+        "#s2-trigger",
+        { opacity: 0, y: 30, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.5)" },
+        5.1
       );
 
-      // // beat-grid: Taped skill notes flutter in
+      // In-Page Drawer slides smoothly out from right edge (5.5s)
       tl.fromTo(
-        "#note-1",
-        { opacity: 0, y: 50, rotation: -12, scale: 0.8 },
-        { opacity: 1, y: 0, rotation: -4, scale: 1, duration: 0.5, ease: "back.out(1.8)" },
+        "#drawer-mockup",
+        { x: 800, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.85, ease: "power3.out" },
+        5.5
+      );
+
+      // Telemetry Callouts pop in sequence
+      tl.fromTo(
+        "#badge-latency",
+        { opacity: 0, x: 50, scale: 0.8 },
+        { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" },
         6.6
       );
       tl.fromTo(
-        "#note-2",
-        { opacity: 0, y: 50, rotation: 10, scale: 0.8 },
-        { opacity: 1, y: 0, rotation: 3, scale: 1, duration: 0.5, ease: "back.out(1.8)" },
+        "#badge-pipeline",
+        { opacity: 0, x: 50, scale: 0.8 },
+        { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" },
         7.2
       );
       tl.fromTo(
-        "#note-3",
-        { opacity: 0, y: 50, rotation: -8, scale: 0.8 },
-        { opacity: 1, y: 0, rotation: -2, scale: 1, duration: 0.5, ease: "back.out(1.8)" },
+        "#badge-compliance",
+        { opacity: 0, x: 50, scale: 0.8 },
+        { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" },
         7.8
       );
 
-      // // beat-locked: 8.74s Spidey Hero Landing impact
-      tl.set("#spidey-hero", { opacity: 0, scale: 1.4, y: -60 }, 8.7);
-      tl.to(
-        "#spidey-hero",
+      // Beat-locked: 8.74s Spidey Hero Landing impact
+      tl.fromTo(
+        "#s2-spidey",
+        { opacity: 0, scale: 1.4, y: 40 },
         { opacity: 1, scale: 1.0, y: 0, duration: 0.45, ease: "elastic.out(1, 0.4)" },
         8.74
       );
@@ -930,7 +1113,7 @@
       tl.to("#scene-2", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 9.4);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 3: Superpowers & Spidey Mode (9.5s - 15.0s)
+      // Scene 3: 1-Click ATS Recruiter Mode + Spidey Dark Mode (9.5s – 15.0s)
       // ─────────────────────────────────────────────────────────────
       tl.set("#scene-3", { opacity: 1, backgroundColor: "#faf8f3" }, 9.5);
       tl.set("#s3-title", { color: "#1f1d3a" }, 9.5);
@@ -939,42 +1122,52 @@
       tl.fromTo(
         "#s3-header",
         { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         9.6
       );
 
-      // Project cards deal in
+      // Recruiter Modal springs into center
       tl.fromTo(
-        "#card-1",
-        { opacity: 0, y: 80, rotationX: 15, scale: 0.9 },
-        { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 0.6, ease: "back.out(1.4)" },
-        9.9
-      );
-      tl.fromTo(
-        "#card-2",
-        { opacity: 0, y: 80, rotationX: 15, scale: 0.9 },
-        { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 0.6, ease: "back.out(1.4)" },
-        10.2
-      );
-      tl.fromTo(
-        "#card-3",
-        { opacity: 0, y: 80, rotationX: 15, scale: 0.9 },
-        { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 0.6, ease: "back.out(1.4)" },
-        10.5
+        "#recruiter-stage",
+        { opacity: 0, scale: 0.85, y: 40 },
+        { opacity: 1, scale: 1.0, y: 0, duration: 0.65, ease: "back.out(1.3)" },
+        9.8
       );
 
-      // Toggle UI slides up
+      // Feature pins pop onto modal
       tl.fromTo(
-        "#toggle-card",
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+        "#rec-pin-pdf",
+        { opacity: 0, scale: 0.7, x: 30 },
+        { opacity: 1, scale: 1.0, x: 0, duration: 0.4, ease: "back.out(1.6)" },
+        10.4
+      );
+      tl.fromTo(
+        "#rec-pin-matrix",
+        { opacity: 0, scale: 0.7, x: -30 },
+        { opacity: 1, scale: 1.0, x: 0, duration: 0.4, ease: "back.out(1.6)" },
+        10.8
+      );
+
+      // Tactile Toast notification slides up at bottom (11.2s)
+      tl.fromTo(
+        "#toast-stage",
+        { opacity: 0, y: 50, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1.0, duration: 0.45, ease: "back.out(1.8)" },
         11.2
       );
 
-      // // beat-locked: 13.11s Spidey Dark Mode radial switch triggers
+      // Toggle UI slides in
+      tl.fromTo(
+        "#toggle-card",
+        { opacity: 0, x: 40 },
+        { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" },
+        11.8
+      );
+
+      // Beat-locked: 13.11s Spidey Dark Mode radial switch triggers
       tl.to(
         "#knob",
-        { x: 30, duration: 0.2, ease: "power3.out" },
+        { x: 28, duration: 0.2, ease: "power3.out" },
         13.11
       );
       tl.call(
@@ -990,7 +1183,7 @@
         13.11
       );
       tl.to(
-        ["#s3-title", ".toggle-label"],
+        "#s3-title",
         { color: "#ffffff", duration: 0.35, ease: "power2.out" },
         13.11
       );
@@ -1004,18 +1197,25 @@
         { opacity: 1, duration: 0.5, ease: "power2.out" },
         13.15
       );
-      tl.fromTo(
-        "#proj-deck",
-        { scale: 1.0 },
-        { scale: 1.03, duration: 0.3, yoyo: true, repeat: 1, ease: "power1.inOut" },
+
+      // Shift Recruiter slightly left and reveal Dark Drawer in Spidey Mode
+      tl.to(
+        "#recruiter-stage",
+        { x: "-70%", scale: 0.92, duration: 0.6, ease: "power2.inOut" },
         13.11
+      );
+      tl.fromTo(
+        "#dark-drawer-stage",
+        { opacity: 0, x: 200, scale: 0.9 },
+        { opacity: 1, x: 0, scale: 1.0, duration: 0.6, ease: "back.out(1.2)" },
+        13.25
       );
 
       // Scene 3 exit
       tl.to("#scene-3", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 14.85);
 
       // ─────────────────────────────────────────────────────────────
-      // Scene 4: Blockbuster Outro (15.0s - 20.0s)
+      // Scene 4: Blockbuster Outro (15.0s – 20.0s)
       // ─────────────────────────────────────────────────────────────
       tl.set("#scene-4", { opacity: 1 }, 15.0);
 
@@ -1047,12 +1247,20 @@
         15.8
       );
 
-      // // beat-locked: 17.47s brand title slam
+      // Beat-locked: 17.47s brand title slam
       tl.fromTo(
         "#outro-brand",
         { opacity: 0, scale: 1.25, filter: "blur(10px)" },
         { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: 0.6, ease: "back.out(1.5)" },
         17.47
+      );
+
+      // Feature pills reveal
+      tl.fromTo(
+        "#outro-pills",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+        17.9
       );
 
       // CTA bar reveals
@@ -1070,7 +1278,6 @@
         18.56
       );
 
-      // Hold until 20.0s
       tl.seek(0);
     </script>
   </body>

@@ -73,39 +73,45 @@ Every multiverse needs an architect. Meet Sujal — Full Stack & AI Engineer cra
 - **Audio-coupled idea:** Punch SFX at 0.65s on "WERE TOO SLOW", deep resonant trailer bell at 2.60s on "NEEDS AN ARCHITECT".
 - **Transition mood:** Cinematic camera push / zoom into the comic multiverse → Scene 2 (at 4.5s).
 
-### Scene 2 — The Comic Multiverse — 5.0s (4.5s - 9.5s)
-- **Visual:** Scene bursts into the warm vintage comic aesthetic (`#faf8f3`). Spider-Man swings across on dynamic silk line (`swing.png`), landing in heroic pose (`hero.png`).
+### Scene 2 — In-Page Case Study Slide-Over Drawer — 5.0s (4.5s - 9.5s)
+- **Visual:** Scene transitions into the warm vintage comic aesthetic (`#faf8f3`). On the left, the portfolio project card for Autonomous AI Assistant pulses. At 5.5s, the real **In-Page Case Study Slide-Over Drawer** (`drawer-panel.png`) slides in smoothly from the right edge with a deep drop shadow.
 - **Copy:**
-  - "AUTONOMOUS AI · KINETIC FRONTEND"
-  - Taped skill notes flutter in sequentially:
-    - [Full-Stack Web] (6.6s)
-    - [AI Agents & LLMs] (7.2s)
-    - [RAG & Vector DBs] (7.8s)
-- **Sequential/interaction:** 3 taped notes drop in sequence, Spider-Man hero landing.
+  - "ZERO EXTERNAL REDIRECTIONS"
+  - "IN-PAGE CASE STUDY SLIDE-OVER DRAWERS"
+  - "Inspect real distributed systems pipelines, telemetry benchmarks, and architecture flows without ever losing page context."
+  - Telemetry pins pop in:
+    - [⚡ < 1.2s Median Latency] (6.6s)
+    - [📐 6-Step Multi-Agent Pipeline] (7.2s)
+    - [🛡️ 99.2% Tool Compliance] (7.8s)
+- **Sequential/interaction:** Project card trigger, drawer slide-over, 3 telemetry pins pop onto the drawer, Spider-Man hero landing at 8.74s.
 - **Beat-locked:** Hero landing touches down at 8.74s (strong cue in vol-12).
-- **Audio intent:** Movement, kinetic comic energy.
-- **Audio-coupled idea:** Drop sound (`drop_001.ogg`) on note arrivals, soft thud (`impactSoft_medium_001.ogg`) at 8.74s on hero landing.
-- **Transition mood:** Camera pans right into the engineering lab → Scene 3 (at 9.5s).
+- **Audio intent:** High-velocity engineering presentation with tactile movement.
+- **Audio-coupled idea:** Card slide sound (`card-slide-1.ogg`) at 5.5s, drop clicks (`drop_001.ogg`) on pins, soft thud (`impactSoft_medium_001.ogg`) at 8.74s on hero landing.
+- **Transition mood:** Camera pans right into the Recruiter & Dark Mode Suite → Scene 3 (at 9.5s).
 
-### Scene 3 — Superpowers & Spidey Mode — 5.5s (9.5s - 15.0s)
-- **Visual:** 3D project cards cascade into view (Autonomous AI Assistant, RAG Engine, Real-Time Platform). A glowing cursor clicks the Spidey Theme Toggle.
-- **Copy:** "WHERE CODE MEETS RESPONSIBILITY."
-- **Sequential/interaction:** The Spidey Theme Toggle button triggers at 13.11s; a vibrant crimson radial wave sweeps across the entire viewport, flipping the canvas into nocturnal dark mode with glowing red spiderwebs.
+### Scene 3 — 1-Click ATS Recruiter Mode & Spidey Dark Theme — 5.5s (9.5s - 15.0s)
+- **Visual:** The real **ATS Recruiter Modal** (`recruiter-card.png`) springs into view with high contrast and clean typography. Feature pins highlight "1-Click Print & PDF Export" and "Core Competencies & Impact Bullets". At 11.2s, the **tactile floating toast notification** (`toast-pill.png`) slides up: "Copied sujalsah9@gmail.com to clipboard!". At 13.11s, the Spidey Mode toggle flips, washing the scene into midnight black with a glowing red spiderweb grid and revealing the **Dark Mode Drawer** (`drawer-dark-panel.png`).
+- **Copy:**
+  - "FOR ENGINEERING LEADERS & HIRING MANAGERS"
+  - "1-CLICK ATS HIGH-DENSITY RESUME"
+  - "Spidey Mode"
+- **Sequential/interaction:** Recruiter modal spring-in, feature pins pop, toast notification feedback, Spidey Dark Mode radial switch triggers at 13.11s.
 - **Beat-locked:** Spidey Theme Toggle switch at 13.11s (strong cue in vol-12).
-- **Audio intent:** High tech capability, dramatic transformation.
-- **Audio-coupled idea:** Card slide sound (`card-slide-1.ogg`) as project cards glide in; tactile toggle switch (`switch_001.ogg`) at 13.11s.
+- **Audio intent:** Clean developer tooling meets electrifying superhero transformation.
+- **Audio-coupled idea:** Card slide (`card-slide-1.ogg`) at 9.8s, toast pop (`drop_001.ogg`) at 11.2s, tactile toggle switch (`switch_001.ogg`) at 13.11s.
 - **Transition mood:** Cosmic flash / dramatic wipe → Scene 4 (at 15.0s).
 
 ### Scene 4 — Blockbuster Outro — 5.0s (15.0s - 20.0s)
-- **Visual:** Full-bleed cinematic finish. Upside-down Spider-Man (`hang.png`) drops gently on a web. Glowing red spiderweb geometry fills the background.
+- **Visual:** Full-bleed cinematic finish with nocturnal Spider-Verse aura. Spider-Man descends, title slams with crimson drop shadow, and feature badges highlight the shipped upgrades.
 - **Copy:**
-  - 16.0s: "WITH GREAT CODE COMES GREAT VELOCITY."
+  - 15.8s: "WITH GREAT CODE COMES GREAT VELOCITY."
   - 17.47s: "SUJAL.DEV" (colossal title slam, bold crimson outline)
-  - 18.56s: "FULL STACK & AI ENGINEER · GITHUB @RoxxSujal7"
-- **Sequential/interaction:** Hanging Spider-Man swings gently, title slam with crimson comic drop shadow.
-- **Beat-locked:** Mantra at 17.47s, brandmark resonance at 18.56s (strong cue in vol-12).
+  - 17.9s: [🗂️ In-Page Case Studies] [📄 1-Click ATS Resume] [📋 Tactile Toast Feedback] [⚡ 60fps Kinetic UI]
+  - 18.2s: "EXPLORE THE MULTIVERSE · FULL STACK & AI SYSTEMS ENGINEER"
+- **Sequential/interaction:** Character landing, mantra reveal, colossal brand title slam, feature pill cascade.
+- **Beat-locked:** Outro mantra at 17.47s, brandmark resonance at 18.56s (strong cue in vol-12).
 - **Audio intent:** Climax and triumphant resolution.
-- **Audio-coupled idea:** Deep final resonant bell (`impactBell_heavy_003.ogg`) at 18.56s over fading music.
+- **Audio-coupled idea:** Deep final resonant bell (`impactBell_heavy_003.ogg`) at 17.47s over fading music.
 - **Music:** Vol-12 swells and cleanly fades to 0 across 19.0s–20.0s.
 
 **Music mood for this video:** Driving cinematic rhythm with blockbuster trailer impact.  
