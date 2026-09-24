@@ -1,0 +1,630 @@
+---
+// src/components/CaseStudyDrawer.astro
+// Accessible Slide-Over Drawer for Deep-Dive Project Case Studies
+---
+
+<dialog id="case-study-drawer" class="drawer" data-lenis-prevent aria-labelledby="drawer-title" aria-modal="true">
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  
+  <div class="drawer-panel" id="drawer-panel" data-lenis-prevent role="document">
+    <!-- Header -->
+    <header class="drawer-head">
+      <div class="drawer-badge-row">
+        <span class="drawer-badge" id="drawer-tag">ARCHITECTURE DEEP DIVE</span>
+        <span class="drawer-status" id="drawer-kind-pill">PRODUCTION GRADE</span>
+      </div>
+      
+      <button type="button" class="drawer-close" id="drawer-close" aria-label="Close case study" title="Close (Esc)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </header>
+
+    <!-- Scrollable Body -->
+    <div class="drawer-body" id="drawer-body" data-lenis-prevent>
+      <div class="drawer-title-group">
+        <h2 id="drawer-title" class="drawer-title">Project Title</h2>
+        <p id="drawer-subtitle" class="drawer-subtitle">Technical Subtitle</p>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="drawer-metrics" id="drawer-metrics">
+        <!-- Dynamically injected metric tiles -->
+      </div>
+
+      <!-- Section: The Problem & Challenge -->
+      <section class="drawer-section">
+        <h3 class="section-heading">
+          <span class="heading-icon">🎯</span> The Core Engineering Challenge
+        </h3>
+        <p id="drawer-problem" class="prose-text">Detailed explanation of the technical problem solved.</p>
+      </section>
+
+      <!-- Section: Architecture Blueprint Flow -->
+      <section class="drawer-section">
+        <h3 class="section-heading">
+          <span class="heading-icon">⚡</span> Architecture Blueprint &amp; Data Flow
+        </h3>
+        <div class="flow-container" id="drawer-flow">
+          <!-- Dynamically injected flow nodes -->
+        </div>
+      </section>
+
+      <!-- Section: Key Engineering Tradeoffs -->
+      <section class="drawer-section">
+        <h3 class="section-heading">
+          <span class="heading-icon">⚖️</span> Key Technical Tradeoffs
+        </h3>
+        <ul class="tradeoff-list" id="drawer-tradeoffs">
+          <!-- Dynamically injected tradeoff points -->
+        </ul>
+      </section>
+
+      <!-- Section: Technologies & Stack -->
+      <section class="drawer-section">
+        <h3 class="section-heading">
+          <span class="heading-icon">🛠️</span> Technologies &amp; Runtime
+        </h3>
+        <div class="chips-wrap" id="drawer-tech">
+          <!-- Dynamically injected tech pills -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Sticky Footer Actions -->
+    <footer class="drawer-foot">
+      <a id="drawer-github-link" class="drawer-btn primary" href="#" target="_blank" rel="noopener noreferrer">
+        <span>Inspect Source on GitHub</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <button type="button" class="drawer-btn ghost" id="drawer-dismiss-btn">
+        Close
+      </button>
+    </footer>
+  </div>
+</dialog>
+
+<style>
+  /* -------------------------------------------------------------
+     Case Study Drawer - Desktop Slide-Over & Mobile Bottom-Sheet
+     ------------------------------------------------------------- */
+  .drawer {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    max-width: 100vw;
+    max-height: 100vh;
+    z-index: 1000;
+    overflow: hidden;
+  }
+
+  .drawer:not([open]) {
+    display: none;
+  }
+
+  .drawer[open] {
+    display: block;
+  }
+
+  .drawer::backdrop {
+    display: none; /* Custom animated backdrop below */
+  }
+
+  .drawer-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 6, 8, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 280ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .drawer[open] .drawer-backdrop {
+    opacity: 1;
+  }
+
+  /* Desktop Panel Docked Right */
+  .drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(620px, 92vw);
+    height: 100%;
+    background: var(--paper, #faf8f3);
+    color: var(--ink, #1f1d3a);
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.28);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-left: 2px solid rgba(216, 64, 47, 0.25);
+    overflow: hidden;
+    touch-action: pan-y;
+    z-index: 2;
+  }
+
+  .drawer[open] .drawer-panel {
+    transform: translateX(0);
+  }
+
+  :global(.spidey) .drawer-panel,
+  :global(.spidey-theme) .drawer-panel {
+    background: #0d080b;
+    color: #f0e8e8;
+    border-left-color: rgba(232, 39, 26, 0.35);
+  }
+
+  /* Header */
+  .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    border-bottom: 1.5px solid rgba(31, 29, 58, 0.08);
+    background: inherit;
+    flex-shrink: 0;
+  }
+
+  :global(.spidey) .drawer-head,
+  :global(.spidey-theme) .drawer-head {
+    border-bottom-color: rgba(240, 232, 232, 0.08);
+  }
+
+  .drawer-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .drawer-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--red, #d8402f);
+    background: rgba(216, 64, 47, 0.1);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  .drawer-status {
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+  }
+
+  .drawer-close {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 26px;
+    line-height: 1;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 150ms ease, transform 100ms ease;
+  }
+
+  .drawer-close:hover {
+    background: rgba(31, 29, 58, 0.08);
+  }
+
+  :global(.spidey) .drawer-close:hover,
+  :global(.spidey-theme) .drawer-close:hover {
+    background: rgba(240, 232, 232, 0.1);
+  }
+
+  .drawer-close:active {
+    transform: scale(0.92);
+  }
+
+  /* Body scroll area */
+  .drawer-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    scrollbar-width: thin;
+    scrollbar-color: var(--red, #d8402f) rgba(31, 29, 58, 0.06);
+  }
+
+  .drawer-body::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .drawer-body::-webkit-scrollbar-track {
+    background: rgba(31, 29, 58, 0.04);
+    border-radius: 999px;
+  }
+
+  .drawer-body::-webkit-scrollbar-thumb {
+    background: var(--red, #d8402f);
+    border-radius: 999px;
+  }
+
+  .drawer-body::-webkit-scrollbar-thumb:hover {
+    background: #b52e1f;
+  }
+
+  :global(.spidey) .drawer-body::-webkit-scrollbar-track,
+  :global(.spidey-theme) .drawer-body::-webkit-scrollbar-track {
+    background: rgba(240, 232, 232, 0.04);
+  }
+
+  :global(.spidey) .drawer-body::-webkit-scrollbar-thumb,
+  :global(.spidey-theme) .drawer-body::-webkit-scrollbar-thumb {
+    background: var(--red, #e8271a);
+  }
+
+  :global(.spidey) .drawer-body,
+  :global(.spidey-theme) .drawer-body {
+    scrollbar-color: var(--red, #e8271a) rgba(240, 232, 232, 0.04);
+  }
+
+  .drawer-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .drawer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0;
+    color: inherit;
+    text-wrap: balance;
+  }
+
+  .drawer-subtitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 18px;
+    color: var(--red, #d8402f);
+    margin: 0;
+  }
+
+  /* Metrics Strip */
+  .drawer-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+  }
+
+  :global(.metric-card) {
+    background: rgba(31, 29, 58, 0.04);
+    border: 1px solid rgba(31, 29, 58, 0.08);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  :global(.spidey-theme .metric-card),
+  :global(.spidey .metric-card) {
+    background: rgba(240, 232, 232, 0.04);
+    border-color: rgba(240, 232, 232, 0.08);
+  }
+
+  :global(.metric-value) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--red, #d8402f);
+    line-height: 1;
+  }
+
+  :global(.metric-label) {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.75;
+    line-height: 1.25;
+  }
+
+  /* Section details */
+  .drawer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .section-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .heading-icon {
+    font-size: 16px;
+  }
+
+  .prose-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.88;
+  }
+
+
+  /* Architecture Flow Diagram nodes */
+  .flow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(31, 29, 58, 0.03);
+    border: 1px dashed rgba(31, 29, 58, 0.16);
+    border-radius: 14px;
+    padding: 16px;
+    transition: border-color 200ms ease;
+  }
+
+  :global(.spidey-theme) .flow-container {
+    background: rgba(240, 232, 232, 0.03);
+    border-color: rgba(240, 232, 232, 0.14);
+  }
+
+  .flow-container.is-active {
+    border-color: var(--red, #d8402f);
+  }
+
+  :global(.flow-node) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    transition: transform 160ms cubic-bezier(0.34, 1.56, 0.64, 1), background 160ms ease;
+  }
+
+  :global(.flow-node.is-simulating) {
+    transform: translateX(8px);
+    background: rgba(216, 64, 47, 0.1);
+  }
+
+  :global(.spidey-theme .flow-node.is-simulating),
+  :global(.spidey .flow-node.is-simulating) {
+    background: rgba(232, 39, 26, 0.2);
+  }
+
+
+  :global(.node-pill) {
+    background: var(--paper, #faf8f3);
+    border: 1.5px solid var(--ink, #1f1d3a);
+    color: var(--ink, #1f1d3a);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 8px 14px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 0 var(--ink, #1f1d3a);
+    white-space: nowrap;
+    transition: transform 140ms ease, background 140ms ease, color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+  }
+
+  :global(.spidey-theme .node-pill),
+  :global(.spidey .node-pill) {
+    background: #140d12;
+    border-color: var(--red, #e8271a);
+    color: #f0e8e8;
+    box-shadow: 2px 2px 0 var(--red, #e8271a);
+  }
+
+  :global(.node-desc) {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  :global(.flow-arrow) {
+    display: flex;
+    justify-content: center;
+    color: var(--red, #d8402f);
+    font-size: 14px;
+    line-height: 1;
+    margin-left: 24px;
+    transition: transform 140ms ease, color 140ms ease;
+  }
+
+
+  /* Tradeoffs */
+  .tradeoff-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  :global(.tradeoff-item) {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding-left: 20px;
+    position: relative;
+    opacity: 0.88;
+  }
+
+  :global(.tradeoff-item::before) {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: var(--red, #d8402f);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* Chips */
+  .chips-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  :global(.tech-chip) {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    background: rgba(242, 201, 76, 0.28);
+    color: var(--ink, #1f1d3a);
+    border: 1px solid rgba(242, 201, 76, 0.6);
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+
+  :global(.spidey-theme .tech-chip),
+  :global(.spidey .tech-chip) {
+    background: rgba(232, 39, 26, 0.15);
+    color: #f0e8e8;
+    border-color: rgba(232, 39, 26, 0.4);
+  }
+
+  /* Sticky Footer */
+  .drawer-foot {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1.5px solid rgba(31, 29, 58, 0.08);
+    background: inherit;
+    flex-shrink: 0;
+  }
+
+  :global(.spidey-theme) .drawer-foot {
+    border-top-color: rgba(240, 232, 232, 0.08);
+  }
+
+  .drawer-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 150ms ease;
+  }
+
+  .drawer-btn.primary {
+    background: var(--red, #d8402f);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 14px rgba(216, 64, 47, 0.35);
+    flex: 1;
+  }
+
+  .drawer-btn.primary:hover {
+    box-shadow: 0 6px 20px rgba(216, 64, 47, 0.5);
+  }
+
+  .drawer-btn.primary:active {
+    transform: scale(0.97);
+  }
+
+  .drawer-btn.ghost {
+    background: transparent;
+    border: 1.5px solid rgba(31, 29, 58, 0.2);
+    color: inherit;
+  }
+
+  :global(.spidey-theme) .drawer-btn.ghost {
+    border-color: rgba(240, 232, 232, 0.2);
+  }
+
+  .drawer-btn.ghost:hover {
+    background: rgba(31, 29, 58, 0.06);
+  }
+
+  :global(.spidey-theme) .drawer-btn.ghost:hover {
+    background: rgba(240, 232, 232, 0.08);
+  }
+
+  .drawer-btn.ghost:active {
+    transform: scale(0.97);
+  }
+
+  /* Mobile Bottom-Sheet Behavior */
+  @media (max-width: 768px) {
+    .drawer-panel {
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 88vh;
+      height: 88dvh;
+      border-left: none;
+      border-top: 2px solid rgba(216, 64, 47, 0.3);
+      border-radius: 20px 20px 0 0;
+      transform: translateY(100%);
+      transition: transform 260ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .drawer[open] .drawer-panel {
+      transform: translateY(0);
+    }
+
+    .drawer-head::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(31, 29, 58, 0.2);
+    }
+
+    :global(.spidey-theme) .drawer-head::before {
+      background: rgba(240, 232, 232, 0.25);
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .drawer-panel,
+    .drawer-backdrop {
+      transition: none !important;
+    }
+  }
+</style>

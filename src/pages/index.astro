@@ -5,6 +5,8 @@ import Spider from '../components/Spider.astro';
 import Web from '../components/Web.astro';
 import Note from '../components/Note.astro';
 import Thumb from '../components/Thumb.astro';
+import CaseStudyDrawer from '../components/CaseStudyDrawer.astro';
+import RecruiterModal from '../components/RecruiterModal.astro';
 import hero from '../assets/stickers/hero.png';
 import swing from '../assets/stickers/swing.png';
 import portrait from '../assets/stickers/portrait.png';
@@ -153,14 +155,21 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
             <li><a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">Instagram</a></li>
           </ul>
         </nav>
-        <button id="theme-toggle" aria-pressed="false" aria-label="Toggle Spidey theme" title="Toggle Spidey theme">
-          <span style="position:relative;display:flex;align-items:center;justify-content:center;width:20px;height:20px;">
-            <span class="icon-paper" style="font-size:16px;">☀️</span>
-            <span class="icon-spidey" style="font-size:16px;">🕷️</span>
-          </span>
-          <span class="toggle-track"><span class="toggle-thumb"></span></span>
-          <span style="letter-spacing:0.01em">Spidey</span>
-        </button>
+        <div class="nav-controls">
+          <button id="recruiter-toggle" class="nav-recruiter-btn" type="button" aria-label="Open Recruiter Resume Mode" title="Recruiter / ATS Resume View">
+            <span class="btn-flash" aria-hidden="true">⚡</span>
+            <span>Recruiter View</span>
+          </button>
+
+          <button id="theme-toggle" aria-pressed="false" aria-label="Toggle Spidey theme" title="Toggle Spidey theme">
+            <span style="position:relative;display:flex;align-items:center;justify-content:center;width:20px;height:20px;">
+              <span class="icon-paper" style="font-size:16px;">☀️</span>
+              <span class="icon-spidey" style="font-size:16px;">🕷️</span>
+            </span>
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span style="letter-spacing:0.01em">Spidey</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -238,10 +247,11 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
           <h2>My work</h2>
           <span class="script sub">selected projects &amp; engineering builds</span>
         </header>
+
         <ul class="grid" data-stagger>
           {work.map((w) => (
-            <li class="card">
-              <a class="card-link" href={w.href ?? '#contact'} target={w.href ? '_blank' : undefined} rel={w.href ? 'noopener noreferrer' : undefined}>
+            <li class="card" data-kind={w.kind}>
+              <a class="card-link" href={`#project-${w.kind}`} aria-label={`Inspect ${w.title} architecture case study`}>
                 <div class="thumb">
                   {art[w.kind]
                     ? <Image src={art[w.kind]} alt={`${w.title} illustration`} widths={[420, 640, 900]} sizes="(max-width: 900px) 92vw, 380px" format="webp" quality={80} />
@@ -250,7 +260,10 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
                 <div class="body">
                   <h3>{w.title}</h3>
                   <p>{w.line}</p>
-                  <span class="tag">{w.tag}</span>
+                  <div class="card-meta">
+                    <span class="tag">{w.tag}</span>
+                    <span class="card-cta">Inspect ➔</span>
+                  </div>
                 </div>
               </a>
             </li>
@@ -302,7 +315,13 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
       </div>
     </footer>
 
+    <CaseStudyDrawer />
+    <RecruiterModal />
+
     <script>import '../scripts/motion.ts';</script>
     <script>import '../scripts/theme.ts';</script>
+    <script>import '../scripts/drawer.ts';</script>
+    <script>import '../scripts/toast.ts';</script>
+    <script>import '../scripts/recruiter.ts';</script>
   </body>
 </html>

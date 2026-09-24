@@ -227,6 +227,58 @@ html, body, #theme-toggle, #theme-toggle .toggle-track {
 .spidey .card h3 { color: var(--ink); }
 .spidey .card .tag { color: var(--red); }
 
+/* ── Nav Controls (Recruiter view, Theme Toggle) ─── */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+
+.nav-recruiter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border: 1.5px solid var(--red);
+  border-radius: 999px;
+  background: rgba(216, 64, 47, 0.08);
+  color: var(--red);
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 rgba(216, 64, 47, 0.2);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.nav-recruiter-btn:hover {
+  background: var(--red);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(216, 64, 47, 0.35);
+}
+
+.nav-recruiter-btn:active {
+  transform: scale(0.96);
+}
+
+.spidey .nav-recruiter-btn {
+  background: rgba(232, 39, 26, 0.15);
+  border-color: var(--red);
+  color: #f0e8e8;
+  box-shadow: 2px 2px 0 rgba(232, 39, 26, 0.3);
+}
+
+.spidey .nav-recruiter-btn:hover {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(232, 39, 26, 0.6);
+}
+
+
 /* ── Theme toggle button ─────────────────────────────────────────── */
 #theme-toggle {
   display: flex; align-items: center; gap: 8px;
@@ -355,6 +407,7 @@ a { color: inherit; text-decoration: none; }
 .sticker:hover img { transform: rotate(-1.5deg) translateY(-4px); }
 
 /* ---------- taped notes ---------- */
+/* ---------- taped notes & physical peeling ---------- */
 .note {
   position: relative; display: inline-block;
   background: #fff; color: var(--ink);
@@ -362,13 +415,38 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 18px 12px; border: 1.5px solid rgba(31, 29, 58, 0.18);
   box-shadow: 0 8px 18px rgba(31, 29, 58, 0.14);
   transform: rotate(var(--r, 0deg));
+  transform-origin: center center;
   transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
-@media (hover: hover) and (pointer: fine) {
-  .note:hover { transform: rotate(0deg) translateY(-3px); box-shadow: 0 14px 26px rgba(31, 29, 58, 0.18); }
+
+/* Tape physical geometry & peeling */
+.note .tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 58px;
+  height: 19px;
+  background: var(--tape);
+  transform: translateX(-50%) rotate(-3deg);
+  transform-origin: 15% 90%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
+  transition: transform 0.22s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.22s ease, background-color 0.2s ease;
+  pointer-events: auto;
 }
-.note:active { transform: scale(0.97) rotate(0deg); box-shadow: 0 4px 10px rgba(31, 29, 58, 0.12); }
-.note .tape { position: absolute; top: -9px; left: 50%; width: 58px; height: 18px; background: var(--tape); transform: translateX(-50%) rotate(-3deg); box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+
+/* Tape subtle lift on hover */
+@media (hover: hover) and (pointer: fine) {
+  .note:hover {
+    transform: rotate(0deg) translateY(-4px);
+    box-shadow: 0 16px 28px rgba(31, 29, 58, 0.2);
+  }
+  .note:hover .tape {
+    transform: translateX(-50%) rotate(-9deg) skewX(8deg) translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18), inset 0 -1px 3px rgba(255, 255, 255, 0.4);
+  }
+}
+
+
 a.note:hover { color: var(--red); }
 
 /* ---------- spider + web ---------- */
@@ -459,6 +537,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
 .hang-rig { position: absolute; left: clamp(0px, 9%, 170px); top: -70px; transform-origin: top center; z-index: 2; }
 .hang-rig .line { width: 2px; height: 90px; margin: 0 auto; background: var(--ink); }
 .hang-rig .sticker { width: clamp(90px, 10vw, 150px); transform: rotate(180deg); margin-top: -8px; }
+
 .grid {
   position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin: 0; padding: 0; list-style: none;
   perspective: 1200px;
@@ -493,7 +572,39 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
 .card .body { padding: 16px 18px 18px; }
 .card h3 { font-size: 18px; font-weight: 800; letter-spacing: 0; margin-bottom: 6px; }
 .card p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
-.card .tag { display: inline-block; margin-top: 12px; font-family: var(--hand); font-size: 16px; color: var(--red); text-transform: uppercase; }
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 8px;
+}
+.card .tag { display: inline-block; font-family: var(--hand); font-size: 16px; color: var(--red); text-transform: uppercase; margin: 0; }
+.card-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  opacity: 0.7;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 150ms ease, transform 150ms ease, color 150ms ease;
+  white-space: nowrap;
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card-cta {
+    opacity: 1;
+    color: var(--red);
+    transform: translateX(4px);
+  }
+}
+.spidey .card-cta {
+  color: #f0e8e8;
+}
+.spidey .card:hover .card-cta {
+  color: var(--red);
+}
 .work-foot { position: relative; margin-top: clamp(240px, 30vw, 420px); }
 .work-foot .band { position: relative; min-height: 96px; display: grid; align-items: center; text-align: left; padding-left: clamp(24px, 4vw, 60px); padding-right: clamp(240px, 26vw, 360px); }
 .work-foot .band .h { font-size: clamp(18px, 2vw, 28px); }
@@ -547,3 +658,86 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
   .laptop-figure { width: 40vw; right: 6px; }
   .contact-figure { width: min(70vw, 300px); }
 }
+
+/* ---------- toast notification ---------- */
+#toast-container {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.toast-bubble {
+  pointer-events: auto;
+  background: var(--ink, #1f1d3a);
+  color: #fff;
+  border: 1.5px solid var(--red, #d8402f);
+  border-radius: 999px;
+  padding: 10px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  animation: toastSlideUp 240ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.spidey .toast-bubble,
+.spidey-theme .toast-bubble {
+  background: #12090c;
+  color: #f0e8e8;
+  border-color: var(--red, #e8271a);
+  box-shadow: 0 8px 30px rgba(232, 39, 26, 0.35);
+}
+
+.toast-bubble.toast-exit {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.toast-action {
+  background: var(--red, #d8402f);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.toast-action:active {
+  transform: scale(0.94);
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- background lock when drawer is active ---------- */
+html.drawer-locked,
+body.drawer-locked {
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+}
+

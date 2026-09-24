@@ -10,14 +10,27 @@ gsap.registerPlugin(ScrollTrigger);
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // --- Smooth scroll, kept in sync with ScrollTrigger ---
-const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+const lenis = new Lenis({
+  lerp: 0.1,
+  smoothWheel: true,
+  prevent: (node) => {
+    return (
+      node?.hasAttribute?.('data-lenis-prevent') ||
+      node?.closest?.('#case-study-drawer') !== null ||
+      node?.closest?.('[data-lenis-prevent]') !== null
+    );
+  }
+});
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((t) => lenis.raf(t * 1000));
 gsap.ticker.lagSmoothing(0);
+if (typeof window !== 'undefined') {
+  (window as any).lenis = lenis;
+}
 
 // --- Smooth animated scrolling for internal anchor links (About, Work, Contact, Hero CTAs) ---
 document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
-  if (anchor.classList.contains('skip-link')) return; // allow screen readers / keyboard to jump immediately
+  if (anchor.classList.contains('skip-link') || anchor.classList.contains('card-link')) return; // allow screen readers and drawer cards to handle their own actions
   anchor.addEventListener('click', (e) => {
     const href = anchor.getAttribute('href');
     if (!href || href === '#') return;
@@ -73,7 +86,7 @@ document.querySelectorAll<SVGPathElement>('.thread path').forEach((p) => {
   intro.to(p, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' }, 0.9);
 });
 
-// --- Organic floating idle on hero sticky notes ---
+// --- Organic floating idle for hero skill notes ---
 if (!prefersReduced) {
   document.querySelectorAll<HTMLElement>('.labels .note').forEach((note, i) => {
     gsap.to(note, {
@@ -83,7 +96,7 @@ if (!prefersReduced) {
       yoyo: true,
       repeat: -1,
       ease: 'sine.inOut',
-      delay: 1.8 + i * 0.12
+      delay: 1.8 + i * 0.12,
     });
   });
 }

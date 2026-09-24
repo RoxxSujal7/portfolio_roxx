@@ -1,0 +1,656 @@
+---
+// src/components/RecruiterModal.astro
+// High-Density, ATS-Optimized Recruiter View & Printable Resume
+---
+
+<dialog id="recruiter-modal" class="recruiter-dialog" data-lenis-prevent aria-labelledby="recruiter-title" aria-modal="true">
+  <div class="recruiter-backdrop" id="recruiter-backdrop"></div>
+
+  <div class="recruiter-window" id="recruiter-window" role="document">
+    <!-- Action Bar (Hidden on Print) -->
+    <header class="recruiter-topbar">
+      <div class="topbar-left">
+        <span class="badge-ats">ATS OPTIMIZED</span>
+        <span class="badge-status">OPEN FOR SELECT ROLES</span>
+      </div>
+
+      <div class="topbar-actions">
+        <button type="button" class="action-btn" id="resume-print-btn" title="Print or Save as PDF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Save as PDF</span>
+        </button>
+
+        <button type="button" class="action-btn" id="resume-copy-btn" title="Copy raw plain-text resume">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>Copy Text</span>
+        </button>
+
+        <button type="button" class="close-btn" id="recruiter-close-btn" aria-label="Close recruiter view" title="Close (Esc)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Resume Document Content -->
+    <div class="resume-sheet" id="resume-sheet">
+      <!-- Candidate Header -->
+      <section class="resume-header">
+        <div class="header-main">
+          <h1 id="recruiter-title" class="candidate-name">Sujal Sah</h1>
+          <p class="candidate-role">Full Stack &amp; AI Systems Engineer</p>
+        </div>
+
+        <div class="header-contact">
+          <a href="mailto:sujalsah9@gmail.com" class="contact-link">sujalsah9@gmail.com</a>
+          <span class="contact-sep" aria-hidden="true">•</span>
+          <a href="https://github.com/RoxxSujal7" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/RoxxSujal7</a>
+          <span class="contact-sep" aria-hidden="true">•</span>
+          <a href="https://www.linkedin.com/in/sujalroxx7/" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/sujalroxx7</a>
+          <span class="contact-sep" aria-hidden="true">•</span>
+          <span class="contact-loc">Remote / Global</span>
+        </div>
+      </section>
+
+      <!-- Executive Profile -->
+      <section class="resume-block">
+        <h2 class="block-title">Executive Summary</h2>
+        <p class="summary-text">
+          Full Stack &amp; Autonomous AI Systems Engineer with a deep focus on distributed high-throughput architecture, multi-agent LLM orchestration, and locked 60fps web experiences. Proven track record building resilient, production-ready systems including vector memory pipelines, WebSocket collaboration engines, and hybrid RAG search architectures.
+        </p>
+      </section>
+
+      <!-- Core Competencies Matrix -->
+      <section class="resume-block">
+        <h2 class="block-title">Core Competencies &amp; Technical Stack</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <span class="cat-name">AI &amp; Intelligent Systems:</span>
+            <span class="cat-items">LangChain, Multi-Agent Swarms, ReAct Loops, Qdrant Vector DB, Hybrid RAG (BM25 + Dense Fusion), Cross-Encoders, Sentence-Transformers, OpenAI/Anthropic APIs.</span>
+          </div>
+
+          <div class="skill-category">
+            <span class="cat-name">Backend &amp; Distributed Architecture:</span>
+            <span class="cat-items">Python 3.11+, FastAPI, Node.js, Next.js, Redis (Pub/Sub &amp; BullMQ), WebSockets, PostgreSQL, TimescaleDB, Docker, Asynchronous Microservices.</span>
+          </div>
+
+          <div class="skill-category">
+            <span class="cat-name">Frontend Architecture &amp; Motion:</span>
+            <span class="cat-items">TypeScript, Astro, React, GSAP 3.15, Lenis Smooth Scroll, Web Animations API (WAAPI), Semantic HTML5, Vanilla CSS Design Systems, WCAG 2.1 AA.</span>
+          </div>
+
+          <div class="skill-category">
+            <span class="cat-name">DevOps &amp; Engineering Quality:</span>
+            <span class="cat-items">Docker containerization, Git workflows, Playwright E2E automated test suites, CI/CD automated gates, token-budget optimization.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Production Projects & System Track Record -->
+      <section class="resume-block">
+        <h2 class="block-title">Featured Production Systems &amp; Architecture</h2>
+
+        <!-- Project 1 -->
+        <article class="project-entry">
+          <div class="entry-header">
+            <div class="entry-title-row">
+              <h3 class="entry-title">Autonomous AI Assistant &amp; Orchestration Swarm</h3>
+              <span class="entry-metric-pill">&lt; 1.2s Turnaround • 40% Token Savings</span>
+            </div>
+            <span class="entry-tech">Python, FastAPI, LangChain, Qdrant Vector DB, Docker</span>
+          </div>
+          <ul class="entry-bullets">
+            <li>Architected a multi-agent swarm orchestrating specialized subagents via dynamic ReAct loops with runtime error recovery.</li>
+            <li>Integrated persistent vector memory using Qdrant with hybrid semantic retrieval and automated token pruning algorithms.</li>
+            <li>Enforced strict schema validation on tool calls, reaching 99.2% tool compliance without LLM hallucinations.</li>
+          </ul>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-entry">
+          <div class="entry-header">
+            <div class="entry-title-row">
+              <h3 class="entry-title">Real-Time Distributed Collaboration Platform</h3>
+              <span class="entry-metric-pill">10K+ WebSockets • &lt; 15ms Broadcast</span>
+            </div>
+            <span class="entry-tech">Next.js 14, TypeScript, Node.js, WebSockets, Redis, PostgreSQL</span>
+          </div>
+          <ul class="entry-bullets">
+            <li>Engineered an optimistic mutation pipeline supporting 10,000+ simultaneous WebSockets synchronized across horizontal Redis Pub/Sub channels.</li>
+            <li>Implemented Conflict-Free Replicated Data Types (CRDTs) to ensure deterministic document state reconciliation without centralized locking.</li>
+            <li>Debounced database write snapshots, decreasing primary database connection overhead by over 70%.</li>
+          </ul>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-entry">
+          <div class="entry-header">
+            <div class="entry-title-row">
+              <h3 class="entry-title">Hybrid RAG &amp; Semantic Retrieval Engine</h3>
+              <span class="entry-metric-pill">94.1% Recall • 100% Grounding</span>
+            </div>
+            <span class="entry-tech">Python 3.11, Qdrant, BM25, Sentence-Transformers, Docker</span>
+          </div>
+          <ul class="entry-bullets">
+            <li>Formulated a hybrid Reciprocal Rank Fusion (RRF) pipeline combining sparse BM25 keyword search with dense vector embeddings.</li>
+            <li>Embedded cross-encoder re-ranking to filter false positives, boosting recall on technical queries by 34% compared to standard vector search.</li>
+            <li>Engineered sliding-window semantic overlap chunking with dynamic metadata filtering for verbatim source attribution.</li>
+          </ul>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-entry">
+          <div class="entry-header">
+            <div class="entry-title-row">
+              <h3 class="entry-title">Intelligent Automation Queue &amp; Media Pipeline</h3>
+              <span class="entry-metric-pill">99.99% Delivery SLA • 4x Scaling</span>
+            </div>
+            <span class="entry-tech">Node.js, TypeScript, BullMQ, Redis, Docker, REST APIs</span>
+          </div>
+          <ul class="entry-bullets">
+            <li>Designed a fault-tolerant job scheduler orchestrating asynchronous media transformation and machine learning inference.</li>
+            <li>Isolated compute-heavy workers into ephemeral Docker pools with automated exponential retry and dead-letter queues.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Education & Highlights -->
+      <section class="resume-block">
+        <h2 class="block-title">Education &amp; Background</h2>
+        <div class="edu-entry">
+          <div class="edu-row">
+            <span class="edu-degree">Bachelor of Technology / Computer Engineering</span>
+            <span class="edu-status">Active Practitioner</span>
+          </div>
+          <p class="edu-sub">Extensive hands-on expertise building production systems, open-source AI tooling, and high-performance interactive architectures.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  /* -------------------------------------------------------------
+     Recruiter Modal & ATS Printable Resume Styling
+     ------------------------------------------------------------- */
+  .recruiter-dialog {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    z-index: 1500;
+    overflow: hidden;
+  }
+
+  .recruiter-dialog:not([open]) {
+    display: none;
+  }
+
+  .recruiter-dialog[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .recruiter-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 6, 8, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 240ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .recruiter-dialog[open] .recruiter-backdrop {
+    opacity: 1;
+  }
+
+  .recruiter-window {
+    position: relative;
+    width: min(840px, 94vw);
+    max-height: 90vh;
+    background: var(--paper, #faf8f3);
+    color: var(--ink, #1f1d3a);
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    border: 2px solid rgba(216, 64, 47, 0.35);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.96) translateY(12px);
+    opacity: 0;
+    transition: transform 260ms cubic-bezier(0.23, 1, 0.32, 1), opacity 220ms ease;
+    z-index: 2;
+  }
+
+  .recruiter-dialog[open] .recruiter-window {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  :global(.spidey) .recruiter-window,
+  :global(.spidey-theme) .recruiter-window {
+    background: #0d080b;
+    color: #f0e8e8;
+    border-color: rgba(232, 39, 26, 0.45);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(232, 39, 26, 0.15);
+  }
+
+  /* Top Bar */
+  .recruiter-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    border-bottom: 1.5px solid rgba(31, 29, 58, 0.1);
+    background: rgba(31, 29, 58, 0.02);
+    flex-shrink: 0;
+  }
+
+  :global(.spidey) .recruiter-topbar,
+  :global(.spidey-theme) .recruiter-topbar {
+    border-bottom-color: rgba(240, 232, 232, 0.08);
+    background: rgba(240, 232, 232, 0.02);
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .badge-ats {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--red, #d8402f);
+    background: rgba(216, 64, 47, 0.12);
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .badge-status {
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .action-btn {
+    background: rgba(31, 29, 58, 0.06);
+    color: inherit;
+    border: 1px solid rgba(31, 29, 58, 0.15);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding: 7px 12px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background 150ms ease, transform 100ms ease;
+  }
+
+  .action-btn:hover {
+    background: rgba(31, 29, 58, 0.12);
+  }
+
+  .action-btn:active {
+    transform: scale(0.96);
+  }
+
+  :global(.spidey) .action-btn,
+  :global(.spidey-theme) .action-btn {
+    background: rgba(240, 232, 232, 0.08);
+    border-color: rgba(240, 232, 232, 0.16);
+  }
+
+  :global(.spidey) .action-btn:hover,
+  :global(.spidey-theme) .action-btn:hover {
+    background: rgba(240, 232, 232, 0.15);
+  }
+
+  .close-btn {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 24px;
+    line-height: 1;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 4px;
+    transition: background 150ms ease;
+  }
+
+  .close-btn:hover {
+    background: rgba(31, 29, 58, 0.1);
+  }
+
+  :global(.spidey) .close-btn:hover,
+  :global(.spidey-theme) .close-btn:hover {
+    background: rgba(240, 232, 232, 0.12);
+  }
+
+  /* Resume Scroll Sheet */
+  .resume-sheet {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 32px 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--red, #d8402f) rgba(31, 29, 58, 0.06);
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .resume-sheet::-webkit-scrollbar {
+    width: 6px;
+  }
+  .resume-sheet::-webkit-scrollbar-thumb {
+    background: var(--red, #d8402f);
+    border-radius: 999px;
+  }
+  .resume-sheet::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Candidate Header */
+  .resume-header {
+    border-bottom: 2px solid var(--red, #d8402f);
+    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .candidate-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .candidate-role {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--red, #d8402f);
+    margin: 0;
+  }
+
+  .header-contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.85;
+  }
+
+  .contact-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .contact-sep {
+    opacity: 0.4;
+  }
+
+  /* Resume Blocks */
+  .resume-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .block-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--red, #d8402f);
+    margin: 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(31, 29, 58, 0.12);
+  }
+
+  :global(.spidey) .block-title,
+  :global(.spidey-theme) .block-title {
+    border-bottom-color: rgba(240, 232, 232, 0.12);
+  }
+
+  .summary-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  /* Skills Grid */
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .skill-category {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .cat-name {
+    font-weight: 800;
+    color: inherit;
+  }
+
+  .cat-items {
+    opacity: 0.88;
+  }
+
+  /* Projects */
+  .project-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed rgba(31, 29, 58, 0.08);
+  }
+
+  .project-entry:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  :global(.spidey) .project-entry,
+  :global(.spidey-theme) .project-entry {
+    border-bottom-color: rgba(240, 232, 232, 0.08);
+  }
+
+  .entry-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .entry-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .entry-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14.5px;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .entry-metric-pill {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--red, #d8402f);
+    background: rgba(216, 64, 47, 0.08);
+    padding: 2px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .entry-tech {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.65;
+  }
+
+  .entry-bullets {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.88;
+  }
+
+  /* Education */
+  .edu-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13.5px;
+    font-weight: 800;
+  }
+
+  .edu-status {
+    font-size: 11px;
+    opacity: 0.65;
+  }
+
+  .edu-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12.5px;
+    margin: 4px 0 0;
+    opacity: 0.8;
+  }
+
+  /* -------------------------------------------------------------
+     Print Media Stylesheet for 1-Click PDF Save
+     ------------------------------------------------------------- */
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+
+    #recruiter-modal,
+    #recruiter-modal * {
+      visibility: visible;
+    }
+
+    #recruiter-modal {
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      background: #ffffff !important;
+      color: #000000 !important;
+      display: block !important;
+    }
+
+    .recruiter-backdrop,
+    .recruiter-topbar {
+      display: none !important;
+    }
+
+    .recruiter-window {
+      box-shadow: none !important;
+      border: none !important;
+      width: 100% !important;
+      max-height: none !important;
+      background: #ffffff !important;
+      color: #000000 !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+
+    .resume-sheet {
+      padding: 0 !important;
+      overflow: visible !important;
+    }
+
+    .candidate-name {
+      color: #000000 !important;
+    }
+
+    .block-title,
+    .candidate-role,
+    .entry-metric-pill {
+      color: #b52e1f !important;
+    }
+
+    a {
+      text-decoration: none !important;
+      color: #000000 !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .recruiter-window {
+      width: 100%;
+      height: 94vh;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .resume-sheet {
+      padding: 20px 20px 30px;
+    }
+
+    .entry-title-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+</style>
