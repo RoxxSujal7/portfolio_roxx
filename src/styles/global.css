@@ -548,3 +548,17 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
   .laptop-figure { width: 40vw; right: 6px; }
   .contact-figure { width: min(70vw, 300px); }
 }
+
+/* Accessible screen-reader only class for SEO H1 headings */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
