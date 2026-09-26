@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 import { Image } from 'astro:assets';
 import Spider from '../components/Spider.astro';
 import Web from '../components/Web.astro';
@@ -304,5 +305,6 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
 
     <script>import '../scripts/motion.ts';</script>
     <script>import '../scripts/theme.ts';</script>
+    <Analytics />
   </body>
 </html>
