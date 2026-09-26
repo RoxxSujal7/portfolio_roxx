@@ -362,6 +362,7 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 18px 12px; border: 1.5px solid rgba(31, 29, 58, 0.18);
   box-shadow: 0 8px 18px rgba(31, 29, 58, 0.14);
   transform: rotate(var(--r, 0deg));
+  will-change: transform;
   transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -394,7 +395,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
 .hero-word { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
 .hero-word span { font-family: var(--display); font-weight: 900; font-size: clamp(84px, 20.5vw, 320px); line-height: 0.85; letter-spacing: -0.035em; color: var(--ink); transform: translateY(-22%); }
 .hero-stage { position: relative; z-index: 2; display: grid; justify-items: center; padding-top: clamp(96px, 12vh, 150px); }
-.hero-figure { width: min(54vw, 760px); }
+.hero-figure { width: min(54vw, 760px); will-change: transform; }
 .tagline { margin: -14px 0 0; text-align: center; font-family: var(--display); font-weight: 800; font-size: clamp(15px, 1.6vw, 22px); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
 .tagline .script { display: block; font-size: clamp(28px, 3.2vw, 46px); letter-spacing: 0; line-height: 1; margin-bottom: 4px; }
 .hero-cta { display: flex; gap: 18px; justify-content: center; margin: 22px 0 44px; padding: 0; list-style: none; }
@@ -416,7 +417,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 0.95; l
 .thread { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
 .thread path { fill: none; stroke: var(--red); stroke-width: 2.2; stroke-linecap: round; }
 .spider-hero { top: 0; right: clamp(24px, 9vw, 140px); z-index: 3; }
-.swing-rig { position: absolute; left: 50%; top: -45vh; height: 75vh; width: 2px; transform-origin: top center; z-index: 4; pointer-events: none; }
+.swing-rig { position: absolute; left: 50%; top: -45vh; height: 75vh; width: 2px; transform-origin: top center; z-index: 4; pointer-events: none; will-change: transform; }
 .swing-rig .line { position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: var(--ink); }
 .swing-rig .swing-img { position: absolute; top: calc(100% - 6px); left: 50%; transform: translateX(-52%); width: auto; height: 52vh; }
 .swing-rig .swing-img img { height: 100%; width: auto; }

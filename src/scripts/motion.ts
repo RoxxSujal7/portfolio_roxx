@@ -13,7 +13,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((t) => lenis.raf(t * 1000));
-gsap.ticker.lagSmoothing(0);
+gsap.ticker.lagSmoothing(500, 33);
 
 // --- Smooth animated scrolling for internal anchor links (About, Work, Contact, Hero CTAs) ---
 document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {

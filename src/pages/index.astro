@@ -138,7 +138,10 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700&family=Nunito:wght@400;600;700;800&family=Kaushan+Script&family=Patrick+Hand&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700&family=Nunito:wght@400;600;700;800&family=Kaushan+Script&family=Patrick+Hand&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700&family=Nunito:wght@400;600;700;800&family=Kaushan+Script&family=Patrick+Hand&display=swap" />
+    </noscript>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -178,12 +181,12 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
 
         <div class="swing-rig" aria-hidden="true">
           <span class="line"></span>
-          <div class="sticker swing-img"><Image src={swing} alt="" widths={[500, 800]} sizes="40vh" format="webp" quality={80} loading="eager" /></div>
+          <div class="sticker swing-img"><Image src={swing} alt="" widths={[500, 800]} sizes="40vh" format="webp" quality={80} loading="eager" fetchpriority="high" decoding="async" /></div>
         </div>
 
         <div class="hero-stage">
           <div class="sticker hero-figure">
-            <Image src={hero} alt="Illustrated character sitting on the ground, pointing to the side" widths={[700, 1000, 1500]} sizes="(max-width: 900px) 94vw, 820px" format="webp" quality={82} loading="eager" />
+            <Image src={hero} alt="Illustrated character sitting on the ground, pointing to the side" widths={[700, 1000, 1500]} sizes="(max-width: 900px) 94vw, 820px" format="webp" quality={82} loading="eager" fetchpriority="high" decoding="async" />
           </div>
           <p class="tagline"><span class="script">full stack &amp; AI</span> software engineer</p>
           <ul class="hero-cta">
@@ -203,7 +206,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
         <div class="band" data-reveal><h2>About me</h2></div>
         <section class="about">
           <div class="sticker about-figure" data-pop>
-            <Image src={portrait} alt="Portrait illustration of the character" widths={[500, 800, 1100]} sizes="(max-width: 900px) 78vw, 520px" format="webp" quality={82} />
+            <Image src={portrait} alt="Portrait illustration of the character" widths={[500, 800, 1100]} sizes="(max-width: 900px) 78vw, 520px" format="webp" quality={82} loading="lazy" decoding="async" />
           </div>
           <div class="about-text" data-reveal>
             <p class="hi">Hi, I'm</p>
@@ -224,7 +227,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
         <div class="band ready-band" data-reveal>
           <p class="h">Get ready<br />to see <span class="script">the work</span></p>
           <div class="sticker ready-figure" data-pop>
-            <Image src={crouch} alt="Illustrated character crouched on the edge of a ledge" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 400px" format="webp" quality={82} />
+            <Image src={crouch} alt="Illustrated character crouched on the edge of a ledge" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 400px" format="webp" quality={82} loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -235,7 +238,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
         <header class="work-head" data-reveal>
           <div class="hang-rig" aria-hidden="true">
             <span class="line"></span>
-            <div class="sticker"><Image src={hang} alt="" widths={[300, 500]} sizes="150px" format="webp" quality={80} /></div>
+            <div class="sticker"><Image src={hang} alt="" widths={[300, 500]} sizes="150px" format="webp" quality={80} loading="lazy" decoding="async" /></div>
           </div>
           <h2>My work</h2>
           <span class="script sub">selected projects &amp; engineering builds</span>
@@ -246,7 +249,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
               <a class="card-link" href={w.href ?? '#contact'} target={w.href ? '_blank' : undefined} rel={w.href ? 'noopener noreferrer' : undefined}>
                 <div class="thumb">
                   {art[w.kind]
-                    ? <Image src={art[w.kind]} alt={`${w.title} illustration`} widths={[420, 640, 900]} sizes="(max-width: 900px) 92vw, 380px" format="webp" quality={80} />
+                    ? <Image src={art[w.kind]} alt={`${w.title} illustration`} widths={[420, 640, 900]} sizes="(max-width: 900px) 92vw, 380px" format="webp" quality={80} loading="lazy" decoding="async" />
                     : <Thumb kind={w.kind} />}
                 </div>
                 <div class="body">
@@ -262,7 +265,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
           <div class="band" data-reveal>
             <p class="h">Explore open source code &amp; experiments on <a class="script" href={GH} target="_blank" rel="noopener noreferrer">{HANDLE}</a></p>
             <div class="sticker laptop-figure" data-pop>
-              <Image src={laptop} alt="Illustrated character sitting on a ledge, typing on a laptop" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 280px" format="webp" quality={82} />
+              <Image src={laptop} alt="Illustrated character sitting on a ledge, typing on a laptop" widths={[500, 800]} sizes="(max-width: 900px) 40vw, 280px" format="webp" quality={82} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -274,7 +277,7 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
         <section class="contact">
           <div class="watermark" aria-hidden="true">HELLO</div>
           <div class="sticker contact-figure" data-pop>
-            <Image src={wave} alt="Illustrated character waving" widths={[500, 800]} sizes="(max-width: 900px) 70vw, 380px" format="webp" quality={82} />
+            <Image src={wave} alt="Illustrated character waving" widths={[500, 800]} sizes="(max-width: 900px) 70vw, 380px" format="webp" quality={82} loading="lazy" decoding="async" />
           </div>
           <div class="contact-text" data-reveal>
             <h2>Let's build <span class="script">something</span></h2>
