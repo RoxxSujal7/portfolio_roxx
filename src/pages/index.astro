@@ -144,56 +144,36 @@ const work: { kind: 'agent' | 'p2p' | 'crm' | 'reels' | 'systems' | 'site'; titl
     <!-- JSON-LD Structured Data for Google Knowledge Graph & Rich Results -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": `https://${SITE}/#person`,
-          "name": "Sujal",
-          "alternateName": ["Roxx", "RoxxSujal7", "roxxsujal7", "Sujal Kumar", "Portfolio Roxx", "Roxx Portfolio"],
-          "url": `https://${SITE}/`,
-          "image": `https://${SITE}/og-image.png`,
-          "jobTitle": "Full Stack & AI Engineer",
-          "description": "Full Stack & AI Engineer building modern web apps, intelligent LLM agents, and high-performance distributed systems.",
-          "email": EMAIL,
-          "sameAs": [
-            GH,
-            LINKEDIN,
-            INSTAGRAM
-          ],
-          "knowsAbout": [
-            "Full Stack Web Development",
-            "AI Agents",
-            "Large Language Models",
-            "Astro",
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Python",
-            "FastAPI",
-            "GSAP Motion",
-            "Vector Databases & RAG"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": `https://${SITE}/#website`,
-          "url": `https://${SITE}/`,
-          "name": "Sujal (Roxx) Portfolio",
-          "alternateName": ["Portfolio Roxx", "Roxx Portfolio", "Sujal Portfolio", "RoxxSujal7 Portfolio"],
-          "publisher": { "@id": `https://${SITE}/#person` },
-          "description": "Interactive poster-style portfolio for Sujal (Roxx) — Full Stack & AI Software Engineer."
-        },
-        {
-          "@type": "ProfilePage",
-          "@id": `https://${SITE}/#webpage`,
-          "url": `https://${SITE}/`,
-          "name": "Sujal (Roxx) · Portfolio | Full Stack & AI Engineer",
-          "about": { "@id": `https://${SITE}/#person` },
-          "isPartOf": { "@id": `https://${SITE}/#website` },
-          "primaryImageOfPage": `https://${SITE}/og-image.png`,
-          "description": "Explore interactive web applications, autonomous AI agents, machine learning pipelines, and creative engineering builds by Sujal (Roxx)."
-        }
-      ]
+      "@type": "ProfilePage",
+      "dateCreated": "2026-09-26T00:00:00+00:00",
+      "dateModified": "2026-09-26T00:00:00+00:00",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Sujal",
+        "alternateName": ["Roxx", "RoxxSujal7", "roxxsujal7", "Sujal Kumar", "Portfolio Roxx", "Roxx Portfolio"],
+        "identifier": "@roxxsujal7",
+        "description": "Full Stack & AI Engineer building modern web apps, intelligent LLM agents, and high-performance distributed systems.",
+        "image": `https://${SITE}/og-image.png`,
+        "jobTitle": "Full Stack & AI Engineer",
+        "sameAs": [
+          GH,
+          LINKEDIN,
+          INSTAGRAM
+        ],
+        "knowsAbout": [
+          "Full Stack Web Development",
+          "AI Agents",
+          "Large Language Models",
+          "Astro",
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Python",
+          "FastAPI",
+          "GSAP Motion",
+          "Vector Databases & RAG"
+        ]
+      }
     })} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
